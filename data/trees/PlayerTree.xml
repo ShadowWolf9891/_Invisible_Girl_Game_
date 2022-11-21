@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root main_tree_to_execute ="MainTree">
+	
+	<BehaviorTree ID="MainTree">
+		<Sequence name ="root_sequence">
+			<Script code="isShift:=false"/>
+			<ReactiveSequence>
+				<SubTree ID="InputTree" isRunning="{isShift}"/>
+				<SubTree ID="SelectAnimationTree" isRunning="{isShift}" animToPlay="{Anim}"/>
+				<TriggerEvent EventType ="{Anim}"/>
+			</ReactiveSequence>
+			
+		</Sequence>
+	</BehaviorTree>
+
+	<BehaviorTree ID="InputTree">
+		<ReactiveFallback>
+			<Sequence>
+				<IsKeyPressed Key="Shift"/>
+				<Script code="isRunning:=true"/>
+			</Sequence>
+			<Sequence>
+				<Inverter>
+					<IsKeyPressed Key="Shift"/>
+				</Inverter>
+				<Script code="isRunning:=false"/>
+			</Sequence>
+			
+		</ReactiveFallback>
+	</BehaviorTree>
+
+	<BehaviorTree ID="SelectAnimationTree">
+		<ReactiveSequence>
+			<GetMoveSpeed moveSpeed="{the_moveSpeed}"/>
+			<ReactiveFallback>
+				<Script code="animToPlay:='Run'" _while="isRunning && the_moveSpeed>0"/>
+				<Script code="animToPlay:='Walk'" _while="!isRunning && the_moveSpeed>0"/>
+				<Script code="animToPlay:='Idle'"/>
+			</ReactiveFallback>
+		</ReactiveSequence>
+		
+	</BehaviorTree>
+	
+	
+</root>

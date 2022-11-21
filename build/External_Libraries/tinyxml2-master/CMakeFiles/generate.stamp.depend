@@ -1,0 +1,10 @@
+# CMake generation dependency list for this directory.
+F:/CMake/share/cmake-3.24/Modules/BasicConfigVersion-SameMajorVersion.cmake.in
+F:/CMake/share/cmake-3.24/Modules/CMakePackageConfigHelpers.cmake
+F:/CMake/share/cmake-3.24/Modules/CTest.cmake
+F:/CMake/share/cmake-3.24/Modules/CTestUseLaunchers.cmake
+F:/CMake/share/cmake-3.24/Modules/GNUInstallDirs.cmake
+F:/CMake/share/cmake-3.24/Modules/WriteBasicConfigVersionFile.cmake
+F:/Invisible_Girl_Game/External_Libraries/tinyxml2-master/CMakeLists.txt
+F:/Invisible_Girl_Game/External_Libraries/tinyxml2-master/cmake/tinyxml2.pc.in
+F:/Invisible_Girl_Game/build/External_Libraries/tinyxml2-master/tinyxml2.pc.gen

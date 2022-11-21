@@ -1,0 +1,8 @@
+F:/GameInstall/lib/tinyxml2.lib
+F:/GameInstall/lib/cmake/tinyxml2/tinyxml2-static-targets.cmake
+F:/GameInstall/lib/cmake/tinyxml2/tinyxml2-static-targets-debug.cmake
+F:/GameInstall/lib/cmake/tinyxml2/tinyxml2-config.cmake
+F:/GameInstall/lib/cmake/tinyxml2/tinyxml2-config-version.cmake
+F:/GameInstall/include/tinyxml2.h
+F:/GameInstall/lib/pkgconfig/tinyxml2.pc
+F:/GameInstall/bin/Invisible_Girl.exe

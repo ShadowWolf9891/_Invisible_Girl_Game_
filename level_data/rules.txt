@@ -1,0 +1,7 @@
+#rules.txt
+
+
+# Automapping for the cliffs
+
+rulecliffs.txt
+rulebackground.txt

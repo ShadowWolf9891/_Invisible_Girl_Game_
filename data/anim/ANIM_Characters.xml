@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root _type ="animation">
+	<AnimationGroup state="Idle" looped ="true" filename="Assets/Character/20.01a - Character Base 2.4a (comp. v01)/char_a_p1/char_a_p1_0bas_humn_v01.png">
+		<Animation direction="Down" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x ="0" y="0" duration ="0"/>
+		</Animation>
+		<Animation direction="Up" frameWidth="64" frameHeight="64">
+			<Frame number="0" x="0" y="64" duration="0"/>
+		</Animation>
+		<Animation direction="Right" frameWidth="64" frameHeight="64">
+			<Frame number="0" x="0" y="128" duration="0"/>
+		</Animation>
+		<Animation direction="Left" frameWidth="64" frameHeight="64">
+			<Frame number ="0" x="0" y="192" duration="0"/>
+		</Animation>
+	</AnimationGroup>
+	<AnimationGroup state="Walk" looped ="true" filename="Assets/Character/20.01a - Character Base 2.4a (comp. v01)/char_a_p1/char_a_p1_0bas_humn_v01.png">
+		<Animation direction="Down" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x="0" y="256" duration="0.135"/>
+			<Frame number ="1" x="64" y="256" duration="0.135"/>
+			<Frame number ="2" x="128" y="256" duration="0.135"/>
+			<Frame number ="3" x="192" y="256" duration="0.135"/>
+			<Frame number ="4" x="256" y="256" duration="0.135"/>
+			<Frame number ="5" x="320" y="256" duration="0.135"/>
+		</Animation>
+		<Animation direction="Up" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x="0" y="320" duration="0.135"/>
+			<Frame number ="1" x="64" y="320" duration="0.135"/>
+			<Frame number ="2" x="128" y="320" duration="0.135"/>
+			<Frame number ="3" x="192" y="320" duration="0.135"/>
+			<Frame number ="4" x="256" y="320" duration="0.135"/>
+			<Frame number ="5" x="320" y="320" duration="0.135"/>
+		</Animation>
+		<Animation direction="Right" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x="0" y="384" duration="0.135"/>
+			<Frame number ="1" x="64" y="384" duration="0.135"/>
+			<Frame number ="2" x="128" y="384" duration="0.135"/>
+			<Frame number ="3" x="192" y="384" duration="0.135"/>
+			<Frame number ="4" x="256" y="384" duration="0.135"/>
+			<Frame number ="5" x="320" y="384" duration="0.135"/>
+		</Animation>
+		<Animation direction="Left" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x="0" y="448" duration="0.135"/>
+			<Frame number ="1" x="64" y="448" duration="0.135"/>
+			<Frame number ="2" x="128" y="448" duration="0.135"/>
+			<Frame number ="3" x="192" y="448" duration="0.135"/>
+			<Frame number ="4" x="256" y="448" duration="0.135"/>
+			<Frame number ="5" x="320" y="448" duration="0.135"/>
+		</Animation>
+	</AnimationGroup>
+	<AnimationGroup state="Run" looped ="true" filename="Assets/Character/20.01a - Character Base 2.4a (comp. v01)/char_a_p1/char_a_p1_0bas_humn_v01.png">
+		<Animation direction="Down" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x="0" y="256" duration="0.08"/>
+			<Frame number ="1" x="64" y="256" duration="0.055"/>
+			<Frame number ="2" x="384" y="256" duration="0.125"/>
+			<Frame number ="3" x="192" y="256" duration="0.08"/>
+			<Frame number ="4" x="256" y="256" duration="0.055"/>
+			<Frame number ="5" x="448" y="256" duration="0.125"/>
+		</Animation>
+		<Animation direction="Up" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x="0" y="320" duration="0.08"/>
+			<Frame number ="1" x="64" y="320" duration="0.055"/>
+			<Frame number ="2" x="384" y="320" duration="0.125"/>
+			<Frame number ="3" x="192" y="320" duration="0.08"/>
+			<Frame number ="4" x="256" y="320" duration="0.055"/>
+			<Frame number ="5" x="448" y="320" duration="0.125"/>
+		</Animation>
+		<Animation direction="Right" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x="0" y="384" duration="0.08"/>
+			<Frame number ="1" x="64" y="384" duration="0.055"/>
+			<Frame number ="2" x="384" y="384" duration="0.125"/>
+			<Frame number ="3" x="192" y="384" duration="0.08"/>
+			<Frame number ="4" x="256" y="384" duration="0.055"/>
+			<Frame number ="5" x="448" y="384" duration="0.125"/>
+		</Animation>
+		<Animation direction="Left" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x="0" y="448" duration="0.08"/>
+			<Frame number ="1" x="64" y="448" duration="0.055"/>
+			<Frame number ="2" x="384" y="448" duration="0.125"/>
+			<Frame number ="3" x="192" y="448" duration="0.08"/>
+			<Frame number ="4" x="256" y="448" duration="0.055"/>
+			<Frame number ="5" x="448" y="448" duration="0.125"/>
+		</Animation>
+	</AnimationGroup>
+	<AnimationGroup state="BowDraw" looped ="false" filename="Assets\Character\20.08b - Bow Combat 3.1\char_a_pBOW1\char_a_pBOW1_0bas_humn_v01.png">
+		<Animation direction="Down" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x ="0" y="0" duration ="0.1"/>
+			<Frame number ="1" x ="64" y="0" duration ="0.1"/>
+			<Frame number ="2" x ="128" y="0" duration ="0.1"/>
+		</Animation>
+		<Animation direction="Up" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x ="0" y="64" duration ="0.1"/>
+			<Frame number ="1" x ="64" y="64" duration ="0.1"/>
+			<Frame number ="2" x ="128" y="64" duration ="0.1"/>
+		</Animation>
+		<Animation direction="Right" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x ="0" y="128" duration ="0.1"/>
+			<Frame number ="1" x ="64" y="128" duration ="0.1"/>
+			<Frame number ="2" x ="128" y="128" duration ="0.1"/>
+		</Animation>
+		<Animation direction="Left" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x ="0" y="192" duration ="0.1"/>
+			<Frame number ="1" x ="64" y="192" duration ="0.1"/>
+			<Frame number ="2" x ="128" y="192" duration ="0.1"/>
+		</Animation>
+	</AnimationGroup>
+	<AnimationGroup state="BowSheath" looped ="false" filename="Assets\Character\20.08b - Bow Combat 3.1\char_a_pBOW1\char_a_pBOW1_0bas_humn_v01.png">
+		<Animation direction="Down" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x ="128" y="0" duration ="0.1"/>
+			<Frame number ="1" x ="64" y="0" duration ="0.1"/>
+			<Frame number ="2" x ="0" y="0" duration ="0.1"/>
+		</Animation>
+		<Animation direction="Up" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x ="128" y="64" duration ="0.1"/>
+			<Frame number ="1" x ="64" y="64" duration ="0.1"/>
+			<Frame number ="2" x ="0" y="64" duration ="0.1"/>
+		</Animation>
+		<Animation direction="Right" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x ="128" y="128" duration ="0.1"/>
+			<Frame number ="1" x ="64" y="128" duration ="0.1"/>
+			<Frame number ="2" x ="0" y="128" duration ="0.1"/>
+		</Animation>
+		<Animation direction="Left" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x ="128" y="192" duration ="0.1"/>
+			<Frame number ="1" x ="64" y="192" duration ="0.1"/>
+			<Frame number ="2" x ="0" y="192" duration ="0.1"/>
+		</Animation>
+	</AnimationGroup>
+	<AnimationGroup state="BowParry" looped ="false" filename="Assets\Character\20.08b - Bow Combat 3.1\char_a_pBOW1\char_a_pBOW1_0bas_humn_v01.png">
+		<Animation direction="Down" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x ="192" y="0" duration ="0"/>
+		</Animation>
+		<Animation direction="Up" frameWidth="64" frameHeight="64">
+			<Frame number="0" x="192" y="64" duration="0"/>
+		</Animation>
+		<Animation direction="Right" frameWidth="64" frameHeight="64">
+			<Frame number="0" x="192" y="128" duration="0"/>
+		</Animation>
+		<Animation direction="Left" frameWidth="64" frameHeight="64">
+			<Frame number ="0" x="192" y="192" duration="0"/>
+		</Animation>
+	</AnimationGroup>
+	<AnimationGroup state="BowDodge" looped ="false" filename="Assets\Character\20.08b - Bow Combat 3.1\char_a_pBOW1\char_a_pBOW1_0bas_humn_v01.png">
+		<Animation direction="Down" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x ="256" y="0" duration ="0"/>
+		</Animation>
+		<Animation direction="Up" frameWidth="64" frameHeight="64">
+			<Frame number="0" x="256" y="64" duration="0"/>
+		</Animation>
+		<Animation direction="Right" frameWidth="64" frameHeight="64">
+			<Frame number="0" x="256" y="128" duration="0"/>
+		</Animation>
+		<Animation direction="Left" frameWidth="64" frameHeight="64">
+			<Frame number ="0" x="256" y="192" duration="0"/>
+		</Animation>
+	</AnimationGroup>
+	<AnimationGroup state="BowHurt" looped ="false" filename="Assets\Character\20.08b - Bow Combat 3.1\char_a_pBOW1\char_a_pBOW1_0bas_humn_v01.png">
+		<Animation direction="Down" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x ="320" y="0" duration ="0"/>
+		</Animation>
+		<Animation direction="Up" frameWidth="64" frameHeight="64">
+			<Frame number="0" x="320" y="64" duration="0"/>
+		</Animation>
+		<Animation direction="Right" frameWidth="64" frameHeight="64">
+			<Frame number="0" x="320" y="128" duration="0"/>
+		</Animation>
+		<Animation direction="Left" frameWidth="64" frameHeight="64">
+			<Frame number ="0" x="320" y="192" duration="0"/>
+		</Animation>
+	</AnimationGroup>
+	<AnimationGroup state="BowDead" looped ="false" filename="Assets\Character\20.08b - Bow Combat 3.1\char_a_pBOW1\char_a_pBOW1_0bas_humn_v01.png">
+		<Animation direction="Down" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x ="384" y="0" duration ="0.5"/>
+			<Frame number ="1" x ="448" y="0" duration ="0"/>
+		</Animation>
+		<Animation direction="Up" frameWidth="64" frameHeight="64">
+			<Frame number="0" x="384" y="64" duration="0.5"/>
+			<Frame number ="1" x ="448" y="64" duration ="0"/>
+		</Animation>
+		<Animation direction="Right" frameWidth="64" frameHeight="64">
+			<Frame number="0" x="384" y="128" duration="0.5"/>
+			<Frame number ="1" x ="448" y="128" duration ="0"/>
+		</Animation>
+		<Animation direction="Left" frameWidth="64" frameHeight="64">
+			<Frame number ="0" x="384" y="192" duration="0.5"/>
+			<Frame number ="1" x ="448" y="192" duration ="0"/>
+		</Animation>
+	</AnimationGroup>
+	<AnimationGroup state="BowIdle" looped ="true" filename="Assets\Character\20.08b - Bow Combat 3.1\char_a_pBOW2\char_a_pBOW2_0bas_humn_v01.png">
+		<Animation direction="Down" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x ="0" y="0" duration ="0.1"/>
+			<Frame number ="1" x ="64" y="0" duration ="0.1"/>
+			<Frame number ="2" x ="128" y="0" duration ="0.1"/>
+			<Frame number ="3" x ="192" y="0" duration ="0.1"/>
+		</Animation>
+		<Animation direction="Up" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x ="0" y="64" duration ="0.1"/>
+			<Frame number ="1" x ="64" y="64" duration ="0.1"/>
+			<Frame number ="2" x ="128" y="64" duration ="0.1"/>
+			<Frame number ="3" x ="192" y="64" duration ="0.1"/>
+		</Animation>
+		<Animation direction="Right" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x ="0" y="128" duration ="0.1"/>
+			<Frame number ="1" x ="64" y="128" duration ="0.1"/>
+			<Frame number ="2" x ="128" y="128" duration ="0.1"/>
+			<Frame number ="3" x ="192" y="128" duration ="0.1"/>
+		</Animation>
+		<Animation direction="Left" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x ="0" y="192" duration ="0.1"/>
+			<Frame number ="1" x ="64" y="192" duration ="0.1"/>
+			<Frame number ="2" x ="128" y="192" duration ="0.1"/>
+			<Frame number ="3" x ="192" y="192" duration ="0.1"/>
+		</Animation>
+	</AnimationGroup>
+	<AnimationGroup state="BowMove" looped ="true" filename="Assets\Character\20.08b - Bow Combat 3.1\char_a_pBOW2\char_a_pBOW2_0bas_humn_v01.png">
+		<Animation direction="Down" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x ="256" y="0" duration ="0.1"/>
+			<Frame number ="1" x ="320" y="0" duration ="0.1"/>
+			<Frame number ="2" x ="384" y="0" duration ="0.1"/>
+			<Frame number ="3" x ="448" y="0" duration ="0.1"/>
+		</Animation>
+		<Animation direction="Up" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x ="256" y="64" duration ="0.1"/>
+			<Frame number ="1" x ="320" y="64" duration ="0.1"/>
+			<Frame number ="2" x ="384" y="64" duration ="0.1"/>
+			<Frame number ="3" x ="448" y="64" duration ="0.1"/>
+		</Animation>
+		<Animation direction="Right" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x ="256" y="128" duration ="0.1"/>
+			<Frame number ="1" x ="320" y="128" duration ="0.1"/>
+			<Frame number ="2" x ="384" y="128" duration ="0.1"/>
+			<Frame number ="3" x ="448" y="128" duration ="0.1"/>
+		</Animation>
+		<Animation direction="Left" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x ="256" y="192" duration ="0.1"/>
+			<Frame number ="1" x ="320" y="192" duration ="0.1"/>
+			<Frame number ="2" x ="384" y="192" duration ="0.1"/>
+			<Frame number ="3" x ="448" y="192" duration ="0.1"/>
+		</Animation>
+	</AnimationGroup>
+	<AnimationGroup state="BowCrouch" looped ="false" filename="Assets\Character\20.08b - Bow Combat 3.1\char_a_pBOW2\char_a_pBOW2_0bas_humn_v01.png">
+		<Animation direction="Down" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x ="0" y="256" duration ="0"/>
+		</Animation>
+		<Animation direction="Up" frameWidth="64" frameHeight="64">
+			<Frame number="0" x="0" y="320" duration="0"/>
+		</Animation>
+		<Animation direction="Right" frameWidth="64" frameHeight="64">
+			<Frame number="0" x="0" y="384" duration="0"/>
+		</Animation>
+		<Animation direction="Left" frameWidth="64" frameHeight="64">
+			<Frame number ="0" x="0" y="448" duration="0"/>
+		</Animation>
+	</AnimationGroup>
+	<AnimationGroup state="BowRetreat" looped ="false" filename="Assets\Character\20.08b - Bow Combat 3.1\char_a_pBOW2\char_a_pBOW2_0bas_humn_v01.png">
+		<Animation direction="Down" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x ="64" y="256" duration ="0"/>
+		</Animation>
+		<Animation direction="Up" frameWidth="64" frameHeight="64">
+			<Frame number="0" x="64" y="320" duration="0"/>
+		</Animation>
+		<Animation direction="Right" frameWidth="64" frameHeight="64">
+			<Frame number="0" x="64" y="384" duration="0"/>
+		</Animation>
+		<Animation direction="Left" frameWidth="64" frameHeight="64">
+			<Frame number ="0" x="64" y="448" duration="0"/>
+		</Animation>
+	</AnimationGroup>
+	<AnimationGroup state="BowLunge" looped ="false" filename="Assets\Character\20.08b - Bow Combat 3.1\char_a_pBOW2\char_a_pBOW2_0bas_humn_v01.png">
+		<Animation direction="Down" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x ="128" y="256" duration ="0"/>
+		</Animation>
+		<Animation direction="Up" frameWidth="64" frameHeight="64">
+			<Frame number="0" x="128" y="320" duration="0"/>
+		</Animation>
+		<Animation direction="Right" frameWidth="64" frameHeight="64">
+			<Frame number="0" x="128" y="384" duration="0"/>
+		</Animation>
+		<Animation direction="Left" frameWidth="64" frameHeight="64">
+			<Frame number ="0" x="128" y="448" duration="0"/>
+		</Animation>
+	</AnimationGroup>
+	<AnimationGroup state="BowShootUp" looped ="false" filename="Assets\Character\20.08b - Bow Combat 3.1\char_a_pBOW3\char_a_pBOW3_0bas_humn_v01.png">
+		<Animation direction="Down" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x ="0" y="0" duration ="0.18"/>
+			<Frame number ="1" x ="64" y="0" duration ="0.1"/>
+			<Frame number ="2" x ="128" y="0" duration ="0.1"/>
+			<Frame number ="3" x ="192" y="0" duration ="0.1"/>
+			<Frame number ="4" x ="256" y="0" duration ="0.4"/>
+			<Frame number ="5" x ="320" y="0" duration ="0.05"/>
+			<Frame number ="6" x ="384" y="0" duration ="0.05"/>
+			<Frame number ="7" x ="448" y="0" duration ="0.1"/>
+		</Animation>
+		<Animation direction="Up" frameWidth="64" frameHeight="64">
+			<Frame number ="0" x ="0" y="64" duration ="0.18"/>
+			<Frame number ="1" x ="64" y="64" duration ="0.1"/>
+			<Frame number ="2" x ="128" y="64" duration ="0.1"/>
+			<Frame number ="3" x ="192" y="64" duration ="0.1"/>
+			<Frame number ="4" x ="256" y="64" duration ="0.4"/>
+			<Frame number ="5" x ="320" y="64" duration ="0.05"/>
+			<Frame number ="6" x ="384" y="64" duration ="0.05"/>
+			<Frame number ="7" x ="448" y="64" duration ="0.1"/>
+		</Animation>
+		<Animation direction="Right" frameWidth="64" frameHeight="64">
+			<Frame number ="0" x ="0" y="128" duration ="0.18"/>
+			<Frame number ="1" x ="64" y="128" duration ="0.1"/>
+			<Frame number ="2" x ="128" y="128" duration ="0.1"/>
+			<Frame number ="3" x ="192" y="128" duration ="0.1"/>
+			<Frame number ="4" x ="256" y="128" duration ="0.4"/>
+			<Frame number ="5" x ="320" y="128" duration ="0.05"/>
+			<Frame number ="6" x ="384" y="128" duration ="0.05"/>
+			<Frame number ="7" x ="448" y="128" duration ="0.1"/>
+		</Animation>
+		<Animation direction="Left" frameWidth="64" frameHeight="64">
+			<Frame number ="0" x ="0" y="192" duration ="0.18"/>
+			<Frame number ="1" x ="64" y="192" duration ="0.1"/>
+			<Frame number ="2" x ="128" y="192" duration ="0.1"/>
+			<Frame number ="3" x ="192" y="192" duration ="0.1"/>
+			<Frame number ="4" x ="256" y="192" duration ="0.4"/>
+			<Frame number ="5" x ="320" y="192" duration ="0.05"/>
+			<Frame number ="6" x ="384" y="192" duration ="0.05"/>
+			<Frame number ="7" x ="448" y="192" duration ="0.1"/>
+		</Animation>
+	</AnimationGroup>
+	<AnimationGroup state="BowShootStraight" looped ="false" filename="Assets\Character\20.08b - Bow Combat 3.1\char_a_pBOW3\char_a_pBOW3_0bas_humn_v01.png">
+		<Animation direction="Down" frameWidth ="64" frameHeight ="64">
+			<Frame number ="0" x ="0" y="256" duration ="0.18"/>
+			<Frame number ="1" x ="64" y="256" duration ="0.1"/>
+			<Frame number ="2" x ="128" y="256" duration ="0.1"/>
+			<Frame number ="3" x ="192" y="256" duration ="0.1"/>
+			<Frame number ="4" x ="256" y="256" duration ="0.4"/>
+			<Frame number ="5" x ="320" y="256" duration ="0.05"/>
+			<Frame number ="6" x ="384" y="256" duration ="0.05"/>
+			<Frame number ="7" x ="448" y="256" duration ="0.1"/>
+		</Animation>
+		<Animation direction="Up" frameWidth="64" frameHeight="64">
+			<Frame number ="0" x ="0" y="320" duration ="0.18"/>
+			<Frame number ="1" x ="64" y="320" duration ="0.1"/>
+			<Frame number ="2" x ="128" y="320" duration ="0.1"/>
+			<Frame number ="3" x ="192" y="320" duration ="0.1"/>
+			<Frame number ="4" x ="256" y="320" duration ="0.4"/>
+			<Frame number ="5" x ="320" y="320" duration ="0.05"/>
+			<Frame number ="6" x ="384" y="320" duration ="0.05"/>
+			<Frame number ="7" x ="448" y="320" duration ="0.1"/>
+		</Animation>
+		<Animation direction="Right" frameWidth="64" frameHeight="64">
+			<Frame number ="0" x ="0" y="384" duration ="0.18"/>
+			<Frame number ="1" x ="64" y="384" duration ="0.1"/>
+			<Frame number ="2" x ="128" y="384" duration ="0.1"/>
+			<Frame number ="3" x ="192" y="384" duration ="0.1"/>
+			<Frame number ="4" x ="256" y="384" duration ="0.4"/>
+			<Frame number ="5" x ="320" y="384" duration ="0.05"/>
+			<Frame number ="6" x ="384" y="384" duration ="0.05"/>
+			<Frame number ="7" x ="448" y="384" duration ="0.1"/>
+		</Animation>
+		<Animation direction="Left" frameWidth="64" frameHeight="64">
+			<Frame number ="0" x ="0" y="448" duration ="0.18"/>
+			<Frame number ="1" x ="64" y="448" duration ="0.1"/>
+			<Frame number ="2" x ="128" y="448" duration ="0.1"/>
+			<Frame number ="3" x ="192" y="448" duration ="0.1"/>
+			<Frame number ="4" x ="256" y="448" duration ="0.4"/>
+			<Frame number ="5" x ="320" y="448" duration ="0.05"/>
+			<Frame number ="6" x ="384" y="448" duration ="0.05"/>
+			<Frame number ="7" x ="448" y="448" duration ="0.1"/>
+		</Animation>
+	</AnimationGroup>
+</root>

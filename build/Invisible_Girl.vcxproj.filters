@@ -1,0 +1,1287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="F:\Invisible_Girl_Game\Animation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\Bitmask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\C_Animation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\C_BehaviourApplier.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\C_BoxCollider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\C_Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\C_Collidable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\C_Collider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\C_Direction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\C_Drawable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\C_Events.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\C_InstanceID.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\C_InteractWithObjects.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\C_Interactable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\C_InteractableTalking.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\C_KeyboardMovement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\C_Mass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\C_Observer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\C_ProjectileAttack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\C_RemoveObjectOnCollisionEnter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\C_Sprite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\C_SteeringBehaviour.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\C_SteeringBehaviourChase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\C_SteeringBehaviourWallAvoidance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\C_Tag.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\C_Transform.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\C_Tree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\C_UIWorldLabel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\C_Velocity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\C_WalkInLine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\ClassObserver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\Component.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\ComponentPairHash.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\Debug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\Dispatcher.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\Event.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\GLC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\Input.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\Invisible_Girl_Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\NPC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\Object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\ObjectCollection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\Quadtree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\Raycast.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\ResourceAllocator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\S_Collidable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\S_Drawable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\Scene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\SceneGame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\SceneSplashScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\SceneStateMachine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\SharedContext.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\Tile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\TileMapParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\WorkingDirectory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\XML_Parser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\my_Tile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="F:\Invisible_Girl_Game\Animation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\BT_ActionNodes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\Bitmask.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\C_Animation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\C_BehaviourApplier.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\C_BoxCollider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\C_Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\C_Collidable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\C_Collider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\C_Direction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\C_Drawable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\C_Events.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\C_InstanceID.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\C_InteractWithObjects.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\C_Interactable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\C_InteractableTalking.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\C_KeyboardMovement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\C_Mass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\C_Observer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\C_ProjectileAttack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\C_RemoveObjectOnCollisionEnter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\C_Sprite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\C_SteeringBehaviour.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\C_SteeringBehaviourChase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\C_SteeringBehaviourWallAvoidance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\C_Tag.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\C_Transform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\C_Tree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\C_UIWorldLabel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\C_Velocity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\C_WalkInLine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\Component.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\ComponentPairHash.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\Debug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\Dispatcher.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\Event.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\GLC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\Input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\Invisible_Girl_Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\NPC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\Object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\ObjectCollection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\Player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\Quadtree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\Raycast.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\ResourceAllocator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\S_Collidable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\S_Drawable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\Scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\SceneGame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\SceneSplashScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\SceneStateMachine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\SharedContext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\Tile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\TileMapParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\WorkingDirectory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\XML_Parser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\my_Tile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\tileson.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\Invisible_Girl_Game\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_DUNG1\anim\light1.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_DUNG1\anim\light2.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_DUNG1\decorative_props.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_DUNG1\mainlevbuild.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_DUNG1\other_props.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_DUNG1\outside.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET1\Anim\ragwind1.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET1\Anim\ragwind2.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET1\Anim\torch.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET1\Anim\tree1A.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET1\Anim\tree1B.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET1\Anim\tree2A.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET1\Anim\tree2B.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET1\Anim\tree3A.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET1\Anim\tree3B.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET1\Anim\waterfall.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET1\decorative_props.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET1\mainlevbuild.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET1\other_props.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET1\water_env.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET2\Anim\bush1A.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET2\Anim\bush1B.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET2\Anim\bush2A.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET2\Anim\bush2B.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET2\Anim\bush3A.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET2\Anim\bush3B.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET2\Anim\tree1A.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET2\Anim\tree1B.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET2\Anim\tree2A.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET2\Anim\tree2B.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET2\decorative_props.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET2\mainlevbuild.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET2\other_props.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET2\water_env.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET3\anim\rocksmoke1.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET3\anim\rocksmoke2.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET3\anim\rocksmoke3.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET3\anim\rocksmoke4.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET3\anim\volc_bubble1.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET3\anim\volc_bubble2.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET3\decorative_props.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET3\mainlevbuild.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET3\other_props.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET4\anim\tree1A.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET4\anim\tree1B.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET4\anim\tree2A.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET4\anim\tree2B.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET4\decorative_props.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET4\mainlevbuild.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET4\other_props.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\2DML_SET4\water_env.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\Character\20.01a - Character Base 2.4a (comp. v01)\base effects.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\Character\20.01a - Character Base 2.4a (comp. v01)\color ramp samples.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\Character\20.01a - Character Base 2.4a (comp. v01)\hoe_and_axe.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\Character\how to make and sell your own outfits\mana seed, sprites.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MP_Dungeon1\Anim\candle-01.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MP_Dungeon1\Anim\candle-02.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MP_Dungeon1\Anim\candle-03.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MP_Dungeon1\Anim\candle-04.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MP_Dungeon1\Anim\candles-01.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MP_Dungeon1\Anim\candles-02.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MP_Dungeon1\Anim\candles-03.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MP_Dungeon1\Anim\candles-04.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MP_Dungeon1\chest_keys_treasure.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MP_Dungeon1\decorative.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MP_Dungeon1\mainlevbuild1.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MP_Dungeon1\mainlevbuild2.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MP_Dungeon1\mainlevbuild3.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MP_Dungeon1\outside_entrance.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassA01.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassA02.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassA03.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassAA01.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassAA02.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassAA03.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassB01.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassB02.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassB03.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassBB01.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassBB02.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassBB03.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassC01.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassC02.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassC03.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassCC01.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassCC02.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassCC03.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassD01.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassD02.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassD03.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassDD01.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassDD02.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassDD03.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassE01.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassE02.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassE03.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassEE01.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassEE02.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassEE03.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassF01.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassF02.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassF03.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassFF01.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassFF02.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassFF03.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassG01.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassG02.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassG03.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassGG01.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassGG02.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassGG03.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassH01.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassH02.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassH03.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassHH01.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassHH02.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassHH03.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassI01.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassI02.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassI03.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassII01.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassII02.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassII03.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassJ01.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassJ02.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassJ03.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassJJ01.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassJJ02.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassJJ03.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassK01.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassK02.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassK03.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassKK01.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassKK02.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassKK03.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassL01.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassL02.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassL03.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassM01.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassM02.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\Grass_anim\grassM03.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\chest_keys_treasure.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\decorative.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\grass_static.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\mainlevbuild_1.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\mainlevbuild_2.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\rocks_other.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\MagicPixels_W1\trees_other.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\OpenWorldandcavedung\1. OpenWorld\bckgrnd_mainstatic.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\OpenWorldandcavedung\1. OpenWorld\entrance_caveA.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\OpenWorldandcavedung\1. OpenWorld\entrance_caveB.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\Player\MC_Sprite_Sheet.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RFCastle\decorative.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RFCastle\lightA01.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RFCastle\lightA02.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RFCastle\lightA03.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RFCastle\lightB01.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RFCastle\lightB02.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RFCastle\lightB03.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RFCastle\mainlevbuild.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_AncientForest_v1.0\_PNG\Decorative.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_AncientForest_v1.0\_PNG\MainLev.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_DecorativeProps_v1.0\Animated\flag.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_DecorativeProps_v1.0\Animated\lantern01.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_DecorativeProps_v1.0\Animated\lantern02.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_DecorativeProps_v1.0\Animated\vegA1.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_DecorativeProps_v1.0\Animated\vegA2.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_DecorativeProps_v1.0\Animated\vegA3.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_DecorativeProps_v1.0\Animated\vegA4.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_DecorativeProps_v1.0\Animated\vegB1.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_DecorativeProps_v1.0\Animated\vegB2.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_DecorativeProps_v1.0\Animated\vegB3.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_DecorativeProps_v1.0\Animated\vegC1.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_DecorativeProps_v1.0\Animated\vegC2.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_DecorativeProps_v1.0\Animated\vegC3.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_DecorativeProps_v1.0\Animated\vegC4.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_DecorativeProps_v1.0\fence.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_DecorativeProps_v1.0\propsA.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_DecorativeProps_v1.0\propsB.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_DeepCave_v1.0\_PNG\Decorative.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_DeepCave_v1.0\_PNG\MainLev.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Desert_v2.01\MainLev2.0.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Desert_v2.01\animated\tree1a.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Desert_v2.01\animated\tree1b.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Desert_v2.01\animated\tree2a.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Desert_v2.01\animated\tree2b.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Desert_v2.01\decorative1.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Desert_v2.01\decorative2.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_FC_G_v1.0\CampFireA.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_FC_G_v1.0\CampFireB.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_FC_G_v1.0\Camp_Graves.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_GrassLand_v2.01\MainLev2.0.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_GrassLand_v2.01\MainLev_autotiling.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_GrassLand_v2.01\anim\tree1A_ss.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_GrassLand_v2.01\anim\tree1B_ss.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_GrassLand_v2.01\anim\tree1C_ss.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_GrassLand_v2.01\anim\tree1D_ss.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_GrassLand_v2.01\anim\tree2A_ss.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_GrassLand_v2.01\anim\tree2B_ss.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_GrassLand_v2.01\anim\tree2C_ss.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_GrassLand_v2.01\anim\tree2D_ss.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_GrassLand_v2.01\anim\tree3A_ss.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_GrassLand_v2.01\anim\tree3B_ss.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_GrassLand_v2.01\anim\tree3C_ss.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_GrassLand_v2.01\anim\tree3D_ss.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_GrassLand_v2.01\decorative.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_GrassLand_v2.01\decorative_nograss.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Harbor_v1.0\Anim\Lantern1.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Harbor_v1.0\Anim\Lantern2.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Harbor_v1.0\Anim\water.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Harbor_v1.0\Harbor.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Harbor_v1.0\Ships.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_HousesAndInt_v1.1\decorative_props.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_HousesAndInt_v1.1\furniture.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_HousesAndInt_v1.1\interiors.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_HousesAndInt_v1.1\main_houses.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Marshland_v2.0\Animated\Tree01A.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Marshland_v2.0\Animated\Tree01B.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Marshland_v2.0\Animated\Tree01C.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Marshland_v2.0\Animated\Tree02A.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Marshland_v2.0\Animated\Tree02B.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Marshland_v2.0\Animated\Tree02C.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Marshland_v2.0\Animated\TreeMarsh01.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Marshland_v2.0\Animated\TreeMarsh02.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Marshland_v2.0\Animated\TreeMarsh03.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Marshland_v2.0\Animated\TreeMarsh04.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Marshland_v2.0\Animated\bubble1.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Marshland_v2.0\Animated\bubble2.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Marshland_v2.0\Animated\bubble3.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Marshland_v2.0\Animated\bubble4.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Marshland_v2.0\Animated\bubble5.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Marshland_v2.0\Animated\bubble6.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Marshland_v2.0\Animated\bubble_1,2.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Marshland_v2.0\Decorative.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Marshland_v2.0\MainLev2.0.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Marshland_v2.0\MainLev_autotiling.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Mountains_v1.2\_PNG\Decorative_props.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Mountains_v1.2\_PNG\Mainlev_build.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_SnowyLands_v2.0\MainLev2.0.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_SnowyLands_v2.0\MainLev_autotiling.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_SnowyLands_v2.0\anim\tree1.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_SnowyLands_v2.0\anim\tree2.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_SnowyLands_v2.0\anim\tree3.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_SnowyLands_v2.0\anim\tree4.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_SnowyLands_v2.0\anim\tree5.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_SnowyLands_v2.0\anim\tree6.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_SnowyLands_v2.0\decorative.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_StrangeLand_v1.0\_PNG\Decorative.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_StrangeLand_v1.0\_PNG\MainLev.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Town_v1.0\houses.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Town_v1.0\walls,ground,decorative.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Wetland_v1.1\_PNG\Dec_props1.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Wetland_v1.1\_PNG\Dec_props2.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPGW_Wetland_v1.1\_PNG\MainLev.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_CASTLE_v1.0\Anim\light1a.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_CASTLE_v1.0\Anim\light1b.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_CASTLE_v1.0\Anim\light1c.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_CASTLE_v1.0\Anim\light2a.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_CASTLE_v1.0\Anim\light2b.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_CASTLE_v1.0\Anim\light2c.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_CASTLE_v1.0\Anim\torch.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_CASTLE_v1.0\castle_decoratives.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_CASTLE_v1.0\castle_interriors.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_CASTLE_v1.0\castle_outside.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_CASTLE_v1.0\castle_outside_shadows.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_Desert_v1.0\Anim\candle.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_Desert_v1.0\Anim\fire1.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_Desert_v1.0\Anim\fire2.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_Desert_v1.0\Anim\fire3.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_Desert_v1.0\Anim\fire4.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_Desert_v1.0\Anim\fireplace.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_Desert_v1.0\Anim\torch.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_Desert_v1.0\dec_props_outside1.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_Desert_v1.0\furnitures.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_Desert_v1.0\interriors1.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_Desert_v1.0\interriors2.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_Desert_v1.0\mainbuildings1.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_Desert_v1.0\mainbuildings1_shadows.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_Desert_v1.0\mainbuildings2.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_Desert_v1.0\mainbuildings2_shadows.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_Desert_v1.0\mainbuildings3.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_Desert_v1.0\mainbuildings3_shadows.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_Desert_v1.0\small_obj1.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_HOUSES_v1.1\furnitures.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_HOUSES_v1.1\houses_interriors.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_HOUSES_v1.1\houses_outside.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_HOUSES_v1.1\houses_outside_shadows.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_HOUSES_v1.1\smallobj.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_WINDMILL_v1.1\Anim\light1a.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_WINDMILL_v1.1\Anim\light1b.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_WINDMILL_v1.1\Anim\light2a.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_WINDMILL_v1.1\Anim\light2b.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_WINDMILL_v1.1\Mill_decoratives.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_WINDMILL_v1.1\Mill_furnitures.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_WINDMILL_v1.1\Mill_interriors.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_WINDMILL_v1.1\Mill_outside.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_WINDMILL_v1.1\Mill_outside_shadows.png">
+      <Filter>Resources</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="F:\Invisible_Girl_Game\level_data\Town_1_data.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <XML Include="F:\Invisible_Girl_Game\data\anim\ANIM_Characters.xml" />
+    <XML Include="F:\Invisible_Girl_Game\data\trees\PlayerTree.xml" />
+    <Xml Include="..\data\obj\Player_Data.xml" />
+    <Xml Include="..\data\obj\PassiveNPC_Data.xml" />
+    <Xml Include="..\data\trees\PassiveNPC_Tree.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{8D6600A0-9C1E-3C79-82AA-4D5C610D9B1E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{8F9D4AE8-5A92-3FB2-A690-DE08F31282ED}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{47A1371A-B16F-3C7F-8502-A53649354DDF}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

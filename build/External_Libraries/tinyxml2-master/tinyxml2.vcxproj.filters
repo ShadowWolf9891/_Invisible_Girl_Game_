@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="F:\Invisible_Girl_Game\External_Libraries\tinyxml2-master\tinyxml2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="F:\Invisible_Girl_Game\External_Libraries\tinyxml2-master\tinyxml2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\Invisible_Girl_Game\External_Libraries\tinyxml2-master\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{8D6600A0-9C1E-3C79-82AA-4D5C610D9B1E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{47A1371A-B16F-3C7F-8502-A53649354DDF}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

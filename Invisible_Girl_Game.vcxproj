@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{BC784CD7-2CED-4DF7-8046-E6B76AB45BD9}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\3rdparty\lexy\include;F:\Invisible_Girl_Game\External_Libraries\tinyxml2-master;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\include;F:\Invisible_Girl_Game\External_Libraries\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SFML_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\3rdparty\lexy\src;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\src;F:\Invisible_Girl_Game\External_Libraries\SFML\src;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-s-d.lib;sfml-window-s-d.lib;sfml-system-s-d.lib;sfml-audio-s-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\Invisible_Girl_Game\External_Libraries\tinyxml2-master;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\include;F:\Invisible_Girl_Game\External_Libraries\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SFML_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\src;F:\Invisible_Girl_Game\External_Libraries\SFML\src;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-s.lib;sfml-window-s.lib;sfml-system-s.lib;sfml-audio-s.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="Bitmask.cpp" />
+    <ClCompile Include="ClassObserver.cpp" />
+    <ClCompile Include="Component.cpp" />
+    <ClCompile Include="ComponentPairHash.cpp" />
+    <ClCompile Include="C_Animation.cpp" />
+    <ClCompile Include="C_BehaviourApplier.cpp" />
+    <ClCompile Include="C_BoxCollider.cpp" />
+    <ClCompile Include="C_Camera.cpp" />
+    <ClCompile Include="C_Collidable.cpp" />
+    <ClCompile Include="C_Collider.cpp" />
+    <ClCompile Include="C_Direction.cpp" />
+    <ClCompile Include="C_Drawable.cpp" />
+    <ClCompile Include="C_Events.cpp" />
+    <ClCompile Include="C_InstanceID.cpp" />
+    <ClCompile Include="C_Interactable.cpp" />
+    <ClCompile Include="C_InteractableTalking.cpp" />
+    <ClCompile Include="C_InteractWithObjects.cpp" />
+    <ClCompile Include="C_KeyboardMovement.cpp" />
+    <ClCompile Include="C_Mass.cpp" />
+    <ClCompile Include="C_MovementAnimation.cpp" />
+    <ClCompile Include="C_Observer.cpp" />
+    <ClCompile Include="C_ProjectileAttack.cpp" />
+    <ClCompile Include="C_RemoveObjectOnCollisionEnter.cpp" />
+    <ClCompile Include="C_Sprite.cpp" />
+    <ClCompile Include="C_SteeringBehaviour.cpp" />
+    <ClCompile Include="C_SteeringBehaviourChase.cpp" />
+    <ClCompile Include="C_SteeringBehaviourWallAvoidance.cpp" />
+    <ClCompile Include="C_Tag.cpp" />
+    <ClCompile Include="C_Transform.cpp" />
+    <ClCompile Include="C_Tree.cpp" />
+    <ClCompile Include="C_UIWorldLabel.cpp" />
+    <ClCompile Include="C_Velocity.cpp" />
+    <ClCompile Include="C_WalkInLine.cpp" />
+    <ClCompile Include="Debug.cpp" />
+    <ClCompile Include="Dispatcher.cpp" />
+    <ClCompile Include="Event.cpp" />
+    <ClCompile Include="E_FireProjectile.cpp" />
+    <ClCompile Include="E_Test.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GLC.cpp" />
+    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="Invisible_Girl_Game.cpp" />
+    <ClCompile Include="my_Tile.cpp" />
+    <ClCompile Include="NPC.cpp" />
+    <ClCompile Include="Object.cpp" />
+    <ClCompile Include="ObjectCollection.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Quadtree.cpp" />
+    <ClCompile Include="Raycast.cpp" />
+    <ClCompile Include="ResourceAllocator.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SceneGame.cpp" />
+    <ClCompile Include="SceneSplashScreen.cpp" />
+    <ClCompile Include="SceneStateMachine.cpp" />
+    <ClCompile Include="SharedContext.cpp" />
+    <ClCompile Include="S_Collidable.cpp" />
+    <ClCompile Include="S_Drawable.cpp" />
+    <ClCompile Include="Tile.cpp" />
+    <ClCompile Include="TileMapParser.cpp" />
+    <ClCompile Include="window.cpp" />
+    <ClCompile Include="WorkingDirectory.cpp" />
+    <ClCompile Include="XML_Parser.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Animation.h" />
+    <ClInclude Include="Bitmask.h" />
+    <ClInclude Include="BT_ActionNodes.h" />
+    <ClInclude Include="Component.h" />
+    <ClInclude Include="ComponentPairHash.h" />
+    <ClInclude Include="C_Animation.h" />
+    <ClInclude Include="C_BehaviourApplier.h" />
+    <ClInclude Include="C_BoxCollider.h" />
+    <ClInclude Include="C_Camera.h" />
+    <ClInclude Include="C_Collidable.h" />
+    <ClInclude Include="C_Collider.h" />
+    <ClInclude Include="C_Direction.h" />
+    <ClInclude Include="C_Drawable.h" />
+    <ClInclude Include="C_Events.h" />
+    <ClInclude Include="C_InstanceID.h" />
+    <ClInclude Include="C_Interactable.h" />
+    <ClInclude Include="C_InteractableTalking.h" />
+    <ClInclude Include="C_InteractWithObjects.h" />
+    <ClInclude Include="C_KeyboardMovement.h" />
+    <ClInclude Include="C_Mass.h" />
+    <ClInclude Include="C_MovementAnimation.h" />
+    <ClInclude Include="C_Observer.h" />
+    <ClInclude Include="C_ProjectileAttack.h" />
+    <ClInclude Include="C_RemoveObjectOnCollisionEnter.h" />
+    <ClInclude Include="C_Sprite.h" />
+    <ClInclude Include="C_SteeringBehaviour.h" />
+    <ClInclude Include="C_SteeringBehaviourChase.h" />
+    <ClInclude Include="C_SteeringBehaviourWallAvoidance.h" />
+    <ClInclude Include="C_Tag.h" />
+    <ClInclude Include="C_Transform.h" />
+    <ClInclude Include="C_Tree.h" />
+    <ClInclude Include="C_UIWorldLabel.h" />
+    <ClInclude Include="C_Velocity.h" />
+    <ClInclude Include="C_WalkInLine.h" />
+    <ClInclude Include="Debug.h" />
+    <ClInclude Include="Dispatcher.h" />
+    <ClInclude Include="Event.h" />
+    <ClInclude Include="E_FireProjectile.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GLC.h" />
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="Invisible_Girl_Game.h" />
+    <ClInclude Include="my_Tile.h" />
+    <ClInclude Include="NPC.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="ObjectCollection.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Quadtree.h" />
+    <ClInclude Include="Raycast.h" />
+    <ClInclude Include="ResourceAllocator.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneGame.h" />
+    <ClInclude Include="SceneSplashScreen.h" />
+    <ClInclude Include="SceneStateMachine.h" />
+    <ClInclude Include="SharedContext.h" />
+    <ClInclude Include="S_Collidable.h" />
+    <ClInclude Include="S_Drawable.h" />
+    <ClInclude Include="Tile.h" />
+    <ClInclude Include="TileMapParser.h" />
+    <ClInclude Include="tileson.hpp" />
+    <ClInclude Include="window.h" />
+    <ClInclude Include="WorkingDirectory.h" />
+    <ClInclude Include="XML_Parser.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
