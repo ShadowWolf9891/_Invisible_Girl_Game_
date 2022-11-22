@@ -2,9 +2,25 @@
 
 <root main_tree_to_execute ="PassiveNPCTree">
 	<BehaviorTree ID="PassiveNPCTree">
-		<Fallback>
-			<TriggerEvent EventType="Idle"/>
-		</Fallback>
-
+		<Sequence name ="root_sequence">
+			<Script code="Anim:='Idle'"/>
+			<TriggerEvent EventType ="{Anim}"/>
+			<ReactiveSequence>
+				<SubTree ID="SelectAnimationTree" animToPlay="{Anim}"/>
+				<TriggerEvent EventType ="{Anim}"/>
+			</ReactiveSequence>
+		</Sequence>
 	</BehaviorTree>
+
+	<BehaviorTree ID="SelectAnimationTree">
+		<ReactiveSequence>
+			<GetMoveSpeed moveSpeed="{the_moveSpeed}"/>
+			<ReactiveFallback>
+				<Script code="animToPlay:='Walk'" _while="the_moveSpeed>0"/>
+				<Script code="animToPlay:='Idle'"/>
+			</ReactiveFallback>
+		</ReactiveSequence>
+	</BehaviorTree>
+
+
 </root>

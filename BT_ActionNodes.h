@@ -35,6 +35,34 @@ public:
 private:
 	Object* owner;
 };
+
+class IsDoneAnimating : public BT::SyncActionNode
+{
+public:
+	IsDoneAnimating(const std::string& name) : BT::SyncActionNode(name, {}) {};
+
+	void init(Object* owner)
+	{
+		this->owner = owner;
+		this->eStack = owner->GetComponent<C_Events>();
+		this->cAnim = owner->GetComponent<C_Animation>();
+	}
+
+	BT::NodeStatus tick() override
+	{
+		if (cAnim->isAnimationDone()) 
+		{
+			return BT::NodeStatus::SUCCESS; 
+		};
+	
+		return BT::NodeStatus::FAILURE;
+	}
+private:
+	Object* owner;
+	std::shared_ptr <C_Animation> cAnim;
+	std::shared_ptr <C_Events> eStack;
+};
+
 class IsKeyPressed : public BT::SyncActionNode
 {
 public:
@@ -220,7 +248,6 @@ public:
 		if (cAnim->isAnimationDone())
 		{
 			return BT::NodeStatus::SUCCESS;
-
 			std::cout << curDescriptor << " [Done]" << std::endl;
 		}
 
@@ -232,11 +259,10 @@ public:
 	{
 		if (eStack->PeekEvent().getType() == curDescriptor)
 		{
-			auto e = eStack->PopEvent();
-			std::cout << curDescriptor << " [Aborted]" << std::endl;
+				auto e = eStack->PopEvent();
+				std::cout << curDescriptor << " [Aborted]" << std::endl;
 		}
 
-		
 	}
 
 private:

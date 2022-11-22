@@ -19,8 +19,8 @@ void C_Velocity::AddVelocity()
 {
 	ClampVelocity();
 
-	velocity.x += ((heading.x * maxVelocity) - velocity.x) * acceleration.x;
-	velocity.y += ((heading.y * maxVelocity) - velocity.y) * acceleration.y;
+	velocity.x += (((heading.x * maxVelocity) - velocity.x) * acceleration.x) * velocityMultiplier;
+	velocity.y += (((heading.y * maxVelocity) - velocity.y) * acceleration.y) * velocityMultiplier;
 	
 }
 

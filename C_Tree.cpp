@@ -9,6 +9,10 @@ void C_Tree::Start()
 		{
 			isOnGroundAction->init(owner);
 		}
+		if (auto isDoneAnimatingAction = dynamic_cast<IsDoneAnimating*>(node))
+		{
+			isDoneAnimatingAction->init(owner);
+		}
 		if (auto isKeyPressedAction = dynamic_cast<IsKeyPressed*>(node))
 		{
 			isKeyPressedAction->init(owner);

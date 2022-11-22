@@ -39,12 +39,16 @@ public:
 	void SetMaxVelocity(float maxVelocity) { this->maxVelocity = maxVelocity; };
 	float GetMaxVelocity() { return maxVelocity; };
 
+	void SetVelocityMultiplier(float velocityMultiplier) { this->velocityMultiplier = velocityMultiplier; };
+	float GetVelocityMultiplier() { return velocityMultiplier; };
+
 private:
 	void ClampVelocity();
 	void CalculateAcceleration(float deltaTime);
 	
 	sf::Vector2f velocity;
 	float maxVelocity;
+	float velocityMultiplier;
 	sf::Vector2f acceleration;
 	sf::Vector2f heading;
 

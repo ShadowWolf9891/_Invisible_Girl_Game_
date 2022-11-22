@@ -22,10 +22,11 @@ void C_Observer::handle(const Event& e)
 
     if (currentEventType == E_Walk::descriptor) targetSpeed = 0.5f;
     else if (currentEventType == E_Run::descriptor) targetSpeed = 1.f;
-    else if (currentEventType == E_BowDraw::descriptor) targetSpeed = 0.25f;
-    else if (currentEventType == E_BowSheath::descriptor) targetSpeed = 0.5f;
+    else if (currentEventType == E_BowDraw::descriptor) targetSpeed = 0.1f;
+    else if (currentEventType == E_BowSheath::descriptor) targetSpeed = 0.1f;
+    else if (currentEventType == E_BowMove::descriptor) targetSpeed = 0.25f;
 
-    owner->GetComponent<C_KeyboardMovement>()->SetMovementSpeed(targetSpeed);
+    owner->GetComponent<C_Velocity>()->SetVelocityMultiplier(targetSpeed);
 
     lastEventHandledType = currentEventType;
 

@@ -23,6 +23,7 @@ void SceneGame::OnCreate()
     context.xml_parser = &xml_parser;
 
     bt_factory.registerNodeType<IsOnGround>("IsOnGround");
+    bt_factory.registerNodeType<IsDoneAnimating>("IsDoneAnimating");
     bt_factory.registerNodeType<GetMoveSpeed>("GetMoveSpeed");
 
     bt_factory.registerNodeType<TriggerEvent>("TriggerEvent");
@@ -31,6 +32,8 @@ void SceneGame::OnCreate()
     bt_factory.registerNodeType<IsKeyPressed>("IsKeyDown");
     bt_factory.registerNodeType<IsKeyPressed>("IsKeyUp");
     
+    enum bowInfo {NOBOW=0, BOWDRAW=1, BOWOUT=2, BOWSHEATH=3};
+    bt_factory.registerScriptingEnums<bowInfo>();
 
     using std::filesystem::directory_iterator;
     for (auto const& entry : directory_iterator("../data/trees/"))
