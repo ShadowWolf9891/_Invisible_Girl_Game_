@@ -91,9 +91,6 @@
     <ClCompile Include="F:\Invisible_Girl_Game\C_WalkInLine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\Invisible_Girl_Game\ClassObserver.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="F:\Invisible_Girl_Game\Component.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

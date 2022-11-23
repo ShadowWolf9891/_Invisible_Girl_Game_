@@ -32,5 +32,5 @@ void C_Observer::handle(const Event& e)
 
     // This demonstrates how to obtain the underlying event type in case a slot is set up to handle multiple events of different types.
         const Event& testEvent = static_cast<const Event&>(e);
-        std::cout << testEvent.getName() << " was triggered." << std::endl;
+        std::cout << testEvent.getName() << " was triggered by " << owner->GetName() << std::endl;
 }

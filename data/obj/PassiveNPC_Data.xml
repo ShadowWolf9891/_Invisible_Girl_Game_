@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root _type ="initData">
+	<Object name ="NPC">
+		<Components bitmap ="00000000000011100100110011101110">
+		</Components>
+		<Properties>
+			<Property name="Tag" value="2"/>
+			<Property name="DrawLayer" value="3"/>
+			<Property name="BBoxSizeX" value="16"/>
+			<Property name="BBoxSizeY" value="32"/>
+			<Property name="BBoxOffsetX" value="0"/>
+			<Property name="BBoxOffsetY" value="0"/>
+			<Property name="BBoxCollisionLayer" value="5"/>
+			<Property name="BaseTextureFile" value="Assets/Character/20.01a - Character Base 2.4a (comp. v01)/char_a_p1/char_a_p1_0bas_humn_v01.png"/>
+			<Property name="AnimationFile" value="data/anim/ANIM_Characters.xml"/>
+			<Property name="TreeName" value="PassiveNPCTree"/>
+		</Properties>
+	</Object>
+</root>

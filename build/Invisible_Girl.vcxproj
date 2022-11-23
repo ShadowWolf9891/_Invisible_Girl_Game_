@@ -1024,7 +1024,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="F:\Invisible_Girl_Game\C_Velocity.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\C_WalkInLine.cpp" />
     <ClInclude Include="F:\Invisible_Girl_Game\C_WalkInLine.h" />
-    <ClCompile Include="F:\Invisible_Girl_Game\ClassObserver.cpp" />
     <ClCompile Include="F:\Invisible_Girl_Game\Component.cpp" />
     <ClInclude Include="F:\Invisible_Girl_Game\Component.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\ComponentPairHash.cpp" />

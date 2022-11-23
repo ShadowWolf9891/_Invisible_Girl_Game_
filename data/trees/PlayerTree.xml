@@ -6,7 +6,6 @@
 			<Script code="isShift:=false"/>
 			<Script code="bowState:=NOBOW"/>
 			<Script code="Anim:='Idle'"/>
-			<TriggerEvent EventType ="{Anim}"/>
 			<ReactiveSequence>
 				<SubTree ID="InputTree" isRunning="{isShift}" theBowState="{bowState}"/>
 				<SubTree ID="SelectAnimationTree" isRunning="{isShift}" theBowState="{bowState}" animToPlay="{Anim}"/>
