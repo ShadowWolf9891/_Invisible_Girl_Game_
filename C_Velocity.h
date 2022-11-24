@@ -10,7 +10,7 @@
 class C_Velocity : public Component
 {
 public:
-	C_Velocity(Object* owner) : Component(owner), maxVelocity(100.f), frictionCoefficant(0.7), accelerationRate(0.075)
+	C_Velocity(Object* owner) : Component(owner), maxVelocity(100.f), frictionCoefficant(0.7), accelerationRate(0.075), velocityMultiplier(0.f)
 	{
 		//Friction Coefficant calculated for rubber on dry concrete
 	};

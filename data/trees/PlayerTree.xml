@@ -62,10 +62,10 @@
 			<ReactiveFallback>
 				<Script code="animToPlay:='BowDraw'" _while="theBowState==BOWDRAW"/>
 				<Script code="animToPlay:='BowSheath'" _while="theBowState==BOWSHEATH"/>
-				<Script code="animToPlay:='BowMove'" _while="theBowState==BOWOUT && the_moveSpeed>0"/>
+				<Script code="animToPlay:='BowMove'" _while="theBowState==BOWOUT && the_moveSpeed>5"/>
 				<Script code="animToPlay:='BowIdle'" _while="theBowState==BOWOUT"/>
-				<Script code="animToPlay:='Run'" _while="theBowState==NOBOW && isRunning && the_moveSpeed>0"/>
-				<Script code="animToPlay:='Walk'" _while="theBowState==NOBOW && !isRunning && the_moveSpeed>0"/>
+				<Script code="animToPlay:='Run'" _while="theBowState==NOBOW && isRunning && the_moveSpeed>5"/>
+				<Script code="animToPlay:='Walk'" _while="theBowState==NOBOW && !isRunning && the_moveSpeed>5"/>
 				<Script code="animToPlay:='Idle'" _while="theBowState==NOBOW"/>
 			</ReactiveFallback>
 		</ReactiveSequence>

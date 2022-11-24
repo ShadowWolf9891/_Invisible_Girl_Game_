@@ -19,8 +19,8 @@ void C_Velocity::AddVelocity()
 {
 	ClampVelocity();
 
-	velocity.x += (((heading.x * maxVelocity) - velocity.x) * acceleration.x) * velocityMultiplier;
-	velocity.y += (((heading.y * maxVelocity) - velocity.y) * acceleration.y) * velocityMultiplier;
+	velocity.x += (((heading.x * maxVelocity * velocityMultiplier) - velocity.x) * acceleration.x); 
+	velocity.y += (((heading.y * maxVelocity * velocityMultiplier) - velocity.y) * acceleration.y);
 	
 }
 
@@ -75,16 +75,16 @@ void C_Velocity::ClampVelocity()
 		}
 		else
 		{
-			velocity.x = -std::sqrtf(std::powf(maxVelocity, 2) - std::powf(oldVelocityY, 2));;
+			velocity.x = -std::sqrtf(std::powf(maxVelocity, 2) - std::powf(oldVelocityY, 2));
 		}
 		
 		if (velocity.y > 0.f)
 		{
-			velocity.y = std::sqrtf(std::powf(maxVelocity, 2) - std::powf(oldVelocityX, 2));;
+			velocity.y = std::sqrtf(std::powf(maxVelocity, 2) - std::powf(oldVelocityX, 2));
 		}
 		else
 		{
-			velocity.y = -std::sqrtf(std::powf(maxVelocity, 2) - std::powf(oldVelocityX, 2));;
+			velocity.y = -std::sqrtf(std::powf(maxVelocity, 2) - std::powf(oldVelocityX, 2));
 		}
 	}
 	else if (fabs(directionalVelocity) <= 1 && fabs(directionalVelocity) > 0)
