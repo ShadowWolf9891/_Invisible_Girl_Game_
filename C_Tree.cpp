@@ -43,6 +43,15 @@ void C_Tree::Start()
 
 void C_Tree::Update(float deltaTime)
 {
-	bTree.tickOnce();
-	BT::StdCoutLogger logger_cout(bTree);
+	if (_startTree) 
+	{
+		bTree.tickOnce();
+		BT::StdCoutLogger logger_cout(bTree);
+	}
+	
+}
+
+void C_Tree::LateUpdate(float deltaTime) 
+{
+	startTree();
 }

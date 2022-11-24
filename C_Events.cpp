@@ -27,6 +27,7 @@ Event C_Events::PeekEvent()
 	}
 
 	Event e = Event(e, "E_None", "Default Event");
+	e.SetTargetID(owner->instanceID->Get());
 
 	return e;
 }
@@ -37,7 +38,7 @@ void C_Events::HandleNextEvent()
 	{
 		Event e = PeekEvent();
 
-		if (!e.IsHandled()) 
+		if (!e.IsHandled())
 		{
 			owner->context->dispatcher->post(e);
 			e.SetHandled(true);

@@ -3,8 +3,12 @@
 
 void C_Observer::handle(const Event& e)
 {
-    currentEventType = e.getType();
+    if (e.GetTargetID() != owner->instanceID->Get()) {
+        return;
+    }
 
+    currentEventType = e.getType();
+    
     for (auto it = strToEvent.begin(); it != strToEvent.end(); it++) {
         if (it->second == currentEventType)
         {
@@ -29,6 +33,7 @@ void C_Observer::handle(const Event& e)
     owner->GetComponent<C_Velocity>()->SetVelocityMultiplier(targetSpeed);
 
     lastEventHandledType = currentEventType;
+
 
     // This demonstrates how to obtain the underlying event type in case a slot is set up to handle multiple events of different types.
         const Event& testEvent = static_cast<const Event&>(e);

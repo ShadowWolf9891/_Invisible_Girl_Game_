@@ -36,11 +36,15 @@ public:
 	virtual bool IsHandled() { return _handled; };
 	virtual void SetHandled(bool _handled) { this->_handled = _handled; };
 
+	inline const int GetTargetID() const { return _targetID; };
+	void SetTargetID(const int _targetID) { this->_targetID = _targetID; };
+
 private:
 	DescriptorType _type;
 	std::string _name;
 	bool _handled = false;
 	Event& e;
+	int _targetID = -1;
 };
 
 ///////////////Child Classes/////////////////

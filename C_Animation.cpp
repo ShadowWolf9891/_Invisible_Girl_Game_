@@ -102,5 +102,9 @@ void C_Animation::SetAnimationDirection(FacingDirection dir)
 
 bool C_Animation::isAnimationDone()
 {
+	if (currentAnimation.first == AnimationState::None) {
+		return false;
+	}
+
 	return currentAnimation.second->IsDoneAnimating();
 }

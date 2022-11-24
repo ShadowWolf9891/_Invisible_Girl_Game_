@@ -16,7 +16,7 @@ class C_Observer : public Component
 {
 public:
 
-    C_Observer(Object* owner) : Component(owner), lastEventHandledType("None")
+    C_Observer(Object* owner) : Component(owner), lastEventHandledType("E_None")
     {
 
     };

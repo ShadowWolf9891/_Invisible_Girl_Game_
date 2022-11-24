@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root _type ="animation">
-	<AnimationGroup state="Idle" looped ="true" filename="Assets/Character/20.01a - Character Base 2.4a (comp. v01)/char_a_p1/char_a_p1_0bas_humn_v01.png">
+	<AnimationGroup state="Idle" looped ="false" filename="Assets/Character/20.01a - Character Base 2.4a (comp. v01)/char_a_p1/char_a_p1_0bas_humn_v01.png">
 		<Animation direction="Down" frameWidth ="64" frameHeight ="64">
 			<Frame number ="0" x ="0" y="0" duration ="0"/>
 		</Animation>

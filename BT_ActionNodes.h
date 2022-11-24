@@ -234,7 +234,8 @@ public:
 		std::string name = "Begin " + eType.value() + " Event";
 
 		Event e = Event(e, descriptor, name);
-		
+		e.SetTargetID(owner->instanceID->Get());
+
 		if (handler->lastEventHandledType != e.getType())
 		{
 			eStack->PushEvent(e);
@@ -247,11 +248,15 @@ public:
 	{
 		if (cAnim->isAnimationDone())
 		{
-			return BT::NodeStatus::SUCCESS;
-			std::cout << curDescriptor << " [Done]" << std::endl;
+			if (eStack->PeekEvent().getType() == curDescriptor)
+			{
+				auto e = eStack->PopEvent();
+				std::cout << curDescriptor << " [Done]" << std::endl;
+				return BT::NodeStatus::SUCCESS;
+			}
 		}
 
-		std::cout << curDescriptor << " [Running]" << std::endl;
+		//std::cout << curDescriptor << " [Running]" << std::endl;
 
 		return BT::NodeStatus::RUNNING;
 	}
@@ -259,8 +264,8 @@ public:
 	{
 		if (eStack->PeekEvent().getType() == curDescriptor)
 		{
-				auto e = eStack->PopEvent();
-				std::cout << curDescriptor << " [Aborted]" << std::endl;
+			auto e = eStack->PopEvent();
+			std::cout << curDescriptor << " [Aborted]" << std::endl;
 		}
 
 	}

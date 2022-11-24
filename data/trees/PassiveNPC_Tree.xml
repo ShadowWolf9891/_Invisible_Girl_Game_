@@ -17,7 +17,7 @@
 			<GetMoveSpeed moveSpeed="{the_moveSpeed}"/>
 			<ReactiveFallback>
 				<Script code="NPCanimToPlay:='Walk'" _while="the_moveSpeed>0"/>
-				<Script code="NPCanimToPlay:='Idle'"/>
+				<Script code="NPCanimToPlay:='Idle'" _while="the_moveSpeed==0"/>
 			</ReactiveFallback>
 		</ReactiveSequence>
 	</BehaviorTree>
