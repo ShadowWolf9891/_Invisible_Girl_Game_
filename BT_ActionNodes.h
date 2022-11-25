@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef BT_ActionNodes
-#define BT_ActionNodes
+#ifndef BT_ActionNodes_h
+#define BT_ActionNodes_h
 
 #include "behaviortree_cpp/action_node.h"
 #include <any>
@@ -278,4 +278,4 @@ private:
 	Event::DescriptorType curDescriptor;
 };
 
-#endif //BT_ActionNodes
+#endif //BT_ActionNodes_h
