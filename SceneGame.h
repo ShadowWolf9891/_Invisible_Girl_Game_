@@ -31,6 +31,7 @@
 #include "BT_ActionNodes.h"
 #include "E_FireProjectile.h"
 #include "XML_Parser.h"
+#include "S_QuestManager.h"
 
 
 class SceneGame : public Scene
@@ -64,6 +65,7 @@ private:
 	SharedContext context;
 	S_Drawable drawbleSystem;
 	S_Collidable collisionSystem;
+	S_QuestManager questSystem;
 	Quadtree collisionTree;
 	Raycast raycast;
 	ResourceAllocator<sf::Font>& fontAllocator;

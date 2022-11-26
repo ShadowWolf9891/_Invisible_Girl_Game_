@@ -44,7 +44,14 @@ void SceneGame::OnCreate()
         }
     }
 
+    /*questSystem.Add(std::make_shared<Quest>(0, "Default Quest"));
+
+    questSystem.ProcessNewQuests();
+    questSystem.SetQuestAvailable(0);
+    questSystem.SetActiveQuest(0);
     
+    std::cout << "Current Quest: " << questSystem.GetActiveQuest()->GetName() << " [" << questSystem.GetActiveQuest()->GetStatus() << "]" << std::endl;*/
+
     //CreateEnemy();
     
     std::vector<std::shared_ptr<Object>> levelTiles = mapParser.Parse(workingDir.Get() + "level_data/Town_1_data.json");

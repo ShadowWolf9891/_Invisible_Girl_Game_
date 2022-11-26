@@ -370,8 +370,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Quest.cpp" />
+    <ClCompile Include="..\S_QuestManager.cpp" />
     <ClCompile Include="F:\Invisible_Girl_Game\Animation.cpp" />
     <ClInclude Include="..\Quest.h" />
+    <ClInclude Include="..\S_QuestManager.h" />
     <ClInclude Include="F:\Invisible_Girl_Game\Animation.h" />
     <Image Include="F:\Invisible_Girl_Game\Assets\2DML_DUNG1\anim\light1.png">
     </Image>

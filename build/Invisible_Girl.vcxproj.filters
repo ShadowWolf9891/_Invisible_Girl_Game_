@@ -181,6 +181,9 @@
     <ClCompile Include="..\Quest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\S_QuestManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="F:\Invisible_Girl_Game\Animation.h">
@@ -367,6 +370,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\Quest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\S_QuestManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

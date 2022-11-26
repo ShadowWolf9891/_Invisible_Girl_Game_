@@ -7,9 +7,10 @@
 
 enum StatusType
 {
-	NOT_ACTIVE = 0,
-	ACTIVE = 1,
-	COMPLETED = 2
+	UNAVAILABLE = 0,
+	AVAILABLE = 1,
+	COMPLETED = 2,
+	FAILED = 3
 };
 
 
@@ -17,7 +18,7 @@ class Quest
 {
 public:
 
-	Quest(int ID, std::string questName): _ID(ID), _name(questName), _status(NOT_ACTIVE) {};
+	Quest(int ID, std::string questName): _ID(ID), _name(questName), _status(UNAVAILABLE) {};
 	virtual ~Quest() {};
 
 	void SetStatus(StatusType status) { _status = status; };

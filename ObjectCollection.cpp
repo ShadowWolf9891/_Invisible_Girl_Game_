@@ -63,7 +63,7 @@ void ObjectCollection::ProcessRemovals()
 	auto objIterator = objects.begin();
 	while (objIterator != objects.end())
 	{
-		auto obj = *objIterator;
+		auto& obj = *objIterator;
 		if (obj->IsQueuedForRemoval())
 		{
 			drawables.ProcessRemovals();
