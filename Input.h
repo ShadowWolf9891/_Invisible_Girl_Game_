@@ -20,7 +20,8 @@ public:
 		RBracket = 7,
 		E = 8,
 		R = 9,
-		Shift = 10
+		Shift = 10,
+		Tab = 11
 	};
 
 	void Update();
@@ -29,9 +30,13 @@ public:
 	bool IsKeyDown(Key keycode); // Returns true if the key was just pressed.
 	bool IsKeyUp(Key keycode); // Returns true if the key was just released.
 
+	sf::Vector2i GetMousePos();
+	void UpdateMousePos();
+
 private:
 	Bitmask thisFrameKeys;
 	Bitmask lastFrameKeys;
+	sf::Vector2i mousePosWindow;
 };
 
 #endif /* Input_h */

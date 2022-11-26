@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root _type ="initData">
+	<Object name ="Default Item">
+		<Components bitmap ="00000000000000000100000000000000"/>
+		<Properties>
+			<Property name="ID" value="0"/>
+			<Property name="Tag" value="4"/>
+			<Property name="DrawLayer" value="4"/>
+			<Property name="BaseTextureFile" value="Assets/Icons/Icon_Sheet.png"/>
+			<Property name="X" value="0"/>
+			<Property name="Y" value="0"/>
+			<Property name="Width" value="32"/>
+			<Property name="Height" value="32"/>
+			<Property name="Description" value="Default Description"/>
+		</Properties>
+		<Item ID="100" X="128" Y="448" name="Gold Coin" description="A gold coin belonging to Gerard's great grandfather. It could be worth something."/>
+		<Item ID="101" X="192" Y="192" name="Home cooked meal" description="A home cooked meal from Gerald as thanks for finding his coin. Restores 50HP and 50MP"/>
+	</Object>
+</root>

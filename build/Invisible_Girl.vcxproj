@@ -369,9 +369,11 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\C_Dialogue.cpp" />
     <ClCompile Include="..\Quest.cpp" />
     <ClCompile Include="..\S_QuestManager.cpp" />
     <ClCompile Include="F:\Invisible_Girl_Game\Animation.cpp" />
+    <ClInclude Include="..\C_Dialogue.h" />
     <ClInclude Include="..\Quest.h" />
     <ClInclude Include="..\S_QuestManager.h" />
     <ClInclude Include="F:\Invisible_Girl_Game\Animation.h" />
@@ -1046,7 +1048,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="F:\Invisible_Girl_Game\Input.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\Invisible_Girl_Game.cpp" />
     <ClInclude Include="F:\Invisible_Girl_Game\Invisible_Girl_Game.h" />
-    <ClCompile Include="F:\Invisible_Girl_Game\NPC.cpp" />
     <ClInclude Include="F:\Invisible_Girl_Game\NPC.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\Object.cpp" />
     <ClInclude Include="F:\Invisible_Girl_Game\Object.h" />
@@ -1082,9 +1083,11 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="F:\Invisible_Girl_Game\WorkingDirectory.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\XML_Parser.cpp" />
     <ClInclude Include="F:\Invisible_Girl_Game\XML_Parser.h" />
+    <Xml Include="..\data\obj\Item_Data.xml" />
     <Xml Include="..\data\obj\PassiveNPC_Data.xml" />
     <Xml Include="..\data\obj\Player_Data.xml" />
     <Xml Include="..\data\trees\PassiveNPC_Tree.xml" />
+    <Xml Include="..\Gerard_Dialogue.xml" />
     <XML Include="F:\Invisible_Girl_Game\data\anim\ANIM_Characters.xml">
     </XML>
     <XML Include="F:\Invisible_Girl_Game\data\trees\PlayerTree.xml">

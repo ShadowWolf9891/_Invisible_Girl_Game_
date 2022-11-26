@@ -10,6 +10,10 @@ SceneGame::SceneGame(WorkingDirectory& workingDir, ResourceAllocator<sf::Texture
 
 void SceneGame::OnCreate()
 {
+    sf::View view = window.GetView();
+    view.zoom(0.5f);
+    window.SetView(view);
+
     context.input = &input;
     context.objects = &objects;
     context.workingDir = &workingDir;
@@ -57,6 +61,9 @@ void SceneGame::OnCreate()
     std::vector<std::shared_ptr<Object>> levelTiles = mapParser.Parse(workingDir.Get() + "level_data/Town_1_data.json");
     objects.Add(levelTiles);
     
+    std::vector<std::shared_ptr<Object>> itemList = CreateObjectFromFile("data/obj/Item_Data.xml", sf::Vector2f(1000, 1000));
+    objects.Add(itemList);
+
     std::vector<std::shared_ptr<Object>> playerList = CreateObjectFromFile("data/obj/Player_Data.xml", sf::Vector2f(1024, 1024));
     objects.Add(playerList);
     std::vector<std::shared_ptr<Object>> NPCList = CreateObjectFromFile("data/obj/PassiveNPC_Data.xml", sf::Vector2f(1024, 1224));
@@ -164,6 +171,7 @@ void SceneGame::Draw(Window& window)
 {
    objects.Draw(window);
    Debug::Draw(window);
+   
 }
 
 void SceneGame::AttachComponent(std::shared_ptr<Object> o, std::string _type, std::unordered_map<std::string, std::string> propertiesMap)
@@ -204,8 +212,10 @@ void SceneGame::AttachComponent(std::shared_ptr<Object> o, std::string _type, st
     {
         auto sprite = o->AddComponent<C_Sprite>();
         sprite->SetDrawLayer(DrawLayer(atoi(propertiesMap.at("DrawLayer").c_str())));
-        textureAllocator.Add(workingDir.Get() + propertiesMap.at("BaseTextureFile"));
-       
+        int texID = textureAllocator.Add(workingDir.Get() + propertiesMap.at("BaseTextureFile"));
+        sprite->Load(texID);
+        sprite->SetTextureRect(atoi(propertiesMap.at("X").c_str()), atoi(propertiesMap.at("Y").c_str()),
+            atoi(propertiesMap.at("Width").c_str()), atoi(propertiesMap.at("Height").c_str()));
     }
     else if (_type == "C_SteeringBehaviourChase") o->AddComponent<C_SteeringBehaviourChase>();
     else if (_type == "C_SteeringBehaviourWallAvoidance") o->AddComponent<C_SteeringBehaviourWallAvoidance>();
@@ -216,6 +226,7 @@ void SceneGame::AttachComponent(std::shared_ptr<Object> o, std::string _type, st
     }
     else if (_type == "C_Velocity") o->AddComponent<C_Velocity>();
     else if (_type == "C_WalkInLine") o->AddComponent<C_WalkInLine>();
+    else if (_type == "C_Dialogue") o->AddComponent<C_Dialogue>();
 
 
     //Add any new components here.

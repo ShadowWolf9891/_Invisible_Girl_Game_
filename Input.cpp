@@ -16,6 +16,9 @@ void Input::Update()
 	thisFrameKeys.SetBit((int)Key::E, sf::Keyboard::isKeyPressed(sf::Keyboard::E));
 	thisFrameKeys.SetBit((int)Key::R, sf::Keyboard::isKeyPressed(sf::Keyboard::R));
 	thisFrameKeys.SetBit((int)Key::Shift, sf::Keyboard::isKeyPressed(sf::Keyboard::LShift));
+	thisFrameKeys.SetBit((int)Key::Tab, sf::Keyboard::isKeyPressed(sf::Keyboard::Tab));
+
+	UpdateMousePos();
 }
 // Return true if the specified key is currently being pressed.
 bool Input::IsKeyPressed(Key keycode)
@@ -37,4 +40,15 @@ bool Input::IsKeyUp(Key keycode)
 	bool lastFrame = lastFrameKeys.GetBit((int)keycode);
 	bool thisFrame = thisFrameKeys.GetBit((int)keycode);
 	return !thisFrame && lastFrame;
+}
+
+sf::Vector2i Input::GetMousePos()
+{
+	return mousePosWindow;
+}
+
+//Update mouse position relative to window (Vector2i)
+void Input::UpdateMousePos()
+{
+    mousePosWindow = sf::Mouse::getPosition();
 }

@@ -90,7 +90,8 @@ static std::unordered_map<int, std::string> const bitPosToString =
 	{16, "C_SteeringBehaviorWallAvoidance"},
 	{17, "C_Tree"},
 	{18, "C_Velocity"},
-	{19, "C_WalkInLine"}
+	{19, "C_WalkInLine"},
+	{20, "C_Dialogue"}
 };
 
 

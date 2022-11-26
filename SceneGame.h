@@ -27,6 +27,7 @@
 #include "C_SteeringBehaviourWallAvoidance.h"
 #include "C_Observer.h"
 #include "C_Tree.h"
+#include "C_Dialogue.h"
 #include "Dispatcher.h"
 #include "BT_ActionNodes.h"
 #include "E_FireProjectile.h"

@@ -215,6 +215,19 @@ void XML_Parser::ParseInitDoc(tinyxml2::XMLDocument* doc)
 					throw std::exception(buffer);
 				}
 			}
+			for (auto item = obj->FirstChildElement("Item"); item != nullptr; item = item->NextSiblingElement("Item")) 
+			{
+				if (item->Attribute("ID"))objData.properties.at("ID") = item->Attribute("ID");
+				
+				if (item->Attribute("X")) objData.properties.at("X") = item->Attribute("X");
+				
+				if (item->Attribute("Y")) objData.properties.at("Y") = item->Attribute("Y");
+
+				if (item->Attribute("name")) _name = item->Attribute("name");
+
+				if (item->Attribute("description")) objData.properties.at("Description") = item->Attribute("description");
+
+			}
 
 			objects.insert(std::make_pair(_name, objData));
 		}

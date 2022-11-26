@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root _type ="initData">
 	<Object name ="NPC">
-		<Components bitmap ="00000000000011100100110011101110">
+		<Components bitmap ="00000000000111100100110011101110">
 		</Components>
 		<Properties>
 			<Property name="Tag" value="2"/>
 			<Property name="DrawLayer" value="3"/>
+			<Property name="X" value="16"/>
+			<Property name="Y" value="16"/>
+			<Property name="Width" value="32"/>
+			<Property name="Height" value="32"/>
 			<Property name="BBoxSizeX" value="16"/>
 			<Property name="BBoxSizeY" value="32"/>
 			<Property name="BBoxOffsetX" value="0"/>
