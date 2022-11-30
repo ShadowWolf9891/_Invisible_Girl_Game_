@@ -1,75 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<root _type ="Dialogue">
+<root _type ="QuestDialogue">
 	<Quest id="0">
 		<QuestStatus value="0">
-			<Dialog text="Hey can you do something for me?"/>
-			<Dialog text="I lost my great-grandfathers gold coin somewhere out near the lake."/>
-			<Dialog text="I would go look for it, but with the increase in monster attacks lately..."/>
-			<Loop id="0"/>
-			<Dialog text="Can you help?"/>
-			<Input>
-				<Option id="0" text="Sure, no problem"/>
-				<Option id="1" text="What do I get out of it?"/>
-				<Option id="2" text="Why were you by the lake alone? Isn't it dangerous?"/>
-				<Option id="3" text="Not right now"/>
-			</Input>
-			<Output id="0">
-				<Dialogue text="Thanks! I really appreciate it!"/>
-				<SetQuestStatus value="1"/>
-				<Exit/>
-			</Output>
-			<Output id="1">
-				<Dialogue text="You will make an old man very happy."/>
-				<Dialogue text="If that isn't enough for you, perhaps I can have a nice homecooked meal ready for you upon your return."/>
-				<GoLoop id="0"/>
-			</Output>
-			<Output id="2">
-				<Dialogue text="I was not alone. Pup came with me, and it was before the most recent attacks."/>
-				<GoLoop id="0"/>
-			</Output>
-			<Output id="3">
-				<Dialogue text="Oh you are busy? Maybe another time then."/>
-				<Exit/>
-			</Output>
+			<DialogueNode id="0" text="Hey can you do something for me?"/>
+			<DialogueNode id="1" text="I lost my great-grandfathers gold coin somewhere out near the lake."/>
+			<DialogueNode id="2" text="I would go look for it, but with the increase in monster attacks lately..."/>
+			<DialogueNode id="3" text="Can you help?">
+				<DialogueOption nextNodeID="4" text="Sure, no problem"/>
+				<DialogueOption nextNodeID="6" text="What do I get out of it?"/>
+				<DialogueOption nextNodeID="7" text="Why were you by the lake alone? Isn't it dangerous?"/>
+				<DialogueOption nextNodeID="8" text="Not right now"/>
+			</DialogueNode>
+			<DialogueNode id="4" text="Thanks! I really appreciate it!">
+				<DialogueOption returnCode="1" text="No problem."/>
+			</DialogueNode>
+			<DialogueNode id="5" text="You will make an old man very happy."/>
+			<DialogueNode id="6" text="If that isn't enough for you, perhaps I can have a nice homecooked meal ready for you upon your return.">
+				<DialogueOption nextNodeID="3"/>
+			</DialogueNode>
+			<DialogueNode id="7" text="I was not alone. Pup came with me, and it was before the most recent attacks.">
+				<DialogueOption nextNodeID="3"/>
+			</DialogueNode>
+			<DialogueNode id="8" text="Oh you are busy? Maybe another time then.">
+				<DialogueOption returnCode="0"/>
+			</DialogueNode>
 		</QuestStatus>
 		<QuestStatus value="1">
-			<Dialog text="I will have a meal ready for you when you return with my great-grandfather's gold coin!"/>
-			<Exit/>
+			<DialogueNode id="0" text="I will have a meal ready for you when you return with my great-grandfather's gold coin!">
+				<DialogueOption returnCode="0"/>
+			</DialogueNode>
 		</QuestStatus>
 		<QuestStatus value="2">
-			<Dialog text="Do you have the gold coin?"/>
-			<Input>
-				<Option id="0" text="I found it, here you go. [Give Gold Coin]"/>
-				<Option id="1" text="I couldn't find it, sorry. [Keep Gold Coin]"/>
-				<Option id="2" text="I'm still looking."/>
-			</Input>
-			<Output id="0">
-				<Dialogue text="Thank you so much! It really means a lot to me that you went and found it!"/>
-				<Dialogue text="I know you don't have a lot of time to sit and eat, so I made you this."/>
-				<Dialogue text="I hope you like it!"/>
-				<SetQuestStatus value="2"/>
-				<ItemLost id="100"/>
-				<ItemGain id="101"/>
-				<RepGain value="5"/>
-				<Exit/>
-			</Output>
-			<Output id="1">
-				<Dialogue text="I understand. It was a lot to ask of you."/>
-				<Dialogue text="*sigh*"/>
-				<Dialogue text="I guess me and Pup will head out to have a look for it."/>
-				<SetQuestStatus value="3"/>
-				<RepLoss value="5"/>
-				<Exit/>
-			</Output>
-			<Output id="2">
-				<Dialogue text="Okay, let me know when you find it."/>
-				<Exit/>
-			</Output>
+			<DialogueNode id="0" text="Do you have the gold coin?">
+				<DialogueOption nextNodeID="1" text="I found it, here you go. [Give Gold Coin]"/>
+				<DialogueOption nextNodeID="4" text="I couldn't find it, sorry. [Keep Gold Coin]"/>
+				<DialogueOption nextNodeID="7" text="I'm still looking."/>
+			</DialogueNode>
+			<DialogueNode id="1" text="Thank you so much! It really means a lot to me that you went and found it!"/>
+			<DialogueNode id="2" text="I know you don't have a lot of time to sit and eat, so I made you this."/>
+			<DialogueNode id="3" text="I hope you like it!">
+				<DialogueOption returnCode="2"/>
+			</DialogueNode>
+			<DialogueNode id="4" text="I understand. It was a lot to ask of you."/>
+			<DialogueNode id="5" text="*sigh*"/>
+			<DialogueNode id="6" text="I guess me and Pup will head out to have a look for it.">
+				<DialogueOption returnCode="3"/>
+			</DialogueNode>
+			<DialogueNode id="7" text="Okay, let me know when you find it.">
+				<DialogueOption returnCode="1"/>
+			</DialogueNode>
 		</QuestStatus>
 		<QuestStatus value="3">
-			<Dialogue text="Come on Pup, we are going on an adventure."/>
-			<Exit/>
+			<DialogueNode id="8" text="Come on Pup, we are going on an adventure."/>
+			<DialogueOption returnCode="3"/>
 		</QuestStatus>
 	</Quest>
 </root>
