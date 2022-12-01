@@ -27,6 +27,16 @@ std::unordered_map<std::string, ObjectData> XML_Parser::LoadInitialObjectDataFro
 	return this->objects;
 }
 
+std::unordered_map<int, std::unordered_map<StatusType, std::vector<std::shared_ptr<DialogueNode>>>> XML_Parser::LoadDialogueDataFromFile(const std::string& filename)
+{
+	opened_documents.emplace_back(new tinyxml2::XMLDocument());
+	tinyxml2::XMLDocument* doc = opened_documents.back().get();
+
+	doc->LoadFile(filename.c_str());
+	ParseDialogueDoc(doc);
+	return dNodes;
+}
+
 void XML_Parser::ParseAnimDoc(tinyxml2::XMLDocument* doc)
 {
 	if (doc->Error())
@@ -232,4 +242,144 @@ void XML_Parser::ParseInitDoc(tinyxml2::XMLDocument* doc)
 			objects.insert(std::make_pair(_name, objData));
 		}
 	}
+}
+
+void XML_Parser::ParseDialogueDoc(tinyxml2::XMLDocument* doc)
+{
+	if (doc->Error())
+	{
+		char buffer[200];
+		sprintf(buffer, "Error parsing the XML: %s", doc->ErrorName());
+		throw std::exception(buffer);
+	}
+
+	const tinyxml2::XMLElement* xml_root = doc->RootElement();
+
+	if (xml_root->Attribute("_type", "QuestDialogue")) //Is a XML file describing animation stuff
+	{
+		for (auto questNode = xml_root->FirstChildElement("Quest"); //Recursivly get all Quests
+			questNode != nullptr;
+			questNode = questNode->NextSiblingElement("Quest"))
+		{
+			//Get attributes for questNode
+			
+			int questID;
+			std::unordered_map<StatusType, std::vector < std::shared_ptr<DialogueNode>>> statusDMap;
+
+			if (questNode->Attribute("ID"))
+			{
+				questID = std::stoi(questNode->Attribute("ID"));
+			}
+			else
+			{
+				char buffer[200];
+				sprintf(buffer, "Error parsing the Quest ID from XML: %s", doc->ErrorName());
+				throw std::exception(buffer);
+			}
+			
+			//Loop through quest statuses recursivly
+			for (auto statusNode = questNode->FirstChildElement("QuestStatus");
+				statusNode != nullptr;
+				statusNode = statusNode->NextSiblingElement("QuestStatus"))
+			{
+				StatusType questStatus;
+				std::vector<std::shared_ptr<DialogueNode>> dialogueNodes;
+
+				if (statusNode->Attribute("status")) {
+
+					auto it = strToQuestStatus.find(statusNode->Attribute("status"));
+					if (it != strToQuestStatus.end())
+					{
+						questStatus = it->second;
+					}
+				}
+				else
+				{
+					char buffer[200];
+					sprintf(buffer, "Error parsing the questStatus from XML: %s", doc->ErrorName());
+					throw std::exception(buffer);
+				}
+
+				for (auto dialogNode = statusNode->FirstChildElement("DialogueNode");
+					dialogNode != nullptr;
+					dialogNode = dialogNode->NextSiblingElement("DialogueNode"))
+				{
+					std::shared_ptr<DialogueNode> dNode = std::make_shared<DialogueNode>();
+					
+					if (dialogNode->Attribute("id"))
+					{
+						dNode->ID = atoi(dialogNode->Attribute("id"));
+					}
+					else
+					{
+						char buffer[200];
+						sprintf(buffer, "Error parsing the dialog node ID from XML: %s", doc->ErrorName());
+						throw std::exception(buffer);
+					}
+					if (dialogNode->Attribute("text"))
+					{
+						dNode->text = dialogNode->Attribute("text");
+					}
+					else
+					{
+						char buffer[200];
+						sprintf(buffer, "Error parsing the dialog node text from XML: %s", doc->ErrorName());
+						throw std::exception(buffer);
+					}
+
+					for (auto optNode = dialogNode->FirstChildElement("DialogueOption");
+						optNode != nullptr;
+						optNode = optNode->NextSiblingElement("DialogueOption"))
+					{
+						std::shared_ptr<OptionNode> dOption = std::make_shared<OptionNode>();
+
+						if (optNode->Attribute("nextNodeID"))
+						{
+							dOption->nextNodeID = atoi(optNode->Attribute("nextNodeID"));
+						}
+						else
+						{
+							dOption->nextNodeID = -1;
+						}
+						if (optNode->Attribute("text"))
+						{
+							dOption->text = optNode->Attribute("text");
+						}
+						else 
+						{
+							dOption->text = "";
+						}
+						if (optNode->Attribute("returnCode")) {
+
+							auto it = strToQuestStatus.find(optNode->Attribute("returnCode"));
+							if (it != strToQuestStatus.end())
+							{
+								dOption->returnCode = it->second;
+							}
+							else 
+							{
+								char buffer[200];
+								sprintf(buffer, "Error parsing the returnCode from XML: %s", doc->ErrorName());
+								throw std::exception(buffer);
+							}
+						}
+						else
+						{
+							dOption->returnCode = questStatus;
+						}
+
+						dNode->options.emplace_back(dOption);
+					}
+
+					dialogueNodes.emplace_back(dNode);
+
+				}
+				
+				statusDMap.emplace(questStatus, dialogueNodes);
+
+			}
+				dNodes.emplace(questID, statusDMap);
+		}
+	}
+
 }

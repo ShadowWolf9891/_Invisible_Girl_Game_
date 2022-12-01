@@ -6,6 +6,20 @@
 #include "Component.h"
 #include "Quest.h"
 
+struct OptionNode
+{
+	int nextNodeID;
+	std::string text;
+	StatusType returnCode;
+};
+
+struct DialogueNode
+{
+	int ID;
+	std::string text;
+	std::vector<std::shared_ptr<OptionNode>> options;
+};
+
 
 class C_Dialogue : public Component
 {
@@ -19,19 +33,19 @@ public:
 	{
 		StatusType questStatus = currentQuest->GetStatus();
 
-
-
-
 	}
-	void LoadDialogue() 
+	void LoadDialogue(int curQuestID, StatusType curQuestStatus)
 	{
 
-	}
+
+
+	};
 
 
 
 private:
-
+	
+	
 
 };
 

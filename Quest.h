@@ -9,8 +9,10 @@ enum StatusType
 {
 	UNAVAILABLE = 0,
 	AVAILABLE = 1,
-	COMPLETED = 2,
-	FAILED = 3
+	INPROGRESS = 2,
+	COMPLETED = 3,
+	FINISHED = 4,
+	FAILED = 5
 };
 
 

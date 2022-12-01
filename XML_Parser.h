@@ -8,6 +8,8 @@
 #include "tinyxml2.h"
 #include "SharedContext.h"
 #include "C_Animation.h"
+#include "C_Dialogue.h"
+#include "Quest.h"
 
 struct ObjectData 
 {
@@ -25,15 +27,19 @@ public:
 
 	std::unordered_map <std::string, ObjectData> LoadInitialObjectDataFromFile(const std::string& filename);
 
+	std::unordered_map<int, std::unordered_map<StatusType, std::vector<std::shared_ptr<DialogueNode>>>> LoadDialogueDataFromFile(const std::string& filename);
+
 	SharedContext& context;
 	std::list<std::unique_ptr<tinyxml2::XMLDocument>> opened_documents;
 
 private:
 	void ParseAnimDoc(tinyxml2::XMLDocument* doc);
 	void ParseInitDoc(tinyxml2::XMLDocument* doc);
+	void ParseDialogueDoc(tinyxml2::XMLDocument* doc);
 
 	std::unordered_map<AnimationState, AnimationList> animations;
 	std::unordered_map <std::string, ObjectData> objects;
+	std::unordered_map<int, std::unordered_map<StatusType, std::vector<std::shared_ptr<DialogueNode>>>> dNodes;
 };
 
 
@@ -67,4 +73,14 @@ static std::unordered_map<std::string, FacingDirection> const strToDir =
 	{"Left",FacingDirection::Left}
 };
 
-#endif // XML_Parser_h
+static std::unordered_map<std::string, StatusType> const strToQuestStatus =
+{
+	{"UNAVAILABLE", StatusType::UNAVAILABLE},
+	{"AVAILABLE", StatusType::AVAILABLE},
+	{"INPROGRESS", StatusType::INPROGRESS},
+	{"COMPLETED", StatusType::COMPLETED},
+	{"FINISHED", StatusType::FINISHED},
+	{"FAILED", StatusType::FAILED}
+};
+
+#endif //XML_Parser_h
