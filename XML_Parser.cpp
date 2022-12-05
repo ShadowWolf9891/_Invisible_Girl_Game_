@@ -266,14 +266,14 @@ void XML_Parser::ParseDialogueDoc(tinyxml2::XMLDocument* doc)
 			int questID;
 			std::unordered_map<StatusType, std::vector < std::shared_ptr<DialogueNode>>> statusDMap;
 
-			if (questNode->Attribute("ID"))
+			if (questNode->Attribute("id"))
 			{
-				questID = std::stoi(questNode->Attribute("ID"));
+				questID = std::stoi(questNode->Attribute("id"));
 			}
 			else
 			{
 				char buffer[200];
-				sprintf(buffer, "Error parsing the Quest ID from XML: %s", doc->ErrorName());
+				sprintf(buffer, "Error parsing the Quest id from XML: %s", doc->ErrorName());
 				throw std::exception(buffer);
 			}
 			
@@ -313,7 +313,7 @@ void XML_Parser::ParseDialogueDoc(tinyxml2::XMLDocument* doc)
 					else
 					{
 						char buffer[200];
-						sprintf(buffer, "Error parsing the dialog node ID from XML: %s", doc->ErrorName());
+						sprintf(buffer, "Error parsing the dialog node id from XML: %s", doc->ErrorName());
 						throw std::exception(buffer);
 					}
 					if (dialogNode->Attribute("text"))

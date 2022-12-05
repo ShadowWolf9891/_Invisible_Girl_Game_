@@ -1087,6 +1087,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <Xml Include="..\data\obj\PassiveNPC_Data.xml" />
     <Xml Include="..\data\obj\Player_Data.xml" />
     <Xml Include="..\data\trees\PassiveNPC_Tree.xml" />
+    <Xml Include="..\data\ui\DialogueBoxData.xml" />
     <Xml Include="..\Gerard_Dialogue.xml" />
     <XML Include="F:\Invisible_Girl_Game\data\anim\ANIM_Characters.xml">
     </XML>

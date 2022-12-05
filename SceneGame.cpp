@@ -226,8 +226,12 @@ void SceneGame::AttachComponent(std::shared_ptr<Object> o, std::string _type, st
     }
     else if (_type == "C_Velocity") o->AddComponent<C_Velocity>();
     else if (_type == "C_WalkInLine") o->AddComponent<C_WalkInLine>();
-    else if (_type == "C_Dialogue") o->AddComponent<C_Dialogue>();
-
+    else if (_type == "C_Dialogue")
+    {
+        auto dialogue = xml_parser.LoadDialogueDataFromFile(workingDir.Get() + "data/dialogue/Gerard_Dialogue.xml");
+        auto dComponent = o->AddComponent<C_Dialogue>();
+        dComponent->allDialogue = dialogue;
+    }
 
     //Add any new components here.
 

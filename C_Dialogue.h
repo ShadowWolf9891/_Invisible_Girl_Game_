@@ -3,6 +3,7 @@
 #ifndef C_Dialogue_h
 #define C_Dialogue_h
 
+#include <unordered_map>
 #include "Component.h"
 #include "Quest.h"
 
@@ -27,26 +28,33 @@ public:
 	C_Dialogue(Object* owner) : Component(owner) {};
 	~C_Dialogue() = default;
 
-
-
-	std::string GetDialogue(std::shared_ptr<Quest> currentQuest) 
+	std::string GetDialogueText(std::shared_ptr<Quest> currentQuest)
 	{
 		StatusType questStatus = currentQuest->GetStatus();
 
-	}
-	void LoadDialogue(int curQuestID, StatusType curQuestStatus)
-	{
-
-
-
+		auto it = allDialogue.find(currentQuest->GetID());
+		if (it != allDialogue.end()) 
+		{
+			auto it2 = it->second.find(currentQuest->GetStatus());
+			if (it2 != it->second.end())
+			{
+				for (auto& dialogNode : it2->second)
+				{
+					if (dialogNode->ID == curNodeID)
+					{
+						return dialogNode->text;
+					}
+				}
+			}
+		}
 	};
-
-
+	
+	std::unordered_map<int, std::unordered_map<StatusType, std::vector<std::shared_ptr<DialogueNode>>>> allDialogue;
 
 private:
 	
-	
-
+	int curNodeID, nextNodeID;
+	std::shared_ptr<DialogueNode> curNode;
 };
 
 #endif // C_Dialogue_h

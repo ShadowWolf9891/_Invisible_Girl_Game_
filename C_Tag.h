@@ -10,7 +10,8 @@ enum class Tag
     Player,
     NPC,
     Enemy,
-    Item
+    Item,
+    UI
 };
 
 class C_Tag : public Component

@@ -1286,6 +1286,7 @@
     <Xml Include="..\data\trees\PassiveNPC_Tree.xml" />
     <Xml Include="..\Gerard_Dialogue.xml" />
     <Xml Include="..\data\obj\Item_Data.xml" />
+    <Xml Include="..\data\ui\DialogueBoxData.xml" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
