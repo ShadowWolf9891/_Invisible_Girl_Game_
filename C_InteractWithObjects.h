@@ -16,7 +16,7 @@ public:
   
     void Awake() override;
 
-    void Update(float deltaTime) override;
+    bool CheckInteraction();
 
 private:
     std::shared_ptr<C_Direction> direction;

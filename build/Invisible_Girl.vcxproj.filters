@@ -378,6 +378,9 @@
     <ClInclude Include="..\C_Dialogue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\Button.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="F:\Invisible_Girl_Game\CMakeLists.txt" />
@@ -1284,9 +1287,9 @@
     <Xml Include="..\data\obj\Player_Data.xml" />
     <Xml Include="..\data\obj\PassiveNPC_Data.xml" />
     <Xml Include="..\data\trees\PassiveNPC_Tree.xml" />
-    <Xml Include="..\Gerard_Dialogue.xml" />
     <Xml Include="..\data\obj\Item_Data.xml" />
     <Xml Include="..\data\ui\DialogueBoxData.xml" />
+    <Xml Include="..\data\dialogue\Gerard_Dialogue.xml" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

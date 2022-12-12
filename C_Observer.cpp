@@ -6,6 +6,7 @@ void C_Observer::handle(const Event& e)
     if (e.GetTargetID() != owner->instanceID->Get()) {
         return;
     }
+    std::shared_ptr CAnim = owner->GetComponent<C_Animation>();
 
     currentEventType = e.getType();
     
@@ -14,7 +15,7 @@ void C_Observer::handle(const Event& e)
         {
             auto it2 = strToAnimState.find(it->first);
             if (it2 != strToAnimState.end()) {
-                std::shared_ptr CAnim = owner->GetComponent<C_Animation>();
+               
                 CAnim->SetAnimationState(it2->second);
             }
            
@@ -24,6 +25,16 @@ void C_Observer::handle(const Event& e)
 
     float targetSpeed = 1.f;
 
+    if (currentEventType == E_Interact::descriptor)
+    {
+        auto CInteract = owner->GetComponent<C_InteractWithObjects>();
+        if (CInteract->CheckInteraction())
+        {
+            targetSpeed = 0.f; 
+            CAnim->SetAnimationState(AnimationState::Idle);
+        } 
+    }
+    
     if (currentEventType == E_Walk::descriptor) targetSpeed = 0.5f;
     else if (currentEventType == E_Run::descriptor) targetSpeed = 1.f;
     else if (currentEventType == E_BowDraw::descriptor) targetSpeed = 0.1f;

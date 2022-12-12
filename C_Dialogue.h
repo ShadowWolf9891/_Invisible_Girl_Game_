@@ -6,6 +6,9 @@
 #include <unordered_map>
 #include "Component.h"
 #include "Quest.h"
+#include "Button.h"
+#include "C_Drawable.h"
+#include "Object.h"
 
 struct OptionNode
 {
@@ -21,40 +24,135 @@ struct DialogueNode
 	std::vector<std::shared_ptr<OptionNode>> options;
 };
 
+struct UIPadding
+{
+	float left = 0.0f, right = 0.0f, top = 0.0f, bottom = 0.0f;
 
-class C_Dialogue : public Component
+};
+
+class C_Dialogue : public Component, public C_Drawable
 {
 public:
-	C_Dialogue(Object* owner) : Component(owner) {};
+	C_Dialogue(Object* owner) : Component(owner), doneTalking(false) {};
 	~C_Dialogue() = default;
 
-	std::string GetDialogueText(std::shared_ptr<Quest> currentQuest)
+	void Start() override
 	{
-		StatusType questStatus = currentQuest->GetStatus();
+		const int fontID = owner->context->fontAllocator->Add(owner->context->workingDir->Get() + "Assets/Fonts/joystix monospace.ttf");
+		font = owner->context->fontAllocator->Get(fontID);
+		dialogueText.setFont(*font);
+		CreateBackground();
+	};
 
-		auto it = allDialogue.find(currentQuest->GetID());
-		if (it != allDialogue.end()) 
+	void Draw(Window& window) override
+	{
+		window.Draw(background);
+		window.Draw(dialogueText);
+
+		for (auto& it : optionButtons)
 		{
-			auto it2 = it->second.find(currentQuest->GetStatus());
-			if (it2 != it->second.end())
+			it.Draw(window);
+		}
+	};
+
+	bool ContinueToDraw() const override
+	{
+		return !doneTalking;
+	};
+
+	std::shared_ptr <DialogueNode> GetDialogueNode()
+	{
+		std::shared_ptr <DialogueNode> node = allDialogue.at(curQuest->GetID()).at(curQuest->GetStatus()).at(curNodeID);
+
+		if (node) 
+		{
+			return node;
+		}
+		
+		return nullptr;
+	};
+
+	void GoToNext(int nextNodeID, StatusType returnCode)
+	{
+		curNodeID += 1; 
+		std::shared_ptr <DialogueNode> node = GetDialogueNode();
+
+		if (nextNodeID == -1) //If there are no options and not looping
+		{
+			if (!node)
 			{
-				for (auto& dialogNode : it2->second)
-				{
-					if (dialogNode->ID == curNodeID)
-					{
-						return dialogNode->text;
-					}
-				}
+				doneTalking = true;
+				curNodeID = 0;
+				curQuest->SetStatus(returnCode);
+				return;
+			}
+		}
+		else
+		{
+			curNodeID = nextNodeID;
+		}
+
+		ParseDialogueNode(node);
+	};
+
+	void ParseDialogueNode(std::shared_ptr<DialogueNode> curNode)
+	{
+		dialogueText.setString(curNode->text);
+
+		if (curNode->options.size() > 0)
+		{
+			for (auto& it : curNode->options)
+			{
+				optionButtons.push_back(CreateButton(it));
 			}
 		}
 	};
-	
+
 	std::unordered_map<int, std::unordered_map<StatusType, std::vector<std::shared_ptr<DialogueNode>>>> allDialogue;
 
+	std::shared_ptr<Quest> GetCurQuest() { return curQuest; };
+	void SetCurQuest(std::shared_ptr<Quest> q) { curQuest = q; };
+
+	
 private:
 	
+	Button<C_Dialogue, void, int, StatusType> CreateButton(std::shared_ptr<OptionNode> it)
+	{
+		Button<C_Dialogue, void, int, StatusType> btn(*this, &C_Dialogue::GoToNext);
+		btn(it->nextNodeID, it->returnCode);
+		btn.SetText(it->text, font);
+		btn.SetSize(sf::Vector2f(100, 50));
+		btn.SetPosition(sf::Vector2f(500, 500));
+		btn.SetBackgroundColour(sf::Color::Black);
+		btn.SetFontColour(sf::Color::White);
+
+		return btn;
+	};
+
+	void CreateBackground()
+	{
+		sf::Vector2u center = owner->context->window->GetCenter();
+		sf::Vector2f size = owner->context->window->GetView().getSize();
+		bgPadding = {10.0, 10.0, 10.0, 10.0};
+		background.setSize(sf::Vector2f(size.x - (bgPadding.left + bgPadding.right), size.y - (bgPadding.top + bgPadding.bottom)));
+		background.setPosition(sf::Vector2f(center.x + bgPadding.left - background.getSize().x, center.y + bgPadding.top - background.getSize().y));
+		background.setFillColor(sf::Color::Cyan);
+	};
+
+
+	std::shared_ptr<Quest> curQuest;
 	int curNodeID, nextNodeID;
 	std::shared_ptr<DialogueNode> curNode;
+
+	sf::Text dialogueText;
+	std::vector<Button<C_Dialogue, void, int, StatusType>> optionButtons;
+	std::shared_ptr<sf::Font> font;
+	sf::RectangleShape background;
+
+	UIPadding bgPadding;
+	
+
+	bool doneTalking;
 };
 
 #endif // C_Dialogue_h

@@ -51,7 +51,9 @@ static std::unordered_map<std::string, Event::DescriptorType> const strToEvent =
 	{"BowRetreat",E_BowRetreat::descriptor},
 	{"BowLunge",E_BowLunge::descriptor},
 	{"BowShootUp",E_BowShootUp::descriptor},
-	{"BowShootStraight",E_BowShootStraight::descriptor}
+	{"BowShootStraight",E_BowShootStraight::descriptor},
+	{"Interact",E_Interact::descriptor}
+
 };
 
 static std::unordered_map<std::string, Input::Key> const strToKey =
@@ -90,8 +92,7 @@ static std::unordered_map<int, std::string> const bitPosToString =
 	{16, "C_SteeringBehaviorWallAvoidance"},
 	{17, "C_Tree"},
 	{18, "C_Velocity"},
-	{19, "C_WalkInLine"},
-	{20, "C_Dialogue"}
+	{19, "C_WalkInLine"}
 };
 
 

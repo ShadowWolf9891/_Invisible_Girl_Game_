@@ -7,6 +7,7 @@
 #include "Component.h"
 #include "C_KeyboardMovement.h"
 #include "C_Animation.h"
+#include "C_InteractWithObjects.h"
 #include "XML_Parser.h"
 
 #include <iostream>

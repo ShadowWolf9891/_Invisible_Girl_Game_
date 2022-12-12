@@ -24,6 +24,7 @@
 //BowLunge,
 //BowShootUp,
 //BowShootStraight
+//Interact
 
 //Base Event class. All Events dirive from this. Constructor takes a reference to which event was created.
 class Event 
@@ -202,6 +203,15 @@ public:
 	static constexpr DescriptorType descriptor = "E_BowShootStraight";
 };
 
+class E_Interact : public Event
+{
+public:
+
+	E_Interact() : Event(*this, descriptor, "Attemped to Interact with object") {};
+	virtual ~E_Interact() = default;
+
+	static constexpr DescriptorType descriptor = "E_Interact";
+};
 
 
 #endif //Event_h

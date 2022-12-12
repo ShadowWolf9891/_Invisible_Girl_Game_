@@ -1,22 +1,15 @@
 #include "C_InteractableTalking.h"
 
-
-
 void C_InteractableTalking::OnInteraction(Object* other)
 {
-    std::shared_ptr<Object> labelObj = std::make_shared<Object>(owner->context);
+    std::shared_ptr<Object> dialogueObj = std::make_shared<Object>(owner->context);
 
-    auto label = labelObj->AddComponent<C_UIWorldLabel>();
-    label->SetDrawLayer(DrawLayer::UI);
+    auto dialogue = owner->context->xml_parser->LoadDialogueDataFromFile(dialogueFilename);
+    auto dComponent = dialogueObj->AddComponent<C_Dialogue>();
+    dComponent->SetDrawLayer(DrawLayer::UI);
+    dComponent->allDialogue = dialogue;
 
-    label->SetBackgroundSize(sf::Vector2f(120, 120));
-    label->SetBackgroundColour(sf::Color::Black);
+    owner->context->objects->Add(dialogueObj);
 
-    label->SetFontColour(sf::Color::White);
-    label->SetText(textToSay);
 
-    labelObj->transform->SetParent(owner->transform);
-    labelObj->transform->SetPosition(0.f, -80.f);
-
-    owner->context->objects->Add(labelObj);
 }

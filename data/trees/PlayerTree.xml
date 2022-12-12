@@ -6,8 +6,9 @@
 			<Script code="isShift:=false"/>
 			<Script code="bowState:=NOBOW"/>
 			<Script code="Anim:='Idle'"/>
+			<Script code="isTalking:=false"/>
 			<ReactiveSequence>
-				<SubTree ID="InputTree" isRunning="{isShift}" theBowState="{bowState}"/>
+				<SubTree ID="InputTree" isRunning="{isShift}" isTalking="{isTalk}" theBowState="{bowState}"/>
 				<SubTree ID="SelectAnimationTree" isRunning="{isShift}" theBowState="{bowState}" animToPlay="{Anim}"/>
 				<TriggerEvent EventType ="{Anim}"/>
 			</ReactiveSequence>
@@ -32,26 +33,32 @@
 				</Sequence>
 			</ReactiveFallback>
 			<ForceSuccess>
-			<ReactiveFallback>
 				<ReactiveSequence>
 					<IsKeyDown Key="E"/>
-					<Precondition if="theBowState==NOBOW" else="SUCCESS">
-						<Script code="theBowState:=BOWDRAW"/>
-					</Precondition>
-					<Precondition if="theBowState==BOWOUT" else="SUCCESS">
-						<Script code="theBowState:=BOWSHEATH"/>
-					</Precondition>
+					<TriggerEvent EventType="Interact"/>
 				</ReactiveSequence>
-				<ReactiveSequence>
-					<IsDoneAnimating/>
-					<Precondition if="theBowState==BOWDRAW" else="SUCCESS">
-						<Script code="theBowState:=BOWOUT"/>
-					</Precondition>
-					<Precondition if="theBowState==BOWSHEATH" else="SUCCESS">
-						<Script code="theBowState:=NOBOW"/>
-					</Precondition>
-				</ReactiveSequence>
-			</ReactiveFallback>
+			</ForceSuccess>
+			<ForceSuccess>
+				<ReactiveFallback>
+					<ReactiveSequence>
+						<IsKeyDown Key="R"/>
+						<Precondition if="theBowState==NOBOW" else="SUCCESS">
+							<Script code="theBowState:=BOWDRAW"/>
+						</Precondition>
+						<Precondition if="theBowState==BOWOUT" else="SUCCESS">
+							<Script code="theBowState:=BOWSHEATH"/>
+						</Precondition>
+					</ReactiveSequence>
+					<ReactiveSequence>
+						<IsDoneAnimating/>
+						<Precondition if="theBowState==BOWDRAW" else="SUCCESS">
+							<Script code="theBowState:=BOWOUT"/>
+						</Precondition>
+						<Precondition if="theBowState==BOWSHEATH" else="SUCCESS">
+							<Script code="theBowState:=NOBOW"/>
+						</Precondition>
+					</ReactiveSequence>
+				</ReactiveFallback>
 			</ForceSuccess>
 		</ReactiveSequence>
 	</BehaviorTree>
