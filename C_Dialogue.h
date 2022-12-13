@@ -33,7 +33,7 @@ struct UIPadding
 class C_Dialogue : public Component, public C_Drawable
 {
 public:
-	C_Dialogue(Object* owner) : Component(owner), doneTalking(false) {};
+	C_Dialogue(Object* owner) : Component(owner), doneTalking(false), curNodeID(0), nextNodeID(0) {};
 	~C_Dialogue() = default;
 
 	void Start() override
@@ -131,11 +131,18 @@ private:
 
 	void CreateBackground()
 	{
-		sf::Vector2u center = owner->context->window->GetCenter();
-		sf::Vector2f size = owner->context->window->GetView().getSize();
-		bgPadding = {10.0, 10.0, 10.0, 10.0};
-		background.setSize(sf::Vector2f(size.x - (bgPadding.left + bgPadding.right), size.y - (bgPadding.top + bgPadding.bottom)));
-		background.setPosition(sf::Vector2f(center.x + bgPadding.left - background.getSize().x, center.y + bgPadding.top - background.getSize().y));
+		sf::Vector2f v_center = owner->context->window->GetView().getCenter();
+		sf::Vector2f v_size = owner->context->window->GetView().getSize();
+		bgPadding = {10.0, 10.0, 10.0, 20.0};
+
+		float bg_sizeX = v_size.x - bgPadding.left - bgPadding.right;
+		float bg_sizeY = (v_size.y / 3) - bgPadding.top - bgPadding.bottom;
+
+		float bg_positionX = (v_center.x - v_size.x / 2) + bgPadding.left;
+		float bg_positionY = (v_center.y + v_size.y / 6) + bgPadding.top;
+
+		background.setSize(sf::Vector2f(bg_sizeX, bg_sizeY));
+		background.setPosition(sf::Vector2f(bg_positionX, bg_positionY));
 		background.setFillColor(sf::Color::Cyan);
 	};
 
