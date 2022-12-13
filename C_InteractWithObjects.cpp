@@ -8,7 +8,7 @@ void C_InteractWithObjects::Awake()
 }
 
 
-/*Check interaction between the ownerand other nearby interactable objects, then trigger their OnInteraction code.
+/*Check interaction between the owner and other nearby interactable objects, then trigger their OnInteraction code.
 Return if a collision has happened or not.*/
 bool C_InteractWithObjects::CheckInteraction()
 {

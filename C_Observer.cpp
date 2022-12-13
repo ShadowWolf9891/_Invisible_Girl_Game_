@@ -23,7 +23,7 @@ void C_Observer::handle(const Event& e)
         }
     }
 
-    float targetSpeed = 1.f;
+    float targetSpeed = 0.5f;
 
     if (currentEventType == E_Interact::descriptor)
     {
