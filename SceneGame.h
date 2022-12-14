@@ -50,7 +50,8 @@ public:
 	void Draw(Window& window) override;
 
 private:
-
+	void InitializeContext();
+	void RegisterNodes();
 	std::vector<std::shared_ptr<Object>> CreateObjectFromFile(std::string fileName, sf::Vector2f location);
 	void CreateEnemy();
 

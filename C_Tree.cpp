@@ -25,6 +25,18 @@ void C_Tree::Start()
 		{
 			isKeyUpAction->init(owner);
 		}
+		if (auto isMousePressedAction = dynamic_cast<IsMousePressed*>(node))
+		{
+			isMousePressedAction->init(owner);
+		}
+		if (auto isMouseDownAction = dynamic_cast<IsMouseDown*>(node))
+		{
+			isMouseDownAction->init(owner);
+		}
+		if (auto isMouseUpAction = dynamic_cast<IsMouseUp*>(node))
+		{
+			isMouseUpAction->init(owner);
+		}
 		if (auto getMoveSpeedAction = dynamic_cast<GetMoveSpeed*>(node))
 		{
 			getMoveSpeedAction->init(owner);

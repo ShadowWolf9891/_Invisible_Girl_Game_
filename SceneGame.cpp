@@ -14,30 +14,9 @@ void SceneGame::OnCreate()
     view.zoom(0.5f);
     window.SetView(view);
 
-    context.input = &input;
-    context.objects = &objects;
-    context.workingDir = &workingDir;
-    context.textureAllocator = &textureAllocator;
-    context.window = &window;
-    context.raycast = &raycast;
-    context.fontAllocator = &fontAllocator;
-    context.collisionTree = &collisionTree;
-    context.dispatcher = &dispatcher;
-    context.bt_factory = &bt_factory;
-    context.xml_parser = &xml_parser;
-
-    bt_factory.registerNodeType<IsOnGround>("IsOnGround");
-    bt_factory.registerNodeType<IsDoneAnimating>("IsDoneAnimating");
-    bt_factory.registerNodeType<GetMoveSpeed>("GetMoveSpeed");
-
-    bt_factory.registerNodeType<TriggerEvent>("TriggerEvent");
-
-    bt_factory.registerNodeType<IsKeyPressed>("IsKeyPressed");
-    bt_factory.registerNodeType<IsKeyPressed>("IsKeyDown");
-    bt_factory.registerNodeType<IsKeyPressed>("IsKeyUp");
-    
-    enum bowInfo {NOBOW=0, BOWDRAW=1, BOWOUT=2, BOWSHEATH=3};
-    bt_factory.registerScriptingEnums<bowInfo>();
+   
+    InitializeContext();
+    RegisterNodes();
 
     using std::filesystem::directory_iterator;
     for (auto const& entry : directory_iterator("../data/trees/"))
@@ -69,6 +48,41 @@ void SceneGame::OnCreate()
 
 
     
+}
+
+void SceneGame::InitializeContext()
+{
+    context.input = &input;
+    context.objects = &objects;
+    context.workingDir = &workingDir;
+    context.textureAllocator = &textureAllocator;
+    context.window = &window;
+    context.raycast = &raycast;
+    context.fontAllocator = &fontAllocator;
+    context.collisionTree = &collisionTree;
+    context.dispatcher = &dispatcher;
+    context.bt_factory = &bt_factory;
+    context.xml_parser = &xml_parser;
+}
+
+void SceneGame::RegisterNodes()
+{
+    bt_factory.registerNodeType<IsOnGround>("IsOnGround");
+    bt_factory.registerNodeType<IsDoneAnimating>("IsDoneAnimating");
+    bt_factory.registerNodeType<GetMoveSpeed>("GetMoveSpeed");
+
+    bt_factory.registerNodeType<TriggerEvent>("TriggerEvent");
+
+    bt_factory.registerNodeType<IsKeyPressed>("IsKeyPressed");
+    bt_factory.registerNodeType<IsKeyPressed>("IsKeyDown");
+    bt_factory.registerNodeType<IsKeyPressed>("IsKeyUp");
+
+    bt_factory.registerNodeType<IsMousePressed>("IsMousePressed");
+    bt_factory.registerNodeType<IsMousePressed>("IsMouseDown");
+    bt_factory.registerNodeType<IsMousePressed>("IsMouseUp");
+    
+    enum bowInfo {NOBOW=0, BOWDRAW=1, BOWOUT=2, BOWSHEATH=3};
+    bt_factory.registerScriptingEnums<bowInfo>();
 }
 
 //Creates a new object from XML file and places it at location

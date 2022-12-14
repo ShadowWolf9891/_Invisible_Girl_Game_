@@ -52,8 +52,10 @@ static std::unordered_map<std::string, Event::DescriptorType> const strToEvent =
 	{"BowLunge",E_BowLunge::descriptor},
 	{"BowShootUp",E_BowShootUp::descriptor},
 	{"BowShootStraight",E_BowShootStraight::descriptor},
-	{"Interact",E_Interact::descriptor}
-
+	{"Interact",E_Interact::descriptor},
+	{"LeftClick",E_LeftClick::descriptor},
+	{"RightClick",E_RightClick::descriptor},
+	{"MiddleClick",E_MiddleClick::descriptor}
 };
 
 static std::unordered_map<std::string, Input::Key> const strToKey =
@@ -69,6 +71,14 @@ static std::unordered_map<std::string, Input::Key> const strToKey =
 	{"E",Input::Key::E},
 	{"R",Input::Key::R},
 	{"Shift",Input::Key::Shift}
+};
+
+static std::unordered_map<std::string, Input::Mouse> const strToMouse =
+{
+	{"None",Input::Mouse::None},
+	{"Left",Input::Mouse::Left},
+	{"Right",Input::Mouse::Right},
+	{"Middle",Input::Mouse::Middle}
 };
 
 static std::unordered_map<int, std::string> const bitPosToString =

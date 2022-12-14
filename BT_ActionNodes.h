@@ -71,7 +71,6 @@ public:
 	void init(Object* owner)
 	{
 		this->owner = owner;
-		this->attack = owner->GetComponent<C_ProjectileAttack>();
 	}
 	static BT::PortsList providedPorts()
 	{
@@ -98,7 +97,6 @@ public:
 	}
 private:
 	Object* owner;
-	std::shared_ptr<C_ProjectileAttack> attack;
 };
 class IsKeyDown : public BT::SyncActionNode
 {
@@ -108,7 +106,6 @@ public:
 	void init(Object* owner)
 	{
 		this->owner = owner;
-		this->attack = owner->GetComponent<C_ProjectileAttack>();
 	}
 	static BT::PortsList providedPorts()
 	{
@@ -134,7 +131,6 @@ public:
 	}
 private:
 	Object* owner;
-	std::shared_ptr<C_ProjectileAttack> attack;
 };
 class IsKeyUp : public BT::SyncActionNode
 {
@@ -144,7 +140,6 @@ public:
 	void init(Object* owner)
 	{
 		this->owner = owner;
-		this->attack = owner->GetComponent<C_ProjectileAttack>();
 	}
 	static BT::PortsList providedPorts()
 	{
@@ -170,7 +165,110 @@ public:
 	}
 private:
 	Object* owner;
-	std::shared_ptr<C_ProjectileAttack> attack;
+};
+
+class IsMousePressed : public BT::SyncActionNode
+{
+public:
+	IsMousePressed(const std::string& name, const BT::NodeConfig& config) : BT::SyncActionNode(name, config) {};
+
+	void init(Object* owner)
+	{
+		this->owner = owner;
+	}
+	static BT::PortsList providedPorts()
+	{
+		return
+		{
+			BT::InputPort<std::string>("Mouse")
+		};
+	}
+	BT::NodeStatus tick() override
+	{
+
+		BT::Expected<std::string> mouse = getInput<std::string>("Mouse");
+
+		if (!mouse) { throw BT::RuntimeError("Missing required input [Mouse]: ", mouse.error()); }
+
+		Input::Mouse k = strToMouse.at(mouse.value());
+
+		if (owner->context->input->IsMousePressed(k))
+		{
+			return BT::NodeStatus::SUCCESS;
+		}
+
+		return BT::NodeStatus::FAILURE;
+	}
+private:
+	Object* owner;
+};
+class IsMouseDown : public BT::SyncActionNode
+{
+public:
+	IsMouseDown(const std::string& name, const BT::NodeConfig& config) : BT::SyncActionNode(name, config) {};
+
+	void init(Object* owner)
+	{
+		this->owner = owner;
+	}
+	static BT::PortsList providedPorts()
+	{
+		return
+		{
+			BT::InputPort<std::string>("Mouse")
+		};
+	}
+	BT::NodeStatus tick() override
+	{
+		BT::Expected<std::string> mouse = getInput<std::string>("Mouse");
+
+		if (!mouse) { throw BT::RuntimeError("Missing required input [Mouse]: ", mouse.error()); }
+
+		Input::Mouse k = strToMouse.at(mouse.value());
+
+		if (owner->context->input->IsMouseDown(k))
+		{
+			return BT::NodeStatus::SUCCESS;
+		}
+
+		return BT::NodeStatus::FAILURE;
+	}
+private:
+	Object* owner;
+};
+class IsMouseUp : public BT::SyncActionNode
+{
+public:
+	IsMouseUp(const std::string& name, const BT::NodeConfig& config) : BT::SyncActionNode(name, config) {};
+
+	void init(Object* owner)
+	{
+		this->owner = owner;
+	}
+	static BT::PortsList providedPorts()
+	{
+		return
+		{
+			BT::InputPort<std::string>("Mouse")
+		};
+	}
+	BT::NodeStatus tick() override
+	{
+		BT::Expected<std::string> mouse = getInput<std::string>("Mouse");
+
+		if (!mouse) { throw BT::RuntimeError("Missing required input [Mouse]: ", mouse.error()); }
+
+		Input::Mouse k = strToMouse.at(mouse.value());
+
+		if (owner->context->input->IsMouseUp(k))
+		{
+			return BT::NodeStatus::SUCCESS;
+		}
+
+		return BT::NodeStatus::FAILURE;
+	}
+private:
+	Object* owner;
 };
 
 class GetMoveSpeed : public BT::SyncActionNode

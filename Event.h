@@ -23,8 +23,11 @@
 //BowRetreat,
 //BowLunge,
 //BowShootUp,
-//BowShootStraight
-//Interact
+//BowShootStraight,
+//Interact,
+//LeftClick,
+//RightClick,
+//MiddleClick
 
 //Base Event class. All Events dirive from this. Constructor takes a reference to which event was created.
 class Event 
@@ -213,6 +216,35 @@ public:
 	static constexpr DescriptorType descriptor = "E_Interact";
 };
 
+class E_LeftClick : public Event
+{
+public:
+
+	E_LeftClick() : Event(*this, descriptor, "Left click Event") {};
+	virtual ~E_LeftClick() = default;
+
+	static constexpr DescriptorType descriptor = "E_LeftClick";
+};
+
+class E_RightClick : public Event
+{
+public:
+
+	E_RightClick() : Event(*this, descriptor, "Right click Event") {};
+	virtual ~E_RightClick() = default;
+
+	static constexpr DescriptorType descriptor = "E_RightClick";
+};
+
+class E_MiddleClick : public Event
+{
+public:
+
+	E_MiddleClick() : Event(*this, descriptor, "Middle click Event") {};
+	virtual ~E_MiddleClick() = default;
+
+	static constexpr DescriptorType descriptor = "E_MiddleClick";
+};
 
 #endif //Event_h
 
