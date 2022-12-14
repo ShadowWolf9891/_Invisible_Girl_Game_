@@ -33,7 +33,7 @@ struct UIPadding
 class C_Dialogue : public Component, public C_Drawable
 {
 public:
-	C_Dialogue(Object* owner) : Component(owner), doneTalking(false), curNodeID(0), nextNodeID(0) {};
+	C_Dialogue(Object* owner) : Component(owner), doneTalking(false), isVisible(false), curNodeID(0), nextNodeID(0) {};
 	~C_Dialogue() = default;
 
 	void Start() override
@@ -41,11 +41,12 @@ public:
 		const int fontID = owner->context->fontAllocator->Add(owner->context->workingDir->Get() + "Assets/Fonts/joystix monospace.ttf");
 		font = owner->context->fontAllocator->Get(fontID);
 		dialogueText.setFont(*font);
-		CreateBackground();
 	};
 
 	void Draw(Window& window) override
 	{
+		if (!isVisible) return;
+	
 		window.Draw(background);
 		window.Draw(dialogueText);
 
@@ -58,6 +59,13 @@ public:
 	bool ContinueToDraw() const override
 	{
 		return !doneTalking;
+	};
+
+	void CreateUI() 
+	{
+		CreateBackground();
+		ParseDialogueNode(GetDialogueNode());
+		isVisible = true;
 	};
 
 	std::shared_ptr <DialogueNode> GetDialogueNode()
@@ -99,11 +107,17 @@ public:
 	{
 		dialogueText.setString(curNode->text);
 
+		float xPos = background.getGlobalBounds().left + background.getGlobalBounds().width / 2 - dialogueText.getGlobalBounds().width / 2;
+		float yPos = background.getPosition().y;
+		dialogueText.setPosition(sf::Vector2f(xPos,yPos));
+		
+
 		if (curNode->options.size() > 0)
 		{
+			int optionNum = 0;
 			for (auto& it : curNode->options)
 			{
-				optionButtons.push_back(CreateButton(it));
+				optionButtons.push_back(CreateButton(it, optionNum++));
 			}
 		}
 	};
@@ -113,18 +127,21 @@ public:
 	std::shared_ptr<Quest> GetCurQuest() { return curQuest; };
 	void SetCurQuest(std::shared_ptr<Quest> q) { curQuest = q; };
 
-	
+	void SetVisible(bool visibility) { isVisible = visibility; };
+	bool IsVisible() { return isVisible; };
+
 private:
 	
-	Button<C_Dialogue, void, int, StatusType> CreateButton(std::shared_ptr<OptionNode> it)
+	Button<C_Dialogue, void, int, StatusType> CreateButton(std::shared_ptr<OptionNode> it, int optionNum)
 	{
 		Button<C_Dialogue, void, int, StatusType> btn(*this, &C_Dialogue::GoToNext);
 		btn(it->nextNodeID, it->returnCode);
 		btn.SetText(it->text, font);
-		btn.SetSize(sf::Vector2f(100, 50));
-		btn.SetPosition(sf::Vector2f(500, 500));
+
+		btn.SetPosition(sf::Vector2f(background.getPosition().x + 10, background.getPosition().y + (20 * optionNum)));
 		btn.SetBackgroundColour(sf::Color::Black);
 		btn.SetFontColour(sf::Color::White);
+		btn.SetVisible(true);
 
 		return btn;
 	};
@@ -158,7 +175,7 @@ private:
 
 	UIPadding bgPadding;
 	
-
+	bool isVisible;
 	bool doneTalking;
 };
 

@@ -49,6 +49,11 @@ void SceneGame::OnCreate()
     }
 
     //CreateEnemy();
+
+    questSystem.Add(std::make_shared<Quest>(0, "Lost Coin"));
+    questSystem.ProcessNewQuests();
+    questSystem.SetQuestAvailable(0);
+    questSystem.SetActiveQuest(0);
     
     std::vector<std::shared_ptr<Object>> levelTiles = mapParser.Parse(workingDir.Get() + "level_data/Town_1_data.json");
     objects.Add(levelTiles);
@@ -192,11 +197,7 @@ void SceneGame::AttachComponent(std::shared_ptr<Object> o, std::string _type, st
     else if (_type == "C_Camera") o->AddComponent<C_Camera>();
     else if (_type == "C_Direction") o->AddComponent<C_Direction>();
     else if (_type == "C_Events") o->AddComponent<C_Events>();
-    else if (_type == "C_InteractableTalking") 
-    {
-        auto interactComponent = o->AddComponent<C_InteractableTalking>();
-        interactComponent->SetFilename(workingDir.Get() + propertiesMap.at("DialogueFile"));
-    }
+    else if (_type == "C_InteractableTalking") o->AddComponent<C_InteractableTalking>();
     else if (_type == "C_InteractWithObjects") o->AddComponent<C_InteractWithObjects>();
     else if (_type == "C_KeyboardMovement") o->AddComponent<C_KeyboardMovement>();
     else if (_type == "C_Mass") o->AddComponent<C_Mass>();
@@ -225,6 +226,14 @@ void SceneGame::AttachComponent(std::shared_ptr<Object> o, std::string _type, st
     }
     else if (_type == "C_Velocity") o->AddComponent<C_Velocity>();
     else if (_type == "C_WalkInLine") o->AddComponent<C_WalkInLine>();
+    else if (_type == "C_Dialogue")
+    {
+        auto dialogue = xml_parser.LoadDialogueDataFromFile(workingDir.Get() + propertiesMap.at("DialogueFile"));
+        auto dComponent = o->AddComponent<C_Dialogue>();
+        dComponent->SetCurQuest(questSystem.GetActiveQuest());
+        dComponent->SetDrawLayer(DrawLayer::UI);
+        dComponent->allDialogue = dialogue;
+    }
 
     //Add any new components here.
 

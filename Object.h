@@ -54,7 +54,7 @@ public:
 
 		if (std::dynamic_pointer_cast<C_Drawable>(newComponent))
 		{
-			drawable = std::dynamic_pointer_cast<C_Drawable>(newComponent);
+			drawables.push_back(std::dynamic_pointer_cast<C_Drawable>(newComponent));
 		}
 		// Check if the component inherits from C_Collidable. If it does store it in a separate vector.
 		if (std::dynamic_pointer_cast<C_Collidable>(newComponent))
@@ -89,7 +89,7 @@ public:
 		return matchingComponents;
 	};
 
-	std::shared_ptr<C_Drawable> GetDrawable();
+	std::vector <std::shared_ptr<C_Drawable>> GetDrawables();
 
 	std::shared_ptr<C_Transform> transform; //Adds a Transform component to all objects. Could make this private and have get/set subroutines
 	std::shared_ptr<C_InstanceID> instanceID;
@@ -108,7 +108,7 @@ private:
 	std::string name;
 
 	std::vector<std::shared_ptr<Component>> components;
-	std::shared_ptr<C_Drawable> drawable;
+	std::vector<std::shared_ptr<C_Drawable>> drawables;
 	std::vector<std::shared_ptr<C_Collidable>> collidables;
 	bool queuedForRemoval;
 	bool isOnGround;

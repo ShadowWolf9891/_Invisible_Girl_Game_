@@ -19,13 +19,15 @@ class Button : public C_Drawable
 
 public:
 
-	Button(C& target, EventMethod method) : m_target(target), m_method(method){}; //funcPtr is the function pointer to register for when the button is clicked
+	Button(C& target, EventMethod method) : m_target(target), m_method(method), isVisible(false){}; //funcPtr is the function pointer to register for when the button is clicked
 
 	~Button() {};
 
 	bool operator() (Args&... args) const
 	{
 		(m_target.*(m_method))(args...);
+
+		return true;
 	};
 	
 	void Draw(Window& window) override
@@ -36,7 +38,7 @@ public:
 
 	bool ContinueToDraw() const override
 	{
-		
+		return isVisible;
 	}
 
 	void SetPosition(sf::Vector2f pos) 
@@ -49,21 +51,28 @@ public:
 	};
 	sf::Vector2f GetPosition() { return background.getPosition(); };
 
-	void SetSize(const sf::Vector2f& size) { background.setSize(size); };
 	sf::Vector2f GetSize() { return background.getSize(); };
 
-	void SetText(const std::string& text, std::shared_ptr<sf::Font> font) { this->text.setString(text); this->text.setFont(*font); };
+	void SetText(const std::string& text, std::shared_ptr<sf::Font> font) 
+	{
+		this->text.setString(text); 
+		this->text.setFont(*font);
+		background.setSize(sf::Vector2f(this->text.getGlobalBounds().width, this->text.getGlobalBounds().height));
+	};
+
 	void SetFontColour(const sf::Color& colour) { text.setFillColor(colour); text.setOutlineColor(sf::Color::Black); };
 	void SetBackgroundColour(const sf::Color& colour) { background.setFillColor(colour); };
+
+	void SetVisible(bool visibility) { isVisible = visibility; };
+	bool IsVisible() { return isVisible; };
 
 private:
 
 	sf::Text text;
 	EventMethod m_method;
 	C& m_target;
-
 	sf::RectangleShape background;
-
+	bool isVisible;
 };
 
 

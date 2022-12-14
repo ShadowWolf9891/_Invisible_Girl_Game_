@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root _type ="initData">
 	<Object name ="NPC">
-		<Components bitmap ="00000000000011100100110011101110">
+		<Components bitmap ="00000000000111100100110011101110">
 		</Components>
 		<Properties>
 			<Property name="Tag" value="2"/>

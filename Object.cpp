@@ -35,8 +35,10 @@ void Object::LateUpdate(float timeDelta)
 }
 void Object::Draw(Window& window)
 {
-	drawable->Draw(window);
-	
+	for (const auto& drawable : drawables)
+	{
+		drawable->Draw(window);
+	}
 }
 
 void Object::QueueForRemoval()
@@ -48,9 +50,9 @@ bool Object::IsQueuedForRemoval()
 	return  queuedForRemoval;
 }
 
-std::shared_ptr<C_Drawable> Object::GetDrawable()
+std::vector<std::shared_ptr<C_Drawable>> Object::GetDrawables()
 {
-	return drawable;
+	return drawables;
 }
 
 void Object::OnCollisionEnter(std::shared_ptr<C_BoxCollider> other)

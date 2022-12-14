@@ -11,23 +11,24 @@ void S_Drawable::Add(std::vector<std::shared_ptr<Object>>& objects)
 }
 void S_Drawable::Add(std::shared_ptr<Object> object)
 {
-	std::shared_ptr<C_Drawable> objectsDrawable = object->GetDrawable();
-
-	if (objectsDrawable)
+	for (auto& objectsDrawable : object->GetDrawables())
 	{
-		DrawLayer layer = objectsDrawable->GetDrawLayer();
-
-		auto itr = drawables.find(layer);
-		if (itr != drawables.end())
+		if (objectsDrawable)
 		{
-			drawables[layer].push_back(objectsDrawable);
-		}
-		else
-		{
-			std::vector<std::shared_ptr<C_Drawable>> objs;
-			objs.push_back(objectsDrawable);
+			DrawLayer layer = objectsDrawable->GetDrawLayer();
 
-			drawables.insert(std::make_pair(layer, objs));
+			auto itr = drawables.find(layer);
+			if (itr != drawables.end())
+			{
+				drawables[layer].push_back(objectsDrawable);
+			}
+			else
+			{
+				std::vector<std::shared_ptr<C_Drawable>> objs;
+				objs.push_back(objectsDrawable);
+
+				drawables.insert(std::make_pair(layer, objs));
+			}
 		}
 	}
 }
