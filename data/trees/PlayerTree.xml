@@ -6,9 +6,11 @@
 			<Script code="isShift:=false"/>
 			<Script code="bowState:=NOBOW"/>
 			<Script code="Anim:='Idle'"/>
-			<Script code="isTalking:=false"/>
 			<ReactiveSequence>
-				<SubTree ID="InputTree" isRunning="{isShift}" isTalking="{isTalk}" theBowState="{bowState}"/>
+				<Inverter>
+					<IsInteracting/>
+				</Inverter>
+				<SubTree ID="InputTree" isRunning="{isShift}" theBowState="{bowState}"/>
 				<SubTree ID="SelectAnimationTree" isRunning="{isShift}" theBowState="{bowState}" animToPlay="{Anim}"/>
 				<TriggerEvent EventType ="{Anim}"/>
 			</ReactiveSequence>
@@ -35,7 +37,9 @@
 			<ForceSuccess>
 				<ReactiveSequence>
 					<IsKeyDown Key="E"/>
-					<TriggerEvent EventType="Interact"/>
+					<CheckInteraction/>
+					<SetIsInteracting isTalking="true"/>
+					<TriggerEvent EventType ="PauseMovement"/>
 				</ReactiveSequence>
 			</ForceSuccess>
 			<ForceSuccess>
@@ -43,19 +47,19 @@
 					<ReactiveSequence>
 						<IsKeyDown Key="R"/>
 						<Precondition if="theBowState==NOBOW" else="SUCCESS">
-							<Script code="theBowState:=BOWDRAW"/>
+								<Script code="theBowState:=BOWDRAW"/>
 						</Precondition>
 						<Precondition if="theBowState==BOWOUT" else="SUCCESS">
-							<Script code="theBowState:=BOWSHEATH"/>
+								<Script code="theBowState:=BOWSHEATH"/>
 						</Precondition>
 					</ReactiveSequence>
 					<ReactiveSequence>
 						<IsDoneAnimating/>
 						<Precondition if="theBowState==BOWDRAW" else="SUCCESS">
-							<Script code="theBowState:=BOWOUT"/>
+								<Script code="theBowState:=BOWOUT"/>
 						</Precondition>
 						<Precondition if="theBowState==BOWSHEATH" else="SUCCESS">
-							<Script code="theBowState:=NOBOW"/>
+								<Script code="theBowState:=NOBOW"/>
 						</Precondition>
 					</ReactiveSequence>
 				</ReactiveFallback>
@@ -77,6 +81,4 @@
 			</ReactiveFallback>
 		</ReactiveSequence>
 	</BehaviorTree>
-	
-	
 </root>

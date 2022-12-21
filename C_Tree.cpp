@@ -45,7 +45,18 @@ void C_Tree::Start()
 		{
 			triggerEventAction->init(owner);
 		}
-
+		if (auto isInteractingAction = dynamic_cast<IsInteracting*>(node))
+		{
+			isInteractingAction->init(owner);
+		}
+		if (auto setIsInteractingAction = dynamic_cast<SetIsInteracting*>(node))
+		{
+			setIsInteractingAction->init(owner);
+		}
+		if (auto CheckInteractionAction = dynamic_cast<CheckInteraction*>(node))
+		{
+			CheckInteractionAction->init(owner);
+		}
 		//TODO: Add if statments for any more nodes that inherit a reference to the owner of the tree component
 
 	};

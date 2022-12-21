@@ -4,7 +4,6 @@
 void C_KeyboardMovement::Awake()
 {
 	velocity = owner->GetComponent<C_Velocity>();
-	animation = owner->GetComponent<C_Animation>();
 }
 void C_KeyboardMovement::SetMovementSpeed(float moveSpeed)
 {

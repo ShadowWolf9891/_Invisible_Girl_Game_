@@ -69,6 +69,9 @@ void SceneGame::RegisterNodes()
 {
     bt_factory.registerNodeType<IsOnGround>("IsOnGround");
     bt_factory.registerNodeType<IsDoneAnimating>("IsDoneAnimating");
+    bt_factory.registerNodeType<IsInteracting>("IsInteracting");
+    bt_factory.registerNodeType<SetIsInteracting>("SetIsInteracting");
+    bt_factory.registerNodeType<CheckInteraction>("CheckInteraction");
     bt_factory.registerNodeType<GetMoveSpeed>("GetMoveSpeed");
 
     bt_factory.registerNodeType<TriggerEvent>("TriggerEvent");

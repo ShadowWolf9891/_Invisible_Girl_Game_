@@ -55,7 +55,9 @@ static std::unordered_map<std::string, Event::DescriptorType> const strToEvent =
 	{"Interact",E_Interact::descriptor},
 	{"LeftClick",E_LeftClick::descriptor},
 	{"RightClick",E_RightClick::descriptor},
-	{"MiddleClick",E_MiddleClick::descriptor}
+	{"MiddleClick",E_MiddleClick::descriptor},
+	{"PauseMovement",E_PauseMovement::descriptor},
+	{"UnPauseMovement",E_UnPauseMovement::descriptor}
 };
 
 static std::unordered_map<std::string, Input::Key> const strToKey =

@@ -246,6 +246,26 @@ public:
 	static constexpr DescriptorType descriptor = "E_MiddleClick";
 };
 
+class E_PauseMovement : public Event
+{
+public:
+
+	E_PauseMovement() : Event(*this, descriptor, "Pause Movement Event") {};
+	virtual ~E_PauseMovement() = default;
+
+	static constexpr DescriptorType descriptor = "E_PauseMovement";
+};
+
+class E_UnPauseMovement : public Event
+{
+public:
+
+	E_UnPauseMovement() : Event(*this, descriptor, "UnPause Movement Event") {};
+	virtual ~E_UnPauseMovement() = default;
+
+	static constexpr DescriptorType descriptor = "E_UnPauseMovement";
+};
+
 #endif //Event_h
 
 

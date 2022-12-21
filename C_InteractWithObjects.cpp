@@ -26,6 +26,7 @@ bool C_InteractWithObjects::CheckInteraction()
 
     if (result.collision != nullptr)
     {
+        isInteracting = true;
         // Retrieve all interactable components
         auto interactables = result.collision->GetComponents<C_Interactable>();
 

@@ -35,7 +35,6 @@ public:
 private:
 	Object* owner;
 };
-
 class IsDoneAnimating : public BT::SyncActionNode
 {
 public:
@@ -61,6 +60,84 @@ private:
 	Object* owner;
 	std::shared_ptr <C_Animation> cAnim;
 	std::shared_ptr <C_Events> eStack;
+};
+class IsInteracting : public BT::SyncActionNode
+{
+public:
+	IsInteracting(const std::string& name) : BT::SyncActionNode(name, {}) {};
+
+	void init(Object* owner)
+	{
+		this->owner = owner;
+		this->cInteract = owner->GetComponent<C_InteractWithObjects>();
+	}
+
+	BT::NodeStatus tick() override
+	{
+		if (cInteract->GetIsInteracting())
+		{
+			return BT::NodeStatus::SUCCESS;
+		}
+		return BT::NodeStatus::FAILURE;
+	}
+private:
+	Object* owner;
+	std::shared_ptr <C_InteractWithObjects> cInteract;
+};
+class SetIsInteracting : public BT::SyncActionNode
+{
+public:
+	SetIsInteracting(const std::string& name, const BT::NodeConfig& config) : BT::SyncActionNode(name, config) {};
+
+	void init(Object* owner)
+	{
+		this->owner = owner;
+		this->cInteract = owner->GetComponent<C_InteractWithObjects>();
+	}
+	static BT::PortsList providedPorts()
+	{
+		return
+		{
+			BT::InputPort<bool>("isTalking")
+		};
+	}
+	BT::NodeStatus tick() override
+	{
+		BT::Expected<bool> talking = getInput<bool>("isTalking");
+
+		if (!talking) { throw BT::RuntimeError("Missing required bool [isTalking]: ", talking.error()); }
+
+		cInteract->SetIsInteracting(talking.value());
+		
+		return BT::NodeStatus::SUCCESS;
+		
+	}
+private:
+	Object* owner;
+	std::shared_ptr <C_InteractWithObjects> cInteract;
+};
+class CheckInteraction : public BT::SyncActionNode
+{
+public:
+	CheckInteraction(const std::string& name) : BT::SyncActionNode(name, {}) {};
+
+	void init(Object* owner)
+	{
+		this->owner = owner;
+		this->cInteract = owner->GetComponent<C_InteractWithObjects>();
+	}
+
+	BT::NodeStatus tick() override
+	{
+		if (cInteract->CheckInteraction())
+		{
+			return BT::NodeStatus::SUCCESS;
+		}
+		return BT::NodeStatus::FAILURE;
+	}
+private:
+	Object* owner;
+	std::shared_ptr <C_InteractWithObjects> cInteract;
 };
 
 class IsKeyPressed : public BT::SyncActionNode
@@ -166,7 +243,6 @@ public:
 private:
 	Object* owner;
 };
-
 class IsMousePressed : public BT::SyncActionNode
 {
 public:
@@ -270,7 +346,6 @@ public:
 private:
 	Object* owner;
 };
-
 class GetMoveSpeed : public BT::SyncActionNode
 {
 public:

@@ -12,13 +12,11 @@ void C_Velocity::Update(float deltaTime)
 	CalculateAcceleration(deltaTime);
 	AddVelocity();
 	owner->transform->AddPosition(velocity * deltaTime);
-	
 }
 
 void C_Velocity::AddVelocity()
 {
 	ClampVelocity();
-
 	velocity.x += (((heading.x * maxVelocity * velocityMultiplier) - velocity.x) * acceleration.x); 
 	velocity.y += (((heading.y * maxVelocity * velocityMultiplier) - velocity.y) * acceleration.y);
 	

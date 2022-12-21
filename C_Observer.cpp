@@ -25,16 +25,11 @@ void C_Observer::handle(const Event& e)
 
     float targetSpeed = 0.5f;
 
-    if (currentEventType == E_Interact::descriptor)
+    if (currentEventType == E_PauseMovement::descriptor)
     {
-        auto CInteract = owner->GetComponent<C_InteractWithObjects>();
-        if (CInteract->CheckInteraction())
-        {
-            targetSpeed = 0.f; 
-            CAnim->SetAnimationState(AnimationState::Idle);
-        } 
+        targetSpeed = 0.f;
+        CAnim->SetAnimationState(AnimationState::Idle);
     }
-    
     if (currentEventType == E_Walk::descriptor) targetSpeed = 0.5f;
     else if (currentEventType == E_Run::descriptor) targetSpeed = 1.f;
     else if (currentEventType == E_BowDraw::descriptor) targetSpeed = 0.1f;
