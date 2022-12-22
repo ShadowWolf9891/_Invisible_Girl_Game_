@@ -77,13 +77,13 @@ void SceneGame::RegisterNodes()
     bt_factory.registerNodeType<TriggerEvent>("TriggerEvent");
 
     bt_factory.registerNodeType<IsKeyPressed>("IsKeyPressed");
-    bt_factory.registerNodeType<IsKeyPressed>("IsKeyDown");
-    bt_factory.registerNodeType<IsKeyPressed>("IsKeyUp");
+    bt_factory.registerNodeType<IsKeyDown>("IsKeyDown");
+    bt_factory.registerNodeType<IsKeyUp>("IsKeyUp");
 
     bt_factory.registerNodeType<IsMousePressed>("IsMousePressed");
-    bt_factory.registerNodeType<IsMousePressed>("IsMouseDown");
-    bt_factory.registerNodeType<IsMousePressed>("IsMouseUp");
-    
+    bt_factory.registerNodeType<IsMouseDown>("IsMouseDown");
+    bt_factory.registerNodeType<IsMouseUp>("IsMouseUp");
+
     enum bowInfo {NOBOW=0, BOWDRAW=1, BOWOUT=2, BOWSHEATH=3};
     bt_factory.registerScriptingEnums<bowInfo>();
 }

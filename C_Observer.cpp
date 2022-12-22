@@ -5,11 +5,11 @@ void C_Observer::handle(const Event& e)
 {
     if (e.GetTargetID() != owner->instanceID->Get()) {
         return;
-    }
+    } 
+    currentEventType = e.getType();
+
     std::shared_ptr CAnim = owner->GetComponent<C_Animation>();
 
-    currentEventType = e.getType();
-    
     for (auto it = strToEvent.begin(); it != strToEvent.end(); it++) {
         if (it->second == currentEventType)
         {

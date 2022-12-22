@@ -9,6 +9,7 @@
 #include "Button.h"
 #include "C_Drawable.h"
 #include "Object.h"
+#include "Input.h"
 
 struct OptionNode
 {
@@ -33,26 +34,50 @@ struct UIPadding
 class C_Dialogue : public Component, public C_Drawable
 {
 public:
-	C_Dialogue(Object* owner) : Component(owner), doneTalking(false), isVisible(false), curNodeID(0), nextNodeID(0) {};
+	C_Dialogue(Object* owner) : Component(owner), doneTalking(false), isVisible(false), curNodeID(0), nextNodeID(0), delay(0) {};
 	~C_Dialogue() = default;
 
 	void Start() override
 	{
 		const int fontID = owner->context->fontAllocator->Add(owner->context->workingDir->Get() + "Assets/Fonts/joystix monospace.ttf");
 		font = owner->context->fontAllocator->Get(fontID);
+		
 		dialogueText.setFont(*font);
+		dialogueText.setScale(0.5, 0.5);
+
+		curNode = GetDialogueNode();
+
 	};
+
+	void Update(float deltaTime) override
+	{
+		if (!IsVisible()) { return; }
+
+		if (delay >= 0.1)
+		{
+			delay = 0;
+			CheckInput();
+		}
+		else
+		{
+			delay += deltaTime;
+		}
+		
+
+
+	};
+
 
 	void Draw(Window& window) override
 	{
-		if (!isVisible) return;
+		if (!IsVisible()) return;
 	
 		window.Draw(background);
 		window.Draw(dialogueText);
 
 		for (auto& it : optionButtons)
 		{
-			it.Draw(window);
+			it.second.Draw(window);
 		}
 	};
 
@@ -80,14 +105,14 @@ public:
 		return nullptr;
 	};
 
-	void GoToNext(int nextNodeID, StatusType returnCode)
+	void GoToNext(int nextNodeID = -1, StatusType returnCode = StatusType::UNAVAILABLE)
 	{
-		curNodeID += 1; 
-		std::shared_ptr <DialogueNode> node = GetDialogueNode();
-
 		if (nextNodeID == -1) //If there are no options and not looping
 		{
-			if (!node)
+			curNodeID += 1; 
+			curNode = GetDialogueNode();
+
+			if (!curNode)
 			{
 				doneTalking = true;
 				curNodeID = 0;
@@ -98,9 +123,10 @@ public:
 		else
 		{
 			curNodeID = nextNodeID;
+			curNode = GetDialogueNode();
 		}
 
-		ParseDialogueNode(node);
+		ParseDialogueNode(curNode);
 	};
 
 	void ParseDialogueNode(std::shared_ptr<DialogueNode> curNode)
@@ -117,7 +143,8 @@ public:
 			int optionNum = 0;
 			for (auto& it : curNode->options)
 			{
-				optionButtons.push_back(CreateButton(it, optionNum++));
+				optionButtons.insert(std::make_pair(it, CreateButton(it, optionNum)));
+				optionNum++;
 			}
 		}
 	};
@@ -135,10 +162,8 @@ private:
 	Button<C_Dialogue, void, int, StatusType> CreateButton(std::shared_ptr<OptionNode> it, int optionNum)
 	{
 		Button<C_Dialogue, void, int, StatusType> btn(*this, &C_Dialogue::GoToNext);
-		btn(it->nextNodeID, it->returnCode);
 		btn.SetText(it->text, font);
-
-		btn.SetPosition(sf::Vector2f(background.getPosition().x + 10, background.getPosition().y + (20 * optionNum)));
+		btn.SetPosition(sf::Vector2f(background.getPosition().x + background.getSize().x / 2, (background.getPosition().y + background.getSize().y / 4) + (20 * optionNum)));
 		btn.SetBackgroundColour(sf::Color::Black);
 		btn.SetFontColour(sf::Color::White);
 		btn.SetVisible(true);
@@ -150,7 +175,7 @@ private:
 	{
 		sf::Vector2f v_center = owner->context->window->GetView().getCenter();
 		sf::Vector2f v_size = owner->context->window->GetView().getSize();
-		bgPadding = {10.0, 10.0, 10.0, 20.0};
+		bgPadding = {20.0, 20.0, 20.0, 20.0};
 
 		float bg_sizeX = v_size.x - bgPadding.left - bgPadding.right;
 		float bg_sizeY = (v_size.y / 3) - bgPadding.top - bgPadding.bottom;
@@ -163,17 +188,54 @@ private:
 		background.setFillColor(sf::Color::Cyan);
 	};
 
+	void CheckInput()
+	{
+		if (!curNode) { return; }
+
+		/*if (owner->context->input->IsKeyPressed(Input::Key::E))
+		{
+			if (curNode->options.empty()) 
+			{
+				GoToNext(-1, curQuest->GetStatus());
+				return;
+			}
+		}*/
+		if (owner->context->input->IsMousePressed(Input::Mouse::Left))
+		{
+			if (curNode->options.empty())
+			{
+				GoToNext(-1, curQuest->GetStatus());
+				return;
+			}
+			else 
+			{
+				sf::Vector2f mousePos = (sf::Vector2f)(owner->context->input->GetMousePos());
+				for (auto& btn : optionButtons)
+				{
+					if (btn.second.GetBackground().getGlobalBounds().contains(mousePos))
+					{
+						btn.second(btn.first->nextNodeID, btn.first->returnCode);
+					}
+				}
+			}
+		}
+			
+		
+
+	};
 
 	std::shared_ptr<Quest> curQuest;
 	int curNodeID, nextNodeID;
 	std::shared_ptr<DialogueNode> curNode;
 
 	sf::Text dialogueText;
-	std::vector<Button<C_Dialogue, void, int, StatusType>> optionButtons;
+	std::unordered_map< std::shared_ptr<OptionNode>, Button<C_Dialogue, void, int, StatusType>> optionButtons;
 	std::shared_ptr<sf::Font> font;
 	sf::RectangleShape background;
 
 	UIPadding bgPadding;
+
+	float delay;
 	
 	bool isVisible;
 	bool doneTalking;

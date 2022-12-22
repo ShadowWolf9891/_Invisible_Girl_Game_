@@ -15,9 +15,9 @@
 template < class C, class Tr, class... Args >
 class Button : public C_Drawable
 {
-	typedef Tr(C::*EventMethod)(Args...);
-
 public:
+
+	typedef Tr(C::*EventMethod)(Args...);
 
 	Button(C& target, EventMethod method) : m_target(target), m_method(method), isVisible(false){}; //funcPtr is the function pointer to register for when the button is clicked
 
@@ -57,7 +57,8 @@ public:
 	{
 		this->text.setString(text); 
 		this->text.setFont(*font);
-		background.setSize(sf::Vector2f(this->text.getGlobalBounds().width, this->text.getGlobalBounds().height));
+		this->text.scale(0.5, 0.5);
+		background.setSize(sf::Vector2f(this->text.getGlobalBounds().width * 2, this->text.getGlobalBounds().height * 2));
 	};
 
 	void SetFontColour(const sf::Color& colour) { text.setFillColor(colour); text.setOutlineColor(sf::Color::Black); };
@@ -65,6 +66,8 @@ public:
 
 	void SetVisible(bool visibility) { isVisible = visibility; };
 	bool IsVisible() { return isVisible; };
+
+	sf::RectangleShape GetBackground() { return background; };
 
 private:
 
