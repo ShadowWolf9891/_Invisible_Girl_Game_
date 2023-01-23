@@ -378,7 +378,16 @@
     <ClInclude Include="..\C_Dialogue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Button.h">
+    <ClInclude Include="..\UI_Button.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\UI_TextBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BaseUserInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\UI_Lists.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -1288,8 +1297,8 @@
     <Xml Include="..\data\obj\PassiveNPC_Data.xml" />
     <Xml Include="..\data\trees\PassiveNPC_Tree.xml" />
     <Xml Include="..\data\obj\Item_Data.xml" />
-    <Xml Include="..\data\ui\DialogueBoxData.xml" />
     <Xml Include="..\data\dialogue\Gerard_Dialogue.xml" />
+    <Xml Include="..\data\dialogue\DialogueUIFormat.xml" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

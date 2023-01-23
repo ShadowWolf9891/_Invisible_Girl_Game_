@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root _type ="UIFormat">
+	<HorizontalList Name="hList0" Anchor="BOTLEFT" FillType="FILL" ScaleX="1" ScaleY="0.3" ChildSpacing="20">
+		<VerticleList Name="vList0" Anchor="MIDLEFT" FillType="FILL" ScaleX="1" ScaleY="1" ChildSpacing="20">
+			<TextBox Name="tBox0" Anchor="TOPMID" FillType="SET" ScaleX="1" ScaleY="1" TextWrapping="1" TextAlign="2"/>
+			<VerticleList Name="vList1" Anchor="TOPMID" FillType="AUTO" ScaleX="1" ScaleY="1" ChildSpacing="10">
+				<Button Name="btn0" Anchor="CENTER" FillType ="AUTO" ScaleX="1" ScaleY="1"/>
+				<Button Name="btn1" Anchor="CENTER" FillType ="AUTO" ScaleX="1" ScaleY="1"/>
+				<Button Name="btn2" Anchor="CENTER" FillType ="AUTO" ScaleX="1" ScaleY="1"/>
+				<Button Name="btn3" Anchor="CENTER" FillType ="AUTO" ScaleX="1" ScaleY="1"/>
+			</VerticleList>
+		</VerticleList>
+	</HorizontalList>
+</root>

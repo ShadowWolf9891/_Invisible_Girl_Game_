@@ -37,6 +37,20 @@ std::unordered_map<int, std::unordered_map<StatusType, std::vector<std::shared_p
 	return dNodes;
 }
 
+std::unordered_map<std::string, UIData> XML_Parser::LoadUIFromFile(const std::string& filename)
+{
+	opened_documents.emplace_back(new tinyxml2::XMLDocument());
+	tinyxml2::XMLDocument* doc = opened_documents.back().get();
+
+	doc->LoadFile(filename.c_str());
+
+	ParseUIFormatDoc(doc);
+	return uiObjects;
+}
+
+
+
+
 void XML_Parser::ParseAnimDoc(tinyxml2::XMLDocument* doc)
 {
 	if (doc->Error())
@@ -255,7 +269,7 @@ void XML_Parser::ParseDialogueDoc(tinyxml2::XMLDocument* doc)
 
 	const tinyxml2::XMLElement* xml_root = doc->RootElement();
 
-	if (xml_root->Attribute("_type", "QuestDialogue")) //Is a XML file describing animation stuff
+	if (xml_root->Attribute("_type", "QuestDialogue")) //Is a XML file describing Dialogue stuff
 	{
 		for (auto questNode = xml_root->FirstChildElement("Quest"); //Recursivly get all Quests
 			questNode != nullptr;
@@ -382,4 +396,87 @@ void XML_Parser::ParseDialogueDoc(tinyxml2::XMLDocument* doc)
 		}
 	}
 
+}
+
+void XML_Parser::ParseUIFormatDoc(tinyxml2::XMLDocument* doc)
+{
+	if (doc->Error())
+	{
+		char buffer[200];
+		sprintf(buffer, "Error parsing the XML: %s", doc->ErrorName());
+		throw std::exception(buffer);
+	}
+
+	const tinyxml2::XMLElement* xml_root = doc->RootElement();
+
+	if (xml_root->Attribute("_type", "UIFormat")) //Is a XML file describing animation stuff
+	{
+		for (auto UIElement = xml_root->FirstChildElement();
+			UIElement != nullptr; 
+			UIElement = UIElement->NextSiblingElement()) //Recursivly get all UIElements
+		{
+			//Get attributes for UIElement
+
+			UIData data = UIData();
+			if (UIElement->Parent()->ToElement()->Attribute("Name") != nullptr)
+			{
+				data.parentName = UIElement->Parent()->ToElement()->Attribute("Name");
+			}
+			else
+			{
+				data.parentName = "Root";
+			}
+			 
+			data.uiType = UIElement->Value();
+
+			for (auto a = UIElement->FirstAttribute(); a != nullptr; a = a->Next())
+			{
+				data.properties.insert(std::make_pair(a->Name(), a->Value()));
+			}
+			data.name = data.properties.at("Name");
+
+			if (UIElement->NoChildren())
+			{
+				if (UIElement->NextSiblingElement())
+				{
+					UIElement = UIElement->NextSiblingElement();
+				}
+				else
+				{
+					UIElement = UIElement->Parent()->ToElement();
+				}
+			}
+			else
+			{
+				if (uiObjects.find(data.name) == uiObjects.end())
+				{
+					for (auto child = UIElement->FirstChildElement(); child != nullptr; child = child->NextSiblingElement())
+					{
+						if (child->Attribute("Name"))
+						{
+							data.childrenNames.push_back(child->Attribute("Name"));
+						}
+					}
+
+					uiObjects.insert(std::make_pair(data.name, data));
+
+					UIElement = UIElement->FirstChildElement();
+				}
+				else
+				{
+					if (UIElement->NextSiblingElement())
+					{
+						UIElement = UIElement->NextSiblingElement();
+					}
+					else
+					{
+						if (UIElement->Parent() != xml_root) UIElement = UIElement->Parent()->ToElement();
+						
+					}
+				}
+			}
+			
+			
+		}
+	}
 }

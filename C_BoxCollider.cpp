@@ -80,7 +80,7 @@ void C_BoxCollider::ResolveOverlap(const Manifold& m)
 	
 	
 }
-//TODO: As we're updaing the rects position manually we only need to apss the width and height of the rect and an offset.
+//TODO: As we're updating the rects position manually we only need to pass the width and height of the rect and an offset.
 void C_BoxCollider::SetCollidable(const sf::FloatRect& rect)
 {
 	AABB = rect;

@@ -33,6 +33,15 @@ struct SharedContext
 	XML_Parser* xml_parser;
 };
 
+struct UIData
+{
+	std::string name;
+	std::string uiType;
+	std::string parentName;
+	std::vector<std::string> childrenNames;
+	std::unordered_map<std::string, std::string> properties;
+};
+
 static std::unordered_map<std::string, Event::DescriptorType> const strToEvent =
 {
 	{"None",E_None::descriptor},

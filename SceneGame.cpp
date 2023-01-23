@@ -247,6 +247,7 @@ void SceneGame::AttachComponent(std::shared_ptr<Object> o, std::string _type, st
     {
         auto dialogue = xml_parser.LoadDialogueDataFromFile(workingDir.Get() + propertiesMap.at("DialogueFile"));
         auto dComponent = o->AddComponent<C_Dialogue>();
+        dComponent->LoadUIFormat(xml_parser.LoadUIFromFile(workingDir.Get() + "data/dialogue/DialogueUIFormat.xml"));
         dComponent->SetCurQuest(questSystem.GetActiveQuest());
         dComponent->SetDrawLayer(DrawLayer::UI);
         dComponent->allDialogue = dialogue;

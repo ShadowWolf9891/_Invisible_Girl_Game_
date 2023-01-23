@@ -373,8 +373,11 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="..\Quest.cpp" />
     <ClCompile Include="..\S_QuestManager.cpp" />
     <ClCompile Include="F:\Invisible_Girl_Game\Animation.cpp" />
-    <ClInclude Include="..\Button.h" />
+    <ClInclude Include="..\UI_Button.h" />
     <ClInclude Include="..\C_Dialogue.h" />
+    <ClInclude Include="..\UI_TextBox.h" />
+    <ClInclude Include="..\BaseUserInterface.h" />
+    <ClInclude Include="..\UI_Lists.h" />
     <ClInclude Include="..\Quest.h" />
     <ClInclude Include="..\S_QuestManager.h" />
     <ClInclude Include="F:\Invisible_Girl_Game\Animation.h" />
@@ -1084,12 +1087,12 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="F:\Invisible_Girl_Game\WorkingDirectory.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\XML_Parser.cpp" />
     <ClInclude Include="F:\Invisible_Girl_Game\XML_Parser.h" />
+    <Xml Include="..\data\dialogue\DialogueUIFormat.xml" />
     <Xml Include="..\data\dialogue\Gerard_Dialogue.xml" />
     <Xml Include="..\data\obj\Item_Data.xml" />
     <Xml Include="..\data\obj\PassiveNPC_Data.xml" />
     <Xml Include="..\data\obj\Player_Data.xml" />
     <Xml Include="..\data\trees\PassiveNPC_Tree.xml" />
-    <Xml Include="..\data\ui\DialogueBoxData.xml" />
     <XML Include="F:\Invisible_Girl_Game\data\anim\ANIM_Characters.xml">
     </XML>
     <XML Include="F:\Invisible_Girl_Game\data\trees\PlayerTree.xml">
