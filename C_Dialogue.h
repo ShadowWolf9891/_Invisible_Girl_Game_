@@ -6,7 +6,7 @@
 #include <unordered_map>
 #include "Component.h"
 #include "Quest.h"
-#include "UI_Button.h"
+#include "GUI.h"
 #include "C_Drawable.h"
 #include "Input.h"
 #include "UI_TextBox.h"
@@ -41,29 +41,26 @@ public:
 
 	void Start() override
 	{
-		const int fontID = owner->context->fontAllocator->Add(owner->context->workingDir->Get() + "Assets/Fonts/joystix monospace.ttf");
-		font = owner->context->fontAllocator->Get(fontID);
-		
-		dialogueText.setFont(*font);
-		dialogueText.setScale(0.5, 0.5);
-
 		curNode = GetDialogueNode();
 	};
 
-	void LoadUIFormat(std::unordered_map<std::string, UIData> formatData)
+	/*void LoadUIFormat(std::unordered_map<std::string, UIData> formatData)
 	{
 		for (auto& o : formatData)
 		{
 			if (o.second.uiType == "HorizontalList") CreateUIObject<UI_HorizontalList>(o.first, o.second);
 			else if (o.second.uiType == "VerticleList") CreateUIObject<UI_VerticleList>(o.first, o.second);
 			else if (o.second.uiType == "TextBox") CreateUIObject<UI_TextBox>(o.first, o.second);
-			else if (o.second.uiType == "Button") CreateUIObject<UI_Button>(o.first, o.second);
+			else if (o.second.uiType == "Button") CreateUIObject<GUI::Button>(o.first, o.second);
 			else std::cout << "Unknown UI Object type:" << o.second.uiType << " for object " << o.first << std::endl;
 		}
 
-	}
+		for (auto& u : dialogueUI)
+		{
+			u.second->LoadUI();
+		}
 
-
+	}*/
 	void Update(float deltaTime) override
 	{
 		if (!IsVisible()) { return; }
@@ -80,7 +77,7 @@ public:
 		
 		for (auto& dObj : dialogueUI)
 		{
-			//dObj->UpdateUI();
+			dObj.second->UpdateUI();
 		}
 
 	};
@@ -90,25 +87,11 @@ public:
 	{
 		if (!IsVisible()) return;
 		
-		for (auto& drawable : drawables)
+		for (auto& dObj : dialogueUI)
 		{
-			//drawable->Draw(window);
+			dObj.second->Draw(window);
 		}
 
-
-		/*window.Draw(background);
-		window.Draw(dialogueText);
-
-		for (auto& it : optionButtons)
-		{
-			for (auto& it2 : it.second.GetChildren())
-			{
-				if (std::dynamic_pointer_cast<UI_TextBox>(it2))
-				{
-					it2->UI_TextBox::Draw()
-				}
-			}
-		}*/
 	};
 
 	bool ContinueToDraw() const override
@@ -116,78 +99,96 @@ public:
 		return !doneTalking;
 	};
 
-	void CreateUI() 
+	/*void CreateUI() 
 	{
-		CreateBackground();
 		ParseDialogueNode(GetDialogueNode());
 		isVisible = true;
-	};
+	};*/
 
-	template <typename T>
-	void CreateUIObject(std::string name, UIData objData)
-	{
-		static_assert(std::is_base_of<BaseUserInterface, T>::value, "T must derive from BaseUserInterface.");
+	//template <typename T>
+	//void CreateUIObject(std::string name, UIData objData)
+	//{
+	//	static_assert(std::is_base_of<BaseUserInterface, T>::value, "T must derive from BaseUserInterface.");
 
-		//Use constexpr to check if a specific method exists for the typename. If it doesn't it returns false.
-		constexpr bool has_ChildSpacing = requires(T & t) { t.GetChildSpacing();};
-		constexpr bool has_TextWrapping = requires(T & t) {t.GetTextWrapping();};
-		constexpr bool has_TextAlign = requires(T & t) { t.GetAlignment(); };
-		
-		//Other optional properties go here:
+	//	//Use constexpr to check if a specific method exists for the typename. If it doesn't it returns false.
+	//	constexpr bool has_ChildSpacing = requires(T & t) { t.GetChildSpacing();};
+	//	constexpr bool has_TextWrapping = requires(T & t) {t.GetTextWrapping();};
+	//	constexpr bool has_TextAlign = requires(T & t) { t.GetAlignment(); };
+	//	
+	//	//Other optional properties go here:
 
-		int scaleX = 1, scaleY = 1;
-		std::shared_ptr<T> uiObj = std::make_shared<T>(owner->context); // Create ui Object
+	//	int scaleX = 1, scaleY = 1;
+	//	std::shared_ptr<T> uiObj = std::make_shared<T>(owner->context); // Create ui Object
 
-		 //All objects must have a name
-		uiObj->uiType = objData.uiType;
+	//	 //All objects must have a name
+	//	uiObj->uiType = objData.uiType;
 
-		for (auto& p : objData.properties) //Loop through all properties
-		{
-			if(p.first == "Name") uiObj->SetName(p.second);
-			else if (p.first == "Anchor") uiObj->SetAnchor(strToAnchor.at(p.second));
-			else if (p.first == "FillType") uiObj->SetFillType(strToFillType.at(p.second));
-			else if (p.first == "ScaleX") scaleX = atof(p.second.c_str());
-			else if (p.first == "ScaleY") scaleY = atof(p.second.c_str());
-			else if (p.first == "ChildSpacing")
-			{
-				if constexpr(has_ChildSpacing) uiObj->SetChildSpacing(atof(p.second.c_str()));
-			}
-			else if (p.first == "TextWrapping") 
-			{
-				if constexpr(has_TextWrapping) uiObj->SetTextWrapping(atoi(p.second.c_str()));
-			}
-			else if (p.first == "TextAlign")
-			{
-				if constexpr (has_TextAlign) uiObj->SetAlignment(atoi(p.second.c_str()));
-			}
+	//	for (auto& p : objData.properties) //Loop through all properties
+	//	{
+	//		if(p.first == "Name") uiObj->SetName(p.second);
+	//		else if (p.first == "Anchor") uiObj->SetAnchor(strToAnchor.at(p.second));
+	//		else if (p.first == "FillType") uiObj->SetFillType(strToFillType.at(p.second));
+	//		else if (p.first == "ScaleX") scaleX = atof(p.second.c_str());
+	//		else if (p.first == "ScaleY") scaleY = atof(p.second.c_str());
+	//		else if (p.first == "ChildSpacing")
+	//		{
+	//			if constexpr(has_ChildSpacing) uiObj->SetChildSpacing(atof(p.second.c_str()));
+	//		}
+	//		else if (p.first == "TextWrapping") 
+	//		{
+	//			if constexpr(has_TextWrapping) uiObj->SetTextWrapping(atoi(p.second.c_str()));
+	//		}
+	//		else if (p.first == "TextAlign")
+	//		{
+	//			if constexpr (has_TextAlign) uiObj->SetAlignment(atoi(p.second.c_str()));
+	//		}
 
-			//Any future properties go here. Don't forget to add a constexp above if it is not shared by all objects.
+	//		//Any future properties go here. Don't forget to add a constexp above if it is not shared by all objects.
 
-			else std::cout << "Unknown UI Object property: " << p.first << std::endl;
-		}
+	//		else std::cout << "Unknown UI Object property: " << p.first << std::endl;
+	//	}
 
-		uiObj->SetScale(scaleX, scaleY); //Set scale from above values
+	//	uiObj->SetScale(scaleX, scaleY); //Set scale from above values
 
-		
-			if (dialogueUI.find(objData.parentName) != dialogueUI.end())
-			{
-				if (objData.parentName != "Root")
-				{
-					if (dialogueUI.at(objData.parentName)->uiType == "HorizontalList")
-					{
-						uiObj->SetParent<UI_HorizontalList>(std::dynamic_pointer_cast<UI_HorizontalList>(dialogueUI.at(objData.parentName)));
-					}
-				}
-			}
-			else
-			{
-				std::cout << "Something went wrong assigning UI parent and childs" << std::endl;
-			}
-		
-		
-		dialogueUI.insert(std::make_pair(uiObj->GetName(), uiObj));
+	//	//Find parent in list of objects if it exists
+	//	if (dialogueUI.find(objData.parentName) != dialogueUI.end())
+	//	{
+	//		if (objData.parentName != "root") //Make sure parent is not root
+	//		{
+	//			//Check what type the parent is and assign it to the UIObj, and assign UIObj as the child of that parent.
+	//			if (dialogueUI.at(objData.parentName)->uiType == "HorizontalList")
+	//			{
+	//				uiObj->SetParent<UI_HorizontalList>(std::dynamic_pointer_cast<UI_HorizontalList>(dialogueUI.at(objData.parentName)));
+	//				std::dynamic_pointer_cast<UI_HorizontalList>(dialogueUI.at(objData.parentName))->AddChild<T>(uiObj);
+	//			}
+	//			else if (dialogueUI.at(objData.parentName)->uiType == "VerticleList")
+	//			{
+	//				uiObj->SetParent<UI_VerticleList>(std::dynamic_pointer_cast<UI_VerticleList>(dialogueUI.at(objData.parentName)));
+	//				std::dynamic_pointer_cast<UI_VerticleList>(dialogueUI.at(objData.parentName))->AddChild<T>(uiObj);
+	//			}
+	//			else if (dialogueUI.at(objData.parentName)->uiType == "TextBox")
+	//			{
+	//				uiObj->SetParent<UI_TextBox>(std::dynamic_pointer_cast<UI_TextBox>(dialogueUI.at(objData.parentName)));
+	//				std::dynamic_pointer_cast<UI_TextBox>(dialogueUI.at(objData.parentName))->AddChild<T>(uiObj);
+	//			}
+	//			else if (dialogueUI.at(objData.parentName)->uiType == "Button")
+	//			{
+	//				uiObj->SetParent<GUI::Button>(std::dynamic_pointer_cast<GUI::Button>(dialogueUI.at(objData.parentName)));
+	//				std::dynamic_pointer_cast<GUI::Button>(dialogueUI.at(objData.parentName))->AddChild<T>(uiObj);
+	//			}
 
-	};
+	//			//TODO: Add any more UI Objects here
+
+	//			else
+	//			{
+	//				std::cout << "Unknown UI Type: " << dialogueUI.at(objData.parentName)->uiType << " when creating UI object.";
+	//			}
+	//		}
+	//	}
+	//	uiObj->Show();
+	//	dialogueUI.insert(std::make_pair(uiObj->GetName(), uiObj));
+	//	
+	//};
 
 
 	std::shared_ptr <DialogueNode> GetDialogueNode()
@@ -228,21 +229,69 @@ public:
 
 	void ParseDialogueNode(std::shared_ptr<DialogueNode> curNode)
 	{
-		dialogueText.setString(curNode->text);
+		if (dialogueUI.empty()) return;
 
-		float xPos = background.getGlobalBounds().left + background.getGlobalBounds().width / 2 - dialogueText.getGlobalBounds().width / 2;
-		float yPos = background.getPosition().y;
-		dialogueText.setPosition(sf::Vector2f(xPos,yPos));
-		
-
-		if (curNode->options.size() > 0)
+		auto it0 = dialogueUI.find("tBox0");
+		if( it0 != dialogueUI.end())
 		{
-			int optionNum = 0;
-			/*for (auto& it : curNode->options)
+			std::dynamic_pointer_cast<UI_TextBox>(it0->second)->SetText(curNode->text);
+		}
+
+		auto it1 = dialogueUI.find("tBox1");
+		if (it1 != dialogueUI.end())
+		{
+			if (curNode->options.size() >= 1)
 			{
-				optionButtons.insert(std::make_pair(it, CreateButton(it, optionNum)));
-				optionNum++;
-			}*/
+				std::dynamic_pointer_cast<UI_TextBox>(it1->second)->SetText(curNode->options.at(0)->text);
+				std::dynamic_pointer_cast<UI_TextBox>(it1->second)->Show();
+			}
+			else
+			{
+				std::dynamic_pointer_cast<UI_TextBox>(it1->second)->SetText("Test1");
+				std::dynamic_pointer_cast<UI_TextBox>(it1->second)->Hide();
+			}
+		}
+		auto it2 = dialogueUI.find("tBox2");
+		if (it2 != dialogueUI.end())
+		{
+			if (curNode->options.size() >= 2)
+			{
+				std::dynamic_pointer_cast<UI_TextBox>(it2->second)->SetText(curNode->options.at(1)->text);
+				std::dynamic_pointer_cast<UI_TextBox>(it2->second)->Show();
+			}
+			else
+			{
+				std::dynamic_pointer_cast<UI_TextBox>(it2->second)->SetText("Test2");
+				std::dynamic_pointer_cast<UI_TextBox>(it2->second)->Hide();
+			}
+		}
+		auto it3 = dialogueUI.find("tBox3");
+		if (it3 != dialogueUI.end())
+		{
+			if (curNode->options.size() >= 3)
+			{
+				std::dynamic_pointer_cast<UI_TextBox>(it3->second)->SetText(curNode->options.at(2)->text);
+				std::dynamic_pointer_cast<UI_TextBox>(it3->second)->Show();
+			}
+			else
+			{
+				std::dynamic_pointer_cast<UI_TextBox>(it3->second)->SetText("Test3");
+				std::dynamic_pointer_cast<UI_TextBox>(it3->second)->Hide();
+			}
+		}
+		auto it4 = dialogueUI.find("tBox4");
+		if (it4 != dialogueUI.end())
+		{
+			if (curNode->options.size() >= 4)
+			{
+				std::dynamic_pointer_cast<UI_TextBox>(it4->second)->SetText(curNode->options.at(3)->text);
+				std::dynamic_pointer_cast<UI_TextBox>(it4->second)->Show();
+			}
+			else
+			{
+				std::dynamic_pointer_cast<UI_TextBox>(it4->second)->SetText("Test4");
+				std::dynamic_pointer_cast<UI_TextBox>(it4->second)->Hide();
+			}
 		}
 	};
 
@@ -256,8 +305,8 @@ public:
 
 private:
 	
-	void CreateBackground()
-	{
+	/*void CreateBackground()
+	{*/
 		/*sf::Vector2f v_center = owner->context->window->GetView().getCenter();
 		sf::Vector2f v_size = owner->context->window->GetView().getSize();
 		bgPadding = {20.0, 20.0, 20.0, 20.0};
@@ -271,7 +320,7 @@ private:
 		background.setSize(sf::Vector2f(bg_sizeX, bg_sizeY));
 		background.setPosition(sf::Vector2f(bg_positionX, bg_positionY));
 		background.setFillColor(sf::Color::Cyan);*/
-	};
+	/*};*/
 
 	void CheckInput()
 	{
@@ -290,29 +339,50 @@ private:
 			if (curNode->options.empty())
 			{
 				GoToNext(-1, curQuest->GetStatus());
-				return;
 			}
 			else 
 			{
-				float mousePosX = owner->context->window->GetViewSpace().left + owner->context->input->GetMousePos().x;
-				float mousePosY = owner->context->window->GetViewSpace().top + owner->context->input->GetMousePos().y;
-				sf::Vector2f mousePos = sf::Vector2f(mousePosX,mousePosY);
+				
+				sf::Vector2f mousePos = sf::Vector2f(sf::Mouse::getPosition(owner->context->window->GetRenderWindow()));
 				
 				mouseBox.left = mousePos.x;
 				mouseBox.top = mousePos.y;
 
-				//for (auto& btn : optionButtons)
-				//{
-				//	/*if (btn.second.GetCollidable().intersects(mouseBox))
-				//	{
-				//		btn.second(btn.first->nextNodeID, btn.first->returnCode);
-				//	}*/
-				//}
+				auto it0 = dialogueUI.find("btn0");
+				if (it0 != dialogueUI.end());
+				{
+					if (std::dynamic_pointer_cast<GUI::Button>(it0->second)->isPressed())
+					{
+						GoToNext(curNode->options.at(0)->nextNodeID, curQuest->GetStatus());
+					}
+				}
+				auto it1 = dialogueUI.find("btn1");
+				if (it1 != dialogueUI.end());
+				{
+					if (std::dynamic_pointer_cast<GUI::Button>(it1->second)->isPressed())
+					{
+						GoToNext(curNode->options.at(1)->nextNodeID, curQuest->GetStatus());
+					}
+				}
+				auto it2 = dialogueUI.find("btn2");
+				if (it2 != dialogueUI.end());
+				{
+					if (std::dynamic_pointer_cast<GUI::Button>(it2->second)->isPressed())
+					{
+						GoToNext(curNode->options.at(2)->nextNodeID, curQuest->GetStatus());
+					}
+				}
+				auto it3 = dialogueUI.find("btn3");
+				if (it3 != dialogueUI.end());
+				{
+					if (std::dynamic_pointer_cast<GUI::Button>(it3->second)->isPressed())
+					{
+						GoToNext(curNode->options.at(3)->nextNodeID, curQuest->GetStatus());
+					}
+				}
+
 			}
 		}
-			
-		
-
 	};
 
 	std::shared_ptr<Quest> curQuest;
@@ -320,12 +390,8 @@ private:
 	std::shared_ptr<DialogueNode> curNode;
 
 	std::unordered_map<std::string, std::shared_ptr<BaseUserInterface>> dialogueUI;
-	std::unordered_map<std::string, std::shared_ptr<C_Drawable>> drawables;
 
-	sf::Text dialogueText;
-	//std::unordered_map< std::shared_ptr<OptionNode>, UI_Button> optionButtons;
-	std::shared_ptr<sf::Font> font;
-	sf::RectangleShape background;
+	//std::unordered_map< std::shared_ptr<OptionNode>, GUI::Button> optionButtons;
 
 	sf::FloatRect mouseBox;
 

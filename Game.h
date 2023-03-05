@@ -10,6 +10,7 @@
 #include "SceneStateMachine.h"
 #include "SceneSplashScreen.h"
 #include "SceneGame.h"
+#include "SceneMainMenu.h"
 
 	typedef std::map<std::string, std::string> TextureMap; //Create a partial class that is a type of map that only accepts 2 strings
 	//typedef std::map<int, int, int> AreaMap;

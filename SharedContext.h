@@ -114,7 +114,8 @@ static std::unordered_map<int, std::string> const bitPosToString =
 	{17, "C_Tree"},
 	{18, "C_Velocity"},
 	{19, "C_WalkInLine"},
-	{20, "C_Dialogue"}
+	{20, "C_Dialogue"},
+	{21, "C_FollowMouse"}
 };
 
 

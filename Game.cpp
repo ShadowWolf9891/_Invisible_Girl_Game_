@@ -44,14 +44,17 @@ bool Game::IsRunning() const
 */
 void Game::initVariables()
 {   
-    std::shared_ptr<SceneSplashScreen> splashScreen = std::make_shared<SceneSplashScreen>(workingDir,sceneStateMachine, window, textureAllocator); //Smart pointer to splash screen scene
+    std::shared_ptr<SceneSplashScreen> splashScreen = std::make_shared<SceneSplashScreen>(workingDir, textureAllocator, window, fontAllocator); //Smart pointer to splash screen scene
+    std::shared_ptr<SceneMainMenu> mainMenuScreen = std::make_shared<SceneMainMenu>(workingDir, textureAllocator, window, fontAllocator);
     std::shared_ptr<SceneGame> gameScene = std::make_shared<SceneGame>(workingDir, textureAllocator, window, fontAllocator); //Smart pointer to game scene
 
     //Add scenes to scenestatemachine and return the ID's
     unsigned int splashScreenID = sceneStateMachine.Add(splashScreen); 
     unsigned int gameSceneID = sceneStateMachine.Add(gameScene);
+    unsigned int mainMenuID = sceneStateMachine.Add(mainMenuScreen);
 
-    splashScreen->SetSwitchToScene(gameSceneID); //Set splashscreen to transition to gamescreen when switched to
+    splashScreen->SetSwitchToScene(mainMenuID); //Set splashscreen to transition to gamescreen when switched to
+    mainMenuScreen->SetSwitchToScene(gameSceneID);
     sceneStateMachine.SwitchTo(splashScreenID); //Set game to start on splashscreen
 
 	//this->window = nullptr;
@@ -562,45 +565,8 @@ void Game::initVariables()
 */
 void Game::Update()
 {
-
     window.Update();
     sceneStateMachine.Update(deltaTime);
-    //player.readInput(input);
-    //player.isVisible = true;
-    
-    //this->updateMousePositions();
-    
-   // this->player.updatePlayer(deltaTime, groundFriction);
-    //this->mainView.setCenter(this->player.xPos + (std::abs(this->player.getTextureRect().width / 2.0)), this->player.yPos + (player.getTextureRect().height / 2.0));
-    
-    /*sf::Vector2i centerTileIndex;
-    centerTileIndex.x = (this->mainView.getCenter().x / 32);
-    centerTileIndex.y = (this->mainView.getCenter().y / 32);
-    sf::Vector2i tileBegin, tileEnd;
-    if (centerTileIndex.x - renderDistance > 0 && centerTileIndex.y - renderDistance > 0) {
-        tileBegin = sf::Vector2i(centerTileIndex.x - renderDistance, centerTileIndex.y - renderDistance);
-    }
-    else {
-        tileBegin = sf::Vector2i(centerTileIndex.x, centerTileIndex.y);
-    }
-    if (centerTileIndex.x + renderDistance < this->mainView.getSize().x / 32 && centerTileIndex.y + renderDistance < this->mainView.getSize().x / 32) {
-        tileEnd = sf::Vector2i(centerTileIndex.x + renderDistance, centerTileIndex.y + renderDistance);
-    }
-    else {
-        tileEnd = sf::Vector2i(centerTileIndex.x, centerTileIndex.y);
-    }
-
-    for (auto& layer : tilesToDraw) {
-
-        
-        std::map<sf::Vector2i, my_Tile> renderedTiles(layer[tileBegin], layer[tileEnd]);
-
-        for (auto& t : renderedTiles) {
-
-            t.second.updateTile(timeDelta.asMicroseconds() / 1000.0);
-        }
-    }*/
-    //this->checkCollisions();
 }
 
 void Game::LateUpdate()

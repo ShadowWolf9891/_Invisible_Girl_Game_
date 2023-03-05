@@ -23,6 +23,11 @@ void SceneStateMachine::LateUpdate(float deltaTime)
 	{
 		curScene->LateUpdate(deltaTime);
 	}
+
+	if (curScene->switchScene)
+	{
+		SwitchTo();
+	}
 }
 void SceneStateMachine::Draw(Window& window)
 {
@@ -58,6 +63,21 @@ void SceneStateMachine::Remove(unsigned int id)
 		// of the scene we are removing.
 		it->second->OnDestroy();
 		scenes.erase(it);
+	}
+}
+void SceneStateMachine::SwitchTo()
+{
+	if (curScene)
+	{
+		auto it = scenes.find(curScene->switchToSceneID);
+		if (it != scenes.end())
+		{
+			// If we have a current scene, we call its OnDeactivate method.
+			curScene->OnDeactivate();
+			// Setting the current scene ensures that it is updated and drawn.
+			curScene = it->second;
+			curScene->OnActivate();
+		}
 	}
 }
 void SceneStateMachine::SwitchTo(unsigned int id)

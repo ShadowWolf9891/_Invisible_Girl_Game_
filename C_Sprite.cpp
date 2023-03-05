@@ -56,5 +56,5 @@ bool C_Sprite::ContinueToDraw() const
 
 void C_Sprite::SetScale(float x, float y)
 {
-	sprite.setScale(sf::Vector2(x, y));
+	sprite.setScale(sf::Vector2f(x, y));
 }

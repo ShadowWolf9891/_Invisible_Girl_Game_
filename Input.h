@@ -42,9 +42,6 @@ public:
 	bool IsMouseDown(Mouse keycode); // Returns true if the key was just pressed.
 	bool IsMouseUp(Mouse keycode); // Returns true if the key was just released.
 
-	sf::Vector2i GetMousePos();
-	void UpdateMousePos();
-
 private:
 	Bitmask thisFrameKeys;
 	Bitmask lastFrameKeys;

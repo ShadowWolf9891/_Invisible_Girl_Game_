@@ -75,7 +75,7 @@ private:
 
 	void FormatText() 
 	{
-		float pWidth, pHeight;
+		float pWidth=100, pHeight=100;
 
 		if (GetParent())
 		{
@@ -90,11 +90,14 @@ private:
 		{
 		case(TextWrapping::NONE):
 			drawnText.setString(text);
+			break;
 		case(TextWrapping::AUTO):
 			drawnText.setString(WrapText(text, numLines, charPerLine));
+			break;
 		case(TextWrapping::FILL):
 			SetCharSize(pWidth / text.size() / numLines);
 			drawnText.setString(WrapText(text, numLines, charPerLine));
+			break;
 		default:
 			std::cout << "Invalid UI text wrapping: " << text << std::endl;
 		}
@@ -104,15 +107,19 @@ private:
 		switch (adjustment)
 		{
 		case(TextAdjust::DEFAULT):
-			
+			break;
 		case(TextAdjust::LEFT):
 			SetAnchor(Anchor::TOPLEFT);
+			break;
 		case(TextAdjust::CENTER):
 			SetAnchor(Anchor::TOPMID);
+			break;
 		case(TextAdjust::RIGHT):
 			SetAnchor(Anchor::TOPRIGHT);
+			break;
 		default:
 			SetAnchor(Anchor::TOPLEFT);
+			break;
 		}
 	};
 
@@ -127,7 +134,7 @@ private:
 			while (foundSpace < i * charPerLine)
 			{
 				previousSpace = foundSpace;
-				foundSpace = originalString.find(" ", foundSpace);
+				foundSpace = originalString.find(" ", foundSpace + 1);
 			}
 
 			newString.insert(previousSpace, "\n");

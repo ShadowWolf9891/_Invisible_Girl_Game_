@@ -20,6 +20,7 @@ public:
 	// Adds a scene to the state machine and returns the id of that scene.
 	unsigned int Add(std::shared_ptr<Scene> scene);
 	// Transitions to scene with specified id.
+	void SwitchTo();
 	void SwitchTo(unsigned int id);
 	// Removes scene from state machine.
 	void Remove(unsigned int id);

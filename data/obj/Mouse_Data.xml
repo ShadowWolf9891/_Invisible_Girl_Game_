@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root _type ="initData">
+	<Object name ="Mouse">
+		<Components bitmap ="00000000001000000100000000001000">
+		</Components>
+		<Properties>
+			<Property name="Tag" value="6"/>
+			<Property name="DrawLayer" value="3"/>
+			<Property name="X" value="0"/>
+			<Property name="Y" value="0"/>
+			<Property name="Width" value="20"/>
+			<Property name="Height" value="20"/>
+			<Property name="ScaleX" value="0.5"/>
+			<Property name="ScaleY" value="0.5"/>
+			<Property name="BBoxSizeX" value="20"/>
+			<Property name="BBoxSizeY" value="20"/>
+			<Property name="BBoxOffsetX" value="0"/>
+			<Property name="BBoxOffsetY" value="0"/>
+			<Property name="BBoxCollisionLayer" value="6"/>
+			<Property name="BaseTextureFile" value="Assets/UI/MouseCursor1.png"/>
+		</Properties>
+	</Object>
+</root>

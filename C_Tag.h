@@ -11,7 +11,8 @@ enum class Tag
     NPC,
     Enemy,
     Item,
-    UI
+    UI,
+    Mouse
 };
 
 class C_Tag : public Component

@@ -1,5 +1,5 @@
 #include "window.h"
-Window::Window(const std::string& windowName) : window(sf::VideoMode(1920, 1080), windowName, sf::Style::Titlebar) //RenderWindow constructor
+Window::Window(const std::string& windowName) : window(sf::VideoMode(1920, 1080), windowName, sf::Style::Fullscreen) //RenderWindow constructor
 {
     window.setVerticalSyncEnabled(true); // Used to reduce visual artifacts
 }

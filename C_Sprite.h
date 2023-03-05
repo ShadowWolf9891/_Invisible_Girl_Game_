@@ -28,6 +28,18 @@ public:
 	void SetTextureRect(const sf::IntRect& rect);
 	
 	void SetScale(float x, float y);
+	sf::Vector2f GetScale() { return sprite.getScale(); };
+
+	//Local bounds of sprite, ignoring scale
+	sf::FloatRect GetLocalBounds()
+	{
+		return sprite.getLocalBounds();
+	};
+
+	sf::FloatRect GetGlobalBounds()
+	{
+		return sprite.getGlobalBounds();
+	};
 
 private:
 	sf::Sprite sprite;

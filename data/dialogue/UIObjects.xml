@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root _type ="GUIObjects">
+	<State name="DialogueState">
+		<TextBox name="QuestionText" x="10" y ="800" width="1900" height="270" font="Assets/Fonts/joystix monospace.ttf" charSize="16"
+				textColorR ="255" textColorG="255" textColorB="255" textColorA="200"
+				bgColorR ="120" bgColorG="150" bgColorB="220" bgColorA="200"/>
+	</State>
+	<State name="ResponceState">
+		<Button name="Option1" x="10" y ="700" width="350" height="100" font="Assets/Fonts/joystix monospace.ttf" charSize="16"
+				textIdleColorR ="0" textIdleColorG="0" textIdleColorB="0" textIdleColorA="200"
+				textHoverColorR ="0" textHoverColorG="0" textHoverColorB="0" textHoverColorA="200"
+				textActiveColorR ="100" textActiveColorG="150" textActiveColorB="230" textActiveColorA="255"
+				bgIdleColorR ="45" bgIdleColorG="45" bgIdleColorB="45" bgIdleColorA="200"
+				bgHoverColorR ="60" bgHoverColorG="60" bgHoverColorB="60" bgHoverColorA="200"
+				bgActiveColorR ="140" bgActiveColorG="110" bgActiveColorB="110" bgActiveColorA="200"/>
+		
+		<Button name="Option2" x="10" y ="590" width="350" height="100" font="Assets/Fonts/joystix monospace.ttf" charSize="16"
+				textIdleColorR ="0" textIdleColorG="0" textIdleColorB="0" textIdleColorA="200"
+				textHoverColorR ="0" textHoverColorG="0" textHoverColorB="0" textHoverColorA="200"
+				textActiveColorR ="100" textActiveColorG="150" textActiveColorB="230" textActiveColorA="255"
+				bgIdleColorR ="45" bgIdleColorG="45" bgIdleColorB="45" bgIdleColorA="200"
+				bgHoverColorR ="60" bgHoverColorG="60" bgHoverColorB="60" bgHoverColorA="200"
+				bgActiveColorR ="140" bgActiveColorG="110" bgActiveColorB="110" bgActiveColorA="200"/>
+		
+		<Button name="Option3" x="10" y ="480" width="350" height="100" font="Assets/Fonts/joystix monospace.ttf" charSize="16"
+				textIdleColorR ="0" textIdleColorG="0" textIdleColorB="0" textIdleColorA="200"
+				textHoverColorR ="0" textHoverColorG="0" textHoverColorB="0" textHoverColorA="200"
+				textActiveColorR ="100" textActiveColorG="150" textActiveColorB="230" textActiveColorA="255"
+				bgIdleColorR ="45" bgIdleColorG="45" bgIdleColorB="45" bgIdleColorA="200"
+				bgHoverColorR ="60" bgHoverColorG="60" bgHoverColorB="60" bgHoverColorA="200"
+				bgActiveColorR ="140" bgActiveColorG="110" bgActiveColorB="110" bgActiveColorA="200"/>
+		
+		<Button name="Option4" x="10" y ="370" width="350" height="100" font="Assets/Fonts/joystix monospace.ttf" charSize="16"
+				textIdleColorR ="0" textIdleColorG="0" textIdleColorB="0" textIdleColorA="200"
+				textHoverColorR ="0" textHoverColorG="0" textHoverColorB="0" textHoverColorA="200"
+				textActiveColorR ="100" textActiveColorG="150" textActiveColorB="230" textActiveColorA="255"
+				bgIdleColorR ="45" bgIdleColorG="45" bgIdleColorB="45" bgIdleColorA="200"
+				bgHoverColorR ="60" bgHoverColorG="60" bgHoverColorB="60" bgHoverColorA="200"
+				bgActiveColorR ="140" bgActiveColorG="110" bgActiveColorB="110" bgActiveColorA="200"/>
+	</State>
+	<State name="MainMenu">
+		<Button name="NewGame" x="10" y ="700" width="350" height="100" font="Assets/Fonts/joystix monospace.ttf" charSize="16"
+				textIdleColorR ="0" textIdleColorG="0" textIdleColorB="0" textIdleColorA="200"
+				textHoverColorR ="0" textHoverColorG="0" textHoverColorB="0" textHoverColorA="200"
+				textActiveColorR ="100" textActiveColorG="150" textActiveColorB="230" textActiveColorA="255"
+				bgIdleColorR ="45" bgIdleColorG="45" bgIdleColorB="45" bgIdleColorA="200"
+				bgHoverColorR ="60" bgHoverColorG="60" bgHoverColorB="60" bgHoverColorA="200"
+				bgActiveColorR ="140" bgActiveColorG="110" bgActiveColorB="110" bgActiveColorA="200"/>
+
+		<Button name="Continue" x="10" y ="590" width="350" height="100" font="Assets/Fonts/joystix monospace.ttf" charSize="16"
+				textIdleColorR ="0" textIdleColorG="0" textIdleColorB="0" textIdleColorA="200"
+				textHoverColorR ="0" textHoverColorG="0" textHoverColorB="0" textHoverColorA="200"
+				textActiveColorR ="100" textActiveColorG="150" textActiveColorB="230" textActiveColorA="255"
+				bgIdleColorR ="45" bgIdleColorG="45" bgIdleColorB="45" bgIdleColorA="200"
+				bgHoverColorR ="60" bgHoverColorG="60" bgHoverColorB="60" bgHoverColorA="200"
+				bgActiveColorR ="140" bgActiveColorG="110" bgActiveColorB="110" bgActiveColorA="200"/>
+
+		<Button name="Settings" x="10" y ="480" width="350" height="100" font="Assets/Fonts/joystix monospace.ttf" charSize="16"
+				textIdleColorR ="0" textIdleColorG="0" textIdleColorB="0" textIdleColorA="200"
+				textHoverColorR ="0" textHoverColorG="0" textHoverColorB="0" textHoverColorA="200"
+				textActiveColorR ="100" textActiveColorG="150" textActiveColorB="230" textActiveColorA="255"
+				bgIdleColorR ="45" bgIdleColorG="45" bgIdleColorB="45" bgIdleColorA="200"
+				bgHoverColorR ="60" bgHoverColorG="60" bgHoverColorB="60" bgHoverColorA="200"
+				bgActiveColorR ="140" bgActiveColorG="110" bgActiveColorB="110" bgActiveColorA="200"/>
+
+		<Button name="Exit" x="10" y ="370" width="350" height="100" font="Assets/Fonts/joystix monospace.ttf" charSize="16"
+				textIdleColorR ="0" textIdleColorG="0" textIdleColorB="0" textIdleColorA="200"
+				textHoverColorR ="0" textHoverColorG="0" textHoverColorB="0" textHoverColorA="200"
+				textActiveColorR ="100" textActiveColorG="150" textActiveColorB="230" textActiveColorA="255"
+				bgIdleColorR ="45" bgIdleColorG="45" bgIdleColorB="45" bgIdleColorA="200"
+				bgHoverColorR ="60" bgHoverColorG="60" bgHoverColorB="60" bgHoverColorA="200"
+				bgActiveColorR ="140" bgActiveColorG="110" bgActiveColorB="110" bgActiveColorA="200"/>
+		
+		
+		
+	</State>
+		
+	
+	
+</root>

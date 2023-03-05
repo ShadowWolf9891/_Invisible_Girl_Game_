@@ -22,8 +22,6 @@ void Input::Update()
 	thisFrameMouse.SetBit((int)Mouse::Left, sf::Mouse::isButtonPressed(sf::Mouse::Left));
 	thisFrameMouse.SetBit((int)Mouse::Right, sf::Mouse::isButtonPressed(sf::Mouse::Right));
 	thisFrameMouse.SetBit((int)Mouse::Middle, sf::Mouse::isButtonPressed(sf::Mouse::Middle));
-
-	UpdateMousePos();
 }
 // Return true if the specified key is currently being pressed.
 bool Input::IsKeyPressed(Key keycode)
@@ -64,15 +62,4 @@ bool Input::IsMouseUp(Mouse keycode)
 	bool lastFrame = lastFrameMouse.GetBit((int)keycode);
 	bool thisFrame = thisFrameMouse.GetBit((int)keycode);
 	return !thisFrame && lastFrame;
-}
-
-sf::Vector2i Input::GetMousePos()
-{
-	return mousePosWindow;
-}
-
-//Update mouse position relative to window (Vector2i)
-void Input::UpdateMousePos()
-{
-    mousePosWindow = sf::Mouse::getPosition();
 }

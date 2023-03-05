@@ -37,25 +37,42 @@ struct Padding
 class BaseUserInterface : public C_Drawable
 {
 public:
-	BaseUserInterface(SharedContext* context) : C_Drawable(), context(context), anchor(Anchor::TOPLEFT), fillType(FillType::AUTO), scale(1,1), position(0,0), offset(0,0), size(0,0), padding(Padding(0,0,0,0)), somethingChanged(false){};
+	BaseUserInterface(SharedContext* context) : C_Drawable(), context(context), anchor(Anchor::TOPLEFT), fillType(FillType::AUTO), scale(1,1), position(0,0), offset(0,0), size(0,0), padding(Padding(0,0,0,0)), somethingChanged(false), visible(false), r(sf::RectangleShape(sf::Vector2f(0, 0))) {};
 
 	virtual ~BaseUserInterface() = default;
 
-	virtual void LoadUI() {};
-	virtual void UpdateUI() = 0; //Must be overidden by child classes
+	virtual void LoadUI()
+	{
+		SetDrawLayer(DrawLayer::UI);
+		SetColour(sf::Color::Black);
+	};
+	virtual void UpdateUI()
+	{
+		if (GetSomethingChanged())
+		{
+			Reload();
+		}
+	};
+	 
 
 	virtual void Reload() 
 	{
 		SetupSize();
 		SetPositon();
 
-		if (!children.empty())	//If this object has children, tell them to reload as well
-		{
-			for (auto& child : children)
-			{
-				child->Reload();
-			}
-		}
+		//if (!children.empty())	//If this object has children, tell them to reload as well
+		//{
+		//	for (auto& child : children)
+		//	{
+		//		child->SetSomethingChanged(true);
+		//	}
+		//}
+
+		r.setSize(GetScaledSize());
+		r.setPosition(GetPosition());
+		SetSomethingChanged(false);
+
+		std::cout << "Reloaded: " << this->GetName() << " Position: x= "<< GetPosition().x << ", y= " << GetPosition().y << " Size: width= " << GetScaledSize().x << ", height= " << GetScaledSize().y << std::endl;
 	};
 
 	virtual void SetPadding(float left, float right, float top, float bottom) { padding.left = left; padding.right = right; padding.top = top; padding.bottom = bottom; SetSomethingChanged(true);};
@@ -71,8 +88,8 @@ public:
 	virtual void SetOffset(const sf::Vector2f& offset) { this->offset = offset; SetSomethingChanged(true);};
 	virtual void SetOffset(float x, float y) { offset.x = x; offset.y = y; SetSomethingChanged(true);};
 
-	virtual void AddOffset(const sf::Vector2f& offset) { this->offset += offset; SetSomethingChanged(true);};
-	virtual void AddOffset(float x, float y) { offset.x += x; offset.y += y; SetSomethingChanged(true);};
+	/*virtual void AddOffset(const sf::Vector2f& offset) { this->offset += offset; SetSomethingChanged(true);};
+	virtual void AddOffset(float x, float y) { offset.x += x; offset.y += y; SetSomethingChanged(true);};*/
 
 	virtual void SetScale(const sf::Vector2f& scale) { this->scale = scale; SetSomethingChanged(true);};
 	virtual void SetScale(float x, float y) { this->scale.x = x; this->scale.y = y; SetSomethingChanged(true);};
@@ -92,6 +109,8 @@ public:
 	virtual bool IsVisible() const { return visible; };
 	virtual void Show() { visible = true; };
 	virtual void Hide() { visible = false; };
+
+	virtual void SetColour(sf::Color c) { r.setFillColor(c); };
 
 	//typename T is Parent class, typename TC is child class (usually the typename of 'this')
 	template <typename T> void SetParent(std::shared_ptr<T> parent)
@@ -133,7 +152,13 @@ public:
 	};
 	virtual const std::vector<std::shared_ptr<BaseUserInterface>>& GetChildren() const {return children;};
 
-	void Draw(Window& window) override{};
+	virtual void Draw(Window& window) override
+	{
+		if (IsVisible())
+		{
+			window.Draw(r);
+		}
+	};
 	
 	bool ContinueToDraw() const override {return IsVisible();};
 	
@@ -158,8 +183,9 @@ private:
 			}
 			else 
 			{
-				std::cout << "Filltype AUTO must have at least one child." << std::endl;
+				std::cout << "Filltype AUTO must have at least one child." << GetName() << std::endl;
 			}
+			break;
 
 		case(FillType::SET):
 			//Make sure scale variable is set before this is called.
@@ -173,6 +199,7 @@ private:
 				size.x = context->window->GetViewSpace().width * scale.x;
 				size.y = context->window->GetViewSpace().height * scale.y;
 			}
+			break;
 		case(FillType::FILLHORIZONTAL):
 			//Fill to size of Parent X, keeping aspect ratio
 			if (parent)
@@ -199,7 +226,7 @@ private:
 					child->SetScale(child->GetScale().x * scaleX, child->GetScale().y);
 				}
 			}
-		
+			break;
 		case(FillType::FILLVERTICAL):
 			//Fill to size of Parent Y, keeping aspect ratio
 			if (parent)
@@ -227,6 +254,7 @@ private:
 					child->SetScale(child->GetScale().x, child->GetScale().y * scaleY);
 				}
 			}
+			break;
 		case(FillType::FILL):
 			//Fill to size of Parent regardless of aspect ratio
 			if (parent)
@@ -258,7 +286,7 @@ private:
 				}
 
 			}
-
+			break;
 		default:
 			break;
 		}
@@ -287,30 +315,39 @@ private:
 		case(Anchor::TOPLEFT):
 			position.x = padding.left + offset.x + pX;
 			position.y = padding.top + offset.y + pY;
+			break;
 		case(Anchor::TOPMID):
 			position.x = pWidth / 2 + offset.x + pX;
 			position.y = padding.top + offset.y + pY;
+			break;
 		case(Anchor::TOPRIGHT):
-			position.x = pWidth - GetScaledSize().x - padding.right + offset.x+ pX;
+			position.x = pWidth - GetScaledSize().x - padding.right + offset.x + pX;
 			position.y = padding.top + offset.y + pY;
+			break;
 		case(Anchor::MIDLEFT):
-			position.x = padding.left + offset.x+ pX;
+			position.x = padding.left + offset.x + pX;
 			position.y = pHeight / 2 + offset.y + pY;
+			break;
 		case(Anchor::CENTER):
-			position.x = pWidth / 2 + offset.x+ pX;
+			position.x = pWidth / 2 + offset.x + pX;
 			position.y = pHeight / 2 + offset.y + pY;
+			break;
 		case(Anchor::MIDRIGHT):
-			position.x = pWidth - GetScaledSize().x - padding.right + offset.x+ pX;
+			position.x = pWidth - GetScaledSize().x - padding.right + offset.x + pX;
 			position.y = pHeight / 2 + offset.y + pY;
+			break;
 		case(Anchor::BOTLEFT):
-			position.x = padding.left + offset.x+ pX;
+			position.x = padding.left + offset.x + pX;
 			position.y = pHeight - GetScaledSize().y - padding.bottom + offset.y + pY;
+			break;
 		case(Anchor::BOTMID):
-			position.x = pWidth / 2 + offset.x+ pX;
+			position.x = pWidth / 2 + offset.x + pX;
 			position.y = pHeight - GetScaledSize().y - padding.bottom + offset.y + pY;
+			break;
 		case(Anchor::BOTRIGHT):
-			position.x = pWidth - GetScaledSize().x - padding.right + offset.x+ pX;
+			position.x = pWidth - GetScaledSize().x - padding.right + offset.x + pX;
 			position.y = pHeight - GetScaledSize().y - padding.bottom + offset.y + pY;
+			break;
 		default:
 			break;
 		}
@@ -330,6 +367,8 @@ private:
 	sf::Vector2f position;
 	sf::Vector2f size;
 	sf::Vector2f scale;
+
+	sf::RectangleShape r;
 };
 
 static std::unordered_map<std::string, Anchor> const strToAnchor =

@@ -412,21 +412,21 @@ void XML_Parser::ParseUIFormatDoc(tinyxml2::XMLDocument* doc)
 	if (xml_root->Attribute("_type", "UIFormat")) //Is a XML file describing animation stuff
 	{
 		for (auto UIElement = xml_root->FirstChildElement();
-			UIElement != nullptr; 
-			UIElement = UIElement->NextSiblingElement()) //Recursivly get all UIElements
+			UIElement != nullptr && UIElement != xml_root; ) //Recursivly get all UIElements
+			
 		{
 			//Get attributes for UIElement
 
 			UIData data = UIData();
-			if (UIElement->Parent()->ToElement()->Attribute("Name") != nullptr)
+			if (UIElement->Parent()->ToElement() == xml_root)
 			{
-				data.parentName = UIElement->Parent()->ToElement()->Attribute("Name");
+				data.parentName = "root";
 			}
 			else
 			{
-				data.parentName = "Root";
+				data.parentName = UIElement->Parent()->ToElement()->Attribute("Name");
 			}
-			 
+			
 			data.uiType = UIElement->Value();
 
 			for (auto a = UIElement->FirstAttribute(); a != nullptr; a = a->Next())
@@ -439,10 +439,12 @@ void XML_Parser::ParseUIFormatDoc(tinyxml2::XMLDocument* doc)
 			{
 				if (UIElement->NextSiblingElement())
 				{
+					uiObjects.insert(std::make_pair(data.name, data));
 					UIElement = UIElement->NextSiblingElement();
 				}
 				else
 				{
+					uiObjects.insert(std::make_pair(data.name, data));
 					UIElement = UIElement->Parent()->ToElement();
 				}
 			}
@@ -470,7 +472,14 @@ void XML_Parser::ParseUIFormatDoc(tinyxml2::XMLDocument* doc)
 					}
 					else
 					{
-						if (UIElement->Parent() != xml_root) UIElement = UIElement->Parent()->ToElement();
+						if (UIElement->Parent()->ToElement()->Name() != "root")
+						{
+							UIElement = UIElement->Parent()->ToElement();
+						}
+						else
+						{
+							break;
+						}
 						
 					}
 				}

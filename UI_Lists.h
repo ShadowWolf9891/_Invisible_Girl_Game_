@@ -24,12 +24,9 @@ public:
 				{
 					child->SetAnchor(Anchor::TOPMID);
 					totalChildSizeY += child->GetScaledSize().y;
-					child->AddOffset(0, totalChildSizeY + GetChildSpacing() );
-					child->Reload();
+					child->SetOffset(0, totalChildSizeY + GetChildSpacing() );
+
 				}
-
-			Reload();
-
 			}
 		}
 	};
@@ -61,10 +58,8 @@ public:
 				{
 				child->SetAnchor(Anchor::MIDLEFT);
 				totalChildSizeX += child->GetScaledSize().x;
-				child->AddOffset(totalChildSizeX + GetChildSpacing(), 0);
-				child->Reload();
+				child->SetOffset(totalChildSizeX + GetChildSpacing(), 0);
 			}
-			Reload();
 		}
 	};
 

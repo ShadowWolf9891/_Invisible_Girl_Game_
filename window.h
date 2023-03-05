@@ -12,11 +12,18 @@ public:
     void EndDraw();
     bool IsOpen() const;
 
+    void Close()
+    {
+        this->window.close();
+    };
+
     sf::Vector2u GetCenter();
     const sf::View& GetView() const;
     void SetView(const sf::View& view);
 
     sf::FloatRect GetViewSpace() const;
+
+    const sf::RenderWindow& GetRenderWindow() const{ return this->window; } ;
 
 private:
     sf::RenderWindow window;

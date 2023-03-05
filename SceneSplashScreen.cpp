@@ -1,14 +1,9 @@
 #include "SceneSplashScreen.h"
-SceneSplashScreen::SceneSplashScreen(WorkingDirectory& workingDir,
-	SceneStateMachine& sceneStateMachine,
-	Window& window, ResourceAllocator<sf::Texture>& textureAllocator) : sceneStateMachine(sceneStateMachine), workingDir(workingDir),
-	window(window), switchToState(0), currentSeconds(0.f),
-	showForSeconds(3.f), textureAllocator(textureAllocator)
-{
 
-}
 void SceneSplashScreen::OnCreate()
 {
+	Scene::OnCreate();
+
 	// Wefll initialise our splash screen image here.
 	int textureID = textureAllocator.Add(workingDir.Get() + "Assets/RPGW_Harbor_v1.0/Ships.png");
 	if (textureID >= 0)
@@ -31,21 +26,20 @@ void SceneSplashScreen::OnDestroy() {
 
 
 }
-void SceneSplashScreen::SetSwitchToScene(unsigned int id)
-{
-	// Stores the id of the scene that we will transition to.
-	switchToState = id;
-}
 void SceneSplashScreen::Update(float deltaTime)
 {
+	Scene::Update(deltaTime);
 	currentSeconds += deltaTime;
 	if (currentSeconds >= showForSeconds)
 	{
 		// Switches states.
-		sceneStateMachine.SwitchTo(switchToState);
+		//sceneStateMachine.SwitchTo(switchToState);
+		switchScene = true;
+
 	}
 }
 void SceneSplashScreen::Draw(Window& window)
 {
+	Scene::Draw(window);
 	window.Draw(splashSprite);
 }
