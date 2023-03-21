@@ -86,8 +86,8 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>F:\Invisible_Girl_Game;F:\Invisible_Girl_Game\build;F:\Invisible_Girl_Game\External_Libraries\tileson-master\include;F:\Invisible_Girl_Game\External_Libraries\tinyxml2-master;F:\Invisible_Girl_Game\header-folder;F:\Invisible_Girl_Game\source-folder;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>%(AdditionalOptions) /external:I "F:/Invisible_Girl_Game/External_Libraries/BehaviorTree/include" /external:I "F:/Invisible_Girl_Game/External_Libraries/SFML-2.5.1/include"</AdditionalOptions>
+      <AdditionalIncludeDirectories>F:\Invisible_Girl_Game;F:\Invisible_Girl_Game\build;F:\Invisible_Girl_Game\External_Libraries\tileson-master\include;F:\Invisible_Girl_Game\External_Libraries\imgui-master;F:\Invisible_Girl_Game\External_Libraries\tinyxml2-master;F:\Invisible_Girl_Game\header-folder;F:\Invisible_Girl_Game\source-folder;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "F:/Invisible_Girl_Game/External_Libraries/BehaviorTree/include" /external:I "F:/Invisible_Girl_Game/External_Libraries/SFML-2.5.1/include" /external:I "F:/Invisible_Girl_Game/External_Libraries/imgui-sfml-master/install/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -99,15 +99,15 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;SFML_STATIC;TINYXML2_DEBUG;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;SFML_STATIC;TINYXML2_DEBUG;IMGUI_USER_CONFIG="imconfig-SFML.h";CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;SFML_STATIC;TINYXML2_DEBUG;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>F:\Invisible_Girl_Game;F:\Invisible_Girl_Game\build;F:\Invisible_Girl_Game\External_Libraries\tileson-master\include;F:\Invisible_Girl_Game\External_Libraries\tinyxml2-master;F:\Invisible_Girl_Game\header-folder;F:\Invisible_Girl_Game\source-folder;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\include;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;SFML_STATIC;TINYXML2_DEBUG;IMGUI_USER_CONFIG=\"imconfig-SFML.h\";CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\Invisible_Girl_Game;F:\Invisible_Girl_Game\build;F:\Invisible_Girl_Game\External_Libraries\tileson-master\include;F:\Invisible_Girl_Game\External_Libraries\imgui-master;F:\Invisible_Girl_Game\External_Libraries\tinyxml2-master;F:\Invisible_Girl_Game\header-folder;F:\Invisible_Girl_Game\source-folder;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\include;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\include;F:\Invisible_Girl_Game\External_Libraries\imgui-sfml-master\install\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>F:\Invisible_Girl_Game;F:\Invisible_Girl_Game\build;F:\Invisible_Girl_Game\External_Libraries\tileson-master\include;F:\Invisible_Girl_Game\External_Libraries\tinyxml2-master;F:\Invisible_Girl_Game\header-folder;F:\Invisible_Girl_Game\source-folder;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\include;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\Invisible_Girl_Game;F:\Invisible_Girl_Game\build;F:\Invisible_Girl_Game\External_Libraries\tileson-master\include;F:\Invisible_Girl_Game\External_Libraries\imgui-master;F:\Invisible_Girl_Game\External_Libraries\tinyxml2-master;F:\Invisible_Girl_Game\header-folder;F:\Invisible_Girl_Game\source-folder;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\include;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\include;F:\Invisible_Girl_Game\External_Libraries\imgui-sfml-master\install\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -128,7 +128,7 @@ exit /b %1
 if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-graphics-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-system-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-window-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-audio-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-network-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\lib\behaviortree_cppd.lib;External_Libraries\tinyxml2-master\Debug\tinyxml2.lib;gdi32.lib;OpenGL32.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\freetype.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\openal32.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\vorbisfile.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\vorbisenc.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\vorbis.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\ogg.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\flac.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-system-s-d.lib;winmm.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-graphics-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-system-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-window-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-audio-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-network-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\lib\behaviortree_cppd.lib;External_Libraries\tinyxml2-master\Debug\tinyxml2.lib;F:\Invisible_Girl_Game\External_Libraries\imgui-sfml-master\install\lib\ImGui-SFML.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\openal32.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\vorbisfile.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\vorbisenc.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\vorbis.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\ogg.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\flac.lib;ws2_32.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-graphics-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\freetype.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-window-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-system-s-d.lib;OpenGL32.lib;winmm.lib;gdi32.lib;opengl32.lib;glu32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -143,8 +143,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>F:\Invisible_Girl_Game;F:\Invisible_Girl_Game\build;F:\Invisible_Girl_Game\External_Libraries\tileson-master\include;F:\Invisible_Girl_Game\External_Libraries\tinyxml2-master;F:\Invisible_Girl_Game\header-folder;F:\Invisible_Girl_Game\source-folder;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>%(AdditionalOptions) /external:I "F:/Invisible_Girl_Game/External_Libraries/BehaviorTree/include" /external:I "F:/Invisible_Girl_Game/External_Libraries/SFML-2.5.1/include"</AdditionalOptions>
+      <AdditionalIncludeDirectories>F:\Invisible_Girl_Game;F:\Invisible_Girl_Game\build;F:\Invisible_Girl_Game\External_Libraries\tileson-master\include;F:\Invisible_Girl_Game\External_Libraries\imgui-master;F:\Invisible_Girl_Game\External_Libraries\tinyxml2-master;F:\Invisible_Girl_Game\header-folder;F:\Invisible_Girl_Game\source-folder;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "F:/Invisible_Girl_Game/External_Libraries/BehaviorTree/include" /external:I "F:/Invisible_Girl_Game/External_Libraries/SFML-2.5.1/include" /external:I "F:/Invisible_Girl_Game/External_Libraries/imgui-sfml-master/install/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
@@ -154,17 +154,17 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SFML_STATIC;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SFML_STATIC;IMGUI_USER_CONFIG="imconfig-SFML.h";CMAKE_INTDIR="Release"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat>
       </DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SFML_STATIC;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>F:\Invisible_Girl_Game;F:\Invisible_Girl_Game\build;F:\Invisible_Girl_Game\External_Libraries\tileson-master\include;F:\Invisible_Girl_Game\External_Libraries\tinyxml2-master;F:\Invisible_Girl_Game\header-folder;F:\Invisible_Girl_Game\source-folder;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\include;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SFML_STATIC;IMGUI_USER_CONFIG=\"imconfig-SFML.h\";CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\Invisible_Girl_Game;F:\Invisible_Girl_Game\build;F:\Invisible_Girl_Game\External_Libraries\tileson-master\include;F:\Invisible_Girl_Game\External_Libraries\imgui-master;F:\Invisible_Girl_Game\External_Libraries\tinyxml2-master;F:\Invisible_Girl_Game\header-folder;F:\Invisible_Girl_Game\source-folder;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\include;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\include;F:\Invisible_Girl_Game\External_Libraries\imgui-sfml-master\install\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>F:\Invisible_Girl_Game;F:\Invisible_Girl_Game\build;F:\Invisible_Girl_Game\External_Libraries\tileson-master\include;F:\Invisible_Girl_Game\External_Libraries\tinyxml2-master;F:\Invisible_Girl_Game\header-folder;F:\Invisible_Girl_Game\source-folder;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\include;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\Invisible_Girl_Game;F:\Invisible_Girl_Game\build;F:\Invisible_Girl_Game\External_Libraries\tileson-master\include;F:\Invisible_Girl_Game\External_Libraries\imgui-master;F:\Invisible_Girl_Game\External_Libraries\tinyxml2-master;F:\Invisible_Girl_Game\header-folder;F:\Invisible_Girl_Game\source-folder;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\include;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\include;F:\Invisible_Girl_Game\External_Libraries\imgui-sfml-master\install\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -185,7 +185,7 @@ exit /b %1
 if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-graphics-s.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-system-s.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-window-s.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-audio-s.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-network-s.lib;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\lib\behaviortree_cppd.lib;External_Libraries\tinyxml2-master\Release\tinyxml2.lib;gdi32.lib;OpenGL32.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\freetype.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\openal32.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\vorbisfile.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\vorbisenc.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\vorbis.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\ogg.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\flac.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-system-s.lib;winmm.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-graphics-s.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-system-s.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-window-s.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-audio-s.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-network-s.lib;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\lib\behaviortree_cppd.lib;External_Libraries\tinyxml2-master\Release\tinyxml2.lib;F:\Invisible_Girl_Game\External_Libraries\imgui-sfml-master\install\lib\ImGui-SFML.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\openal32.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\vorbisfile.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\vorbisenc.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\vorbis.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\ogg.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\flac.lib;ws2_32.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-graphics-s.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\freetype.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-window-s.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-system-s.lib;OpenGL32.lib;winmm.lib;gdi32.lib;opengl32.lib;glu32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -200,8 +200,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>F:\Invisible_Girl_Game;F:\Invisible_Girl_Game\build;F:\Invisible_Girl_Game\External_Libraries\tileson-master\include;F:\Invisible_Girl_Game\External_Libraries\tinyxml2-master;F:\Invisible_Girl_Game\header-folder;F:\Invisible_Girl_Game\source-folder;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>%(AdditionalOptions) /external:I "F:/Invisible_Girl_Game/External_Libraries/BehaviorTree/include" /external:I "F:/Invisible_Girl_Game/External_Libraries/SFML-2.5.1/include"</AdditionalOptions>
+      <AdditionalIncludeDirectories>F:\Invisible_Girl_Game;F:\Invisible_Girl_Game\build;F:\Invisible_Girl_Game\External_Libraries\tileson-master\include;F:\Invisible_Girl_Game\External_Libraries\imgui-master;F:\Invisible_Girl_Game\External_Libraries\tinyxml2-master;F:\Invisible_Girl_Game\header-folder;F:\Invisible_Girl_Game\source-folder;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "F:/Invisible_Girl_Game/External_Libraries/BehaviorTree/include" /external:I "F:/Invisible_Girl_Game/External_Libraries/SFML-2.5.1/include" /external:I "F:/Invisible_Girl_Game/External_Libraries/imgui-sfml-master/install/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
@@ -211,17 +211,17 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SFML_STATIC;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SFML_STATIC;IMGUI_USER_CONFIG="imconfig-SFML.h";CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat>
       </DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SFML_STATIC;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>F:\Invisible_Girl_Game;F:\Invisible_Girl_Game\build;F:\Invisible_Girl_Game\External_Libraries\tileson-master\include;F:\Invisible_Girl_Game\External_Libraries\tinyxml2-master;F:\Invisible_Girl_Game\header-folder;F:\Invisible_Girl_Game\source-folder;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\include;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SFML_STATIC;IMGUI_USER_CONFIG=\"imconfig-SFML.h\";CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\Invisible_Girl_Game;F:\Invisible_Girl_Game\build;F:\Invisible_Girl_Game\External_Libraries\tileson-master\include;F:\Invisible_Girl_Game\External_Libraries\imgui-master;F:\Invisible_Girl_Game\External_Libraries\tinyxml2-master;F:\Invisible_Girl_Game\header-folder;F:\Invisible_Girl_Game\source-folder;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\include;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\include;F:\Invisible_Girl_Game\External_Libraries\imgui-sfml-master\install\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>F:\Invisible_Girl_Game;F:\Invisible_Girl_Game\build;F:\Invisible_Girl_Game\External_Libraries\tileson-master\include;F:\Invisible_Girl_Game\External_Libraries\tinyxml2-master;F:\Invisible_Girl_Game\header-folder;F:\Invisible_Girl_Game\source-folder;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\include;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\Invisible_Girl_Game;F:\Invisible_Girl_Game\build;F:\Invisible_Girl_Game\External_Libraries\tileson-master\include;F:\Invisible_Girl_Game\External_Libraries\imgui-master;F:\Invisible_Girl_Game\External_Libraries\tinyxml2-master;F:\Invisible_Girl_Game\header-folder;F:\Invisible_Girl_Game\source-folder;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\include;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\include;F:\Invisible_Girl_Game\External_Libraries\imgui-sfml-master\install\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -242,7 +242,7 @@ exit /b %1
 if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-graphics-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-system-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-window-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-audio-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-network-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\lib\behaviortree_cppd.lib;External_Libraries\tinyxml2-master\MinSizeRel\tinyxml2.lib;gdi32.lib;OpenGL32.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\freetype.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\openal32.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\vorbisfile.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\vorbisenc.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\vorbis.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\ogg.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\flac.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-system-s-d.lib;winmm.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-graphics-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-system-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-window-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-audio-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-network-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\lib\behaviortree_cppd.lib;External_Libraries\tinyxml2-master\MinSizeRel\tinyxml2.lib;F:\Invisible_Girl_Game\External_Libraries\imgui-sfml-master\install\lib\ImGui-SFML.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\openal32.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\vorbisfile.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\vorbisenc.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\vorbis.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\ogg.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\flac.lib;ws2_32.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-graphics-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\freetype.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-window-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-system-s-d.lib;OpenGL32.lib;winmm.lib;gdi32.lib;opengl32.lib;glu32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -257,8 +257,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>F:\Invisible_Girl_Game;F:\Invisible_Girl_Game\build;F:\Invisible_Girl_Game\External_Libraries\tileson-master\include;F:\Invisible_Girl_Game\External_Libraries\tinyxml2-master;F:\Invisible_Girl_Game\header-folder;F:\Invisible_Girl_Game\source-folder;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>%(AdditionalOptions) /external:I "F:/Invisible_Girl_Game/External_Libraries/BehaviorTree/include" /external:I "F:/Invisible_Girl_Game/External_Libraries/SFML-2.5.1/include"</AdditionalOptions>
+      <AdditionalIncludeDirectories>F:\Invisible_Girl_Game;F:\Invisible_Girl_Game\build;F:\Invisible_Girl_Game\External_Libraries\tileson-master\include;F:\Invisible_Girl_Game\External_Libraries\imgui-master;F:\Invisible_Girl_Game\External_Libraries\tinyxml2-master;F:\Invisible_Girl_Game\header-folder;F:\Invisible_Girl_Game\source-folder;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "F:/Invisible_Girl_Game/External_Libraries/BehaviorTree/include" /external:I "F:/Invisible_Girl_Game/External_Libraries/SFML-2.5.1/include" /external:I "F:/Invisible_Girl_Game/External_Libraries/imgui-sfml-master/install/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -269,15 +269,15 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SFML_STATIC;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SFML_STATIC;IMGUI_USER_CONFIG="imconfig-SFML.h";CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SFML_STATIC;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>F:\Invisible_Girl_Game;F:\Invisible_Girl_Game\build;F:\Invisible_Girl_Game\External_Libraries\tileson-master\include;F:\Invisible_Girl_Game\External_Libraries\tinyxml2-master;F:\Invisible_Girl_Game\header-folder;F:\Invisible_Girl_Game\source-folder;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\include;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SFML_STATIC;IMGUI_USER_CONFIG=\"imconfig-SFML.h\";CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\Invisible_Girl_Game;F:\Invisible_Girl_Game\build;F:\Invisible_Girl_Game\External_Libraries\tileson-master\include;F:\Invisible_Girl_Game\External_Libraries\imgui-master;F:\Invisible_Girl_Game\External_Libraries\tinyxml2-master;F:\Invisible_Girl_Game\header-folder;F:\Invisible_Girl_Game\source-folder;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\include;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\include;F:\Invisible_Girl_Game\External_Libraries\imgui-sfml-master\install\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>F:\Invisible_Girl_Game;F:\Invisible_Girl_Game\build;F:\Invisible_Girl_Game\External_Libraries\tileson-master\include;F:\Invisible_Girl_Game\External_Libraries\tinyxml2-master;F:\Invisible_Girl_Game\header-folder;F:\Invisible_Girl_Game\source-folder;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\include;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\Invisible_Girl_Game;F:\Invisible_Girl_Game\build;F:\Invisible_Girl_Game\External_Libraries\tileson-master\include;F:\Invisible_Girl_Game\External_Libraries\imgui-master;F:\Invisible_Girl_Game\External_Libraries\tinyxml2-master;F:\Invisible_Girl_Game\header-folder;F:\Invisible_Girl_Game\source-folder;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\include;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\include;F:\Invisible_Girl_Game\External_Libraries\imgui-sfml-master\install\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -298,7 +298,7 @@ exit /b %1
 if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-graphics-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-system-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-window-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-audio-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-network-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\lib\behaviortree_cppd.lib;External_Libraries\tinyxml2-master\RelWithDebInfo\tinyxml2.lib;gdi32.lib;OpenGL32.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\freetype.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\openal32.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\vorbisfile.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\vorbisenc.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\vorbis.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\ogg.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\flac.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-system-s-d.lib;winmm.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-graphics-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-system-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-window-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-audio-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-network-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\lib\behaviortree_cppd.lib;External_Libraries\tinyxml2-master\RelWithDebInfo\tinyxml2.lib;F:\Invisible_Girl_Game\External_Libraries\imgui-sfml-master\install\lib\ImGui-SFML.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\openal32.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\vorbisfile.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\vorbisenc.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\vorbis.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\ogg.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\flac.lib;ws2_32.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-graphics-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\freetype.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-window-s-d.lib;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\sfml-system-s-d.lib;OpenGL32.lib;winmm.lib;gdi32.lib;opengl32.lib;glu32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -324,7 +324,7 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F:\CMake\share\cmake-3.24\Modules\CMakeCInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeCXXInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeCommonLanguageInclude.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeGenericSystem.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeInitializeConfigs.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeLanguageInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeRCInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInitialize.cmake;F:\CMake\share\cmake-3.24\Modules\Compiler\CMakeCommonCompilerMacros.cmake;F:\CMake\share\cmake-3.24\Modules\Compiler\MSVC-C.cmake;F:\CMake\share\cmake-3.24\Modules\Compiler\MSVC-CXX.cmake;F:\CMake\share\cmake-3.24\Modules\Compiler\MSVC.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-C.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-CXX.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\Windows.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\WindowsPaths.cmake;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\lib\cmake\behaviortree_cpp\behaviortree_cppConfig.cmake;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\lib\cmake\behaviortree_cpp\behaviortree_cppTargets-debug.cmake;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\lib\cmake\behaviortree_cpp\behaviortree_cppTargets.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLConfig.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLConfigDependencies.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLConfigVersion.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLStaticTargets-debug.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLStaticTargets-release.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLStaticTargets.cmake;F:\Invisible_Girl_Game\build\CMakeFiles\3.24.0\CMakeCCompiler.cmake;F:\Invisible_Girl_Game\build\CMakeFiles\3.24.0\CMakeCXXCompiler.cmake;F:\Invisible_Girl_Game\build\CMakeFiles\3.24.0\CMakeRCCompiler.cmake;F:\Invisible_Girl_Game\build\CMakeFiles\3.24.0\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F:\CMake\share\cmake-3.24\Modules\CMakeCInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeCXXInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeCommonLanguageInclude.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeGenericSystem.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeInitializeConfigs.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeLanguageInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeRCInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInitialize.cmake;F:\CMake\share\cmake-3.24\Modules\Compiler\CMakeCommonCompilerMacros.cmake;F:\CMake\share\cmake-3.24\Modules\Compiler\MSVC-C.cmake;F:\CMake\share\cmake-3.24\Modules\Compiler\MSVC-CXX.cmake;F:\CMake\share\cmake-3.24\Modules\Compiler\MSVC.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-C.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-CXX.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\Windows.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\WindowsPaths.cmake;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\lib\cmake\behaviortree_cpp\behaviortree_cppConfig.cmake;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\lib\cmake\behaviortree_cpp\behaviortree_cppTargets-debug.cmake;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\lib\cmake\behaviortree_cpp\behaviortree_cppTargets.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLConfig.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLConfigDependencies.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLConfigVersion.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLStaticTargets-debug.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLStaticTargets-release.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLStaticTargets.cmake;F:\Invisible_Girl_Game\External_Libraries\imgui-sfml-master\install\lib\cmake\ImGui-SFML\ImGui-SFMLConfig-debug.cmake;F:\Invisible_Girl_Game\External_Libraries\imgui-sfml-master\install\lib\cmake\ImGui-SFML\ImGui-SFMLConfig.cmake;F:\Invisible_Girl_Game\build\CMakeFiles\3.24.0\CMakeCCompiler.cmake;F:\Invisible_Girl_Game\build\CMakeFiles\3.24.0\CMakeCXXCompiler.cmake;F:\Invisible_Girl_Game\build\CMakeFiles\3.24.0\CMakeRCCompiler.cmake;F:\Invisible_Girl_Game\build\CMakeFiles\3.24.0\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F:\Invisible_Girl_Game\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule F:/Invisible_Girl_Game/CMakeLists.txt</Message>
@@ -337,7 +337,7 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F:\CMake\share\cmake-3.24\Modules\CMakeCInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeCXXInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeCommonLanguageInclude.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeGenericSystem.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeInitializeConfigs.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeLanguageInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeRCInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInitialize.cmake;F:\CMake\share\cmake-3.24\Modules\Compiler\CMakeCommonCompilerMacros.cmake;F:\CMake\share\cmake-3.24\Modules\Compiler\MSVC-C.cmake;F:\CMake\share\cmake-3.24\Modules\Compiler\MSVC-CXX.cmake;F:\CMake\share\cmake-3.24\Modules\Compiler\MSVC.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-C.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-CXX.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\Windows.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\WindowsPaths.cmake;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\lib\cmake\behaviortree_cpp\behaviortree_cppConfig.cmake;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\lib\cmake\behaviortree_cpp\behaviortree_cppTargets-debug.cmake;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\lib\cmake\behaviortree_cpp\behaviortree_cppTargets.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLConfig.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLConfigDependencies.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLConfigVersion.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLStaticTargets-debug.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLStaticTargets-release.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLStaticTargets.cmake;F:\Invisible_Girl_Game\build\CMakeFiles\3.24.0\CMakeCCompiler.cmake;F:\Invisible_Girl_Game\build\CMakeFiles\3.24.0\CMakeCXXCompiler.cmake;F:\Invisible_Girl_Game\build\CMakeFiles\3.24.0\CMakeRCCompiler.cmake;F:\Invisible_Girl_Game\build\CMakeFiles\3.24.0\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F:\CMake\share\cmake-3.24\Modules\CMakeCInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeCXXInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeCommonLanguageInclude.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeGenericSystem.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeInitializeConfigs.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeLanguageInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeRCInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInitialize.cmake;F:\CMake\share\cmake-3.24\Modules\Compiler\CMakeCommonCompilerMacros.cmake;F:\CMake\share\cmake-3.24\Modules\Compiler\MSVC-C.cmake;F:\CMake\share\cmake-3.24\Modules\Compiler\MSVC-CXX.cmake;F:\CMake\share\cmake-3.24\Modules\Compiler\MSVC.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-C.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-CXX.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\Windows.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\WindowsPaths.cmake;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\lib\cmake\behaviortree_cpp\behaviortree_cppConfig.cmake;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\lib\cmake\behaviortree_cpp\behaviortree_cppTargets-debug.cmake;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\lib\cmake\behaviortree_cpp\behaviortree_cppTargets.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLConfig.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLConfigDependencies.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLConfigVersion.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLStaticTargets-debug.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLStaticTargets-release.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLStaticTargets.cmake;F:\Invisible_Girl_Game\External_Libraries\imgui-sfml-master\install\lib\cmake\ImGui-SFML\ImGui-SFMLConfig-debug.cmake;F:\Invisible_Girl_Game\External_Libraries\imgui-sfml-master\install\lib\cmake\ImGui-SFML\ImGui-SFMLConfig.cmake;F:\Invisible_Girl_Game\build\CMakeFiles\3.24.0\CMakeCCompiler.cmake;F:\Invisible_Girl_Game\build\CMakeFiles\3.24.0\CMakeCXXCompiler.cmake;F:\Invisible_Girl_Game\build\CMakeFiles\3.24.0\CMakeRCCompiler.cmake;F:\Invisible_Girl_Game\build\CMakeFiles\3.24.0\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F:\Invisible_Girl_Game\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule F:/Invisible_Girl_Game/CMakeLists.txt</Message>
@@ -350,7 +350,7 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">F:\CMake\share\cmake-3.24\Modules\CMakeCInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeCXXInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeCommonLanguageInclude.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeGenericSystem.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeInitializeConfigs.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeLanguageInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeRCInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInitialize.cmake;F:\CMake\share\cmake-3.24\Modules\Compiler\CMakeCommonCompilerMacros.cmake;F:\CMake\share\cmake-3.24\Modules\Compiler\MSVC-C.cmake;F:\CMake\share\cmake-3.24\Modules\Compiler\MSVC-CXX.cmake;F:\CMake\share\cmake-3.24\Modules\Compiler\MSVC.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-C.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-CXX.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\Windows.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\WindowsPaths.cmake;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\lib\cmake\behaviortree_cpp\behaviortree_cppConfig.cmake;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\lib\cmake\behaviortree_cpp\behaviortree_cppTargets-debug.cmake;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\lib\cmake\behaviortree_cpp\behaviortree_cppTargets.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLConfig.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLConfigDependencies.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLConfigVersion.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLStaticTargets-debug.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLStaticTargets-release.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLStaticTargets.cmake;F:\Invisible_Girl_Game\build\CMakeFiles\3.24.0\CMakeCCompiler.cmake;F:\Invisible_Girl_Game\build\CMakeFiles\3.24.0\CMakeCXXCompiler.cmake;F:\Invisible_Girl_Game\build\CMakeFiles\3.24.0\CMakeRCCompiler.cmake;F:\Invisible_Girl_Game\build\CMakeFiles\3.24.0\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">F:\CMake\share\cmake-3.24\Modules\CMakeCInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeCXXInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeCommonLanguageInclude.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeGenericSystem.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeInitializeConfigs.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeLanguageInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeRCInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInitialize.cmake;F:\CMake\share\cmake-3.24\Modules\Compiler\CMakeCommonCompilerMacros.cmake;F:\CMake\share\cmake-3.24\Modules\Compiler\MSVC-C.cmake;F:\CMake\share\cmake-3.24\Modules\Compiler\MSVC-CXX.cmake;F:\CMake\share\cmake-3.24\Modules\Compiler\MSVC.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-C.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-CXX.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\Windows.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\WindowsPaths.cmake;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\lib\cmake\behaviortree_cpp\behaviortree_cppConfig.cmake;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\lib\cmake\behaviortree_cpp\behaviortree_cppTargets-debug.cmake;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\lib\cmake\behaviortree_cpp\behaviortree_cppTargets.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLConfig.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLConfigDependencies.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLConfigVersion.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLStaticTargets-debug.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLStaticTargets-release.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLStaticTargets.cmake;F:\Invisible_Girl_Game\External_Libraries\imgui-sfml-master\install\lib\cmake\ImGui-SFML\ImGui-SFMLConfig-debug.cmake;F:\Invisible_Girl_Game\External_Libraries\imgui-sfml-master\install\lib\cmake\ImGui-SFML\ImGui-SFMLConfig.cmake;F:\Invisible_Girl_Game\build\CMakeFiles\3.24.0\CMakeCCompiler.cmake;F:\Invisible_Girl_Game\build\CMakeFiles\3.24.0\CMakeCXXCompiler.cmake;F:\Invisible_Girl_Game\build\CMakeFiles\3.24.0\CMakeRCCompiler.cmake;F:\Invisible_Girl_Game\build\CMakeFiles\3.24.0\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">F:\Invisible_Girl_Game\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule F:/Invisible_Girl_Game/CMakeLists.txt</Message>
@@ -363,25 +363,13 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">F:\CMake\share\cmake-3.24\Modules\CMakeCInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeCXXInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeCommonLanguageInclude.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeGenericSystem.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeInitializeConfigs.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeLanguageInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeRCInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInitialize.cmake;F:\CMake\share\cmake-3.24\Modules\Compiler\CMakeCommonCompilerMacros.cmake;F:\CMake\share\cmake-3.24\Modules\Compiler\MSVC-C.cmake;F:\CMake\share\cmake-3.24\Modules\Compiler\MSVC-CXX.cmake;F:\CMake\share\cmake-3.24\Modules\Compiler\MSVC.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-C.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-CXX.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\Windows.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\WindowsPaths.cmake;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\lib\cmake\behaviortree_cpp\behaviortree_cppConfig.cmake;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\lib\cmake\behaviortree_cpp\behaviortree_cppTargets-debug.cmake;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\lib\cmake\behaviortree_cpp\behaviortree_cppTargets.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLConfig.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLConfigDependencies.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLConfigVersion.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLStaticTargets-debug.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLStaticTargets-release.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLStaticTargets.cmake;F:\Invisible_Girl_Game\build\CMakeFiles\3.24.0\CMakeCCompiler.cmake;F:\Invisible_Girl_Game\build\CMakeFiles\3.24.0\CMakeCXXCompiler.cmake;F:\Invisible_Girl_Game\build\CMakeFiles\3.24.0\CMakeRCCompiler.cmake;F:\Invisible_Girl_Game\build\CMakeFiles\3.24.0\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">F:\CMake\share\cmake-3.24\Modules\CMakeCInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeCXXInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeCommonLanguageInclude.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeGenericSystem.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeInitializeConfigs.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeLanguageInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeRCInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInformation.cmake;F:\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInitialize.cmake;F:\CMake\share\cmake-3.24\Modules\Compiler\CMakeCommonCompilerMacros.cmake;F:\CMake\share\cmake-3.24\Modules\Compiler\MSVC-C.cmake;F:\CMake\share\cmake-3.24\Modules\Compiler\MSVC-CXX.cmake;F:\CMake\share\cmake-3.24\Modules\Compiler\MSVC.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-C.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-CXX.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\Windows.cmake;F:\CMake\share\cmake-3.24\Modules\Platform\WindowsPaths.cmake;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\lib\cmake\behaviortree_cpp\behaviortree_cppConfig.cmake;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\lib\cmake\behaviortree_cpp\behaviortree_cppTargets-debug.cmake;F:\Invisible_Girl_Game\External_Libraries\BehaviorTree\lib\cmake\behaviortree_cpp\behaviortree_cppTargets.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLConfig.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLConfigDependencies.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLConfigVersion.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLStaticTargets-debug.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLStaticTargets-release.cmake;F:\Invisible_Girl_Game\External_Libraries\SFML-2.5.1\lib\cmake\SFML\SFMLStaticTargets.cmake;F:\Invisible_Girl_Game\External_Libraries\imgui-sfml-master\install\lib\cmake\ImGui-SFML\ImGui-SFMLConfig-debug.cmake;F:\Invisible_Girl_Game\External_Libraries\imgui-sfml-master\install\lib\cmake\ImGui-SFML\ImGui-SFMLConfig.cmake;F:\Invisible_Girl_Game\build\CMakeFiles\3.24.0\CMakeCCompiler.cmake;F:\Invisible_Girl_Game\build\CMakeFiles\3.24.0\CMakeCXXCompiler.cmake;F:\Invisible_Girl_Game\build\CMakeFiles\3.24.0\CMakeRCCompiler.cmake;F:\Invisible_Girl_Game\build\CMakeFiles\3.24.0\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">F:\Invisible_Girl_Game\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\C_Dialogue.cpp" />
-    <ClCompile Include="..\Quest.cpp" />
-    <ClCompile Include="..\S_QuestManager.cpp" />
     <ClCompile Include="F:\Invisible_Girl_Game\Animation.cpp" />
-    <ClInclude Include="..\C_FollowMouse.h" />
-    <ClInclude Include="..\GUI.h" />
-    <ClInclude Include="..\C_Dialogue.h" />
-    <ClInclude Include="..\SceneMainMenu.h" />
-    <ClInclude Include="..\UI_TextBox.h" />
-    <ClInclude Include="..\BaseUserInterface.h" />
-    <ClInclude Include="..\UI_Lists.h" />
-    <ClInclude Include="..\Quest.h" />
-    <ClInclude Include="..\S_QuestManager.h" />
     <ClInclude Include="F:\Invisible_Girl_Game\Animation.h" />
     <Image Include="F:\Invisible_Girl_Game\Assets\2DML_DUNG1\anim\light1.png">
     </Image>
@@ -492,6 +480,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <Image Include="F:\Invisible_Girl_Game\Assets\Character\20.01a - Character Base 2.4a (comp. v01)\hoe_and_axe.png">
     </Image>
     <Image Include="F:\Invisible_Girl_Game\Assets\Character\how to make and sell your own outfits\mana seed, sprites.png">
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\Icons\Icon_Sheet.png">
     </Image>
     <Image Include="F:\Invisible_Girl_Game\Assets\MP_Dungeon1\Anim\candle-01.png">
     </Image>
@@ -977,7 +967,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </Image>
     <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_WINDMILL_v1.1\Mill_outside_shadows.png">
     </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\UI\MouseCursor1.png">
+    </Image>
     <ClInclude Include="F:\Invisible_Girl_Game\BT_ActionNodes.h" />
+    <ClInclude Include="F:\Invisible_Girl_Game\BaseUserInterface.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\Bitmask.cpp" />
     <ClInclude Include="F:\Invisible_Girl_Game\Bitmask.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\C_Animation.cpp" />
@@ -992,12 +985,15 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="F:\Invisible_Girl_Game\C_Collidable.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\C_Collider.cpp" />
     <ClInclude Include="F:\Invisible_Girl_Game\C_Collider.h" />
+    <ClCompile Include="F:\Invisible_Girl_Game\C_Dialogue.cpp" />
+    <ClInclude Include="F:\Invisible_Girl_Game\C_Dialogue.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\C_Direction.cpp" />
     <ClInclude Include="F:\Invisible_Girl_Game\C_Direction.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\C_Drawable.cpp" />
     <ClInclude Include="F:\Invisible_Girl_Game\C_Drawable.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\C_Events.cpp" />
     <ClInclude Include="F:\Invisible_Girl_Game\C_Events.h" />
+    <ClInclude Include="F:\Invisible_Girl_Game\C_FollowMouse.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\C_InstanceID.cpp" />
     <ClInclude Include="F:\Invisible_Girl_Game\C_InstanceID.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\C_InteractWithObjects.cpp" />
@@ -1036,6 +1032,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="F:\Invisible_Girl_Game\C_Velocity.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\C_WalkInLine.cpp" />
     <ClInclude Include="F:\Invisible_Girl_Game\C_WalkInLine.h" />
+    <ClCompile Include="F:\Invisible_Girl_Game\ClassObserver.cpp" />
     <ClCompile Include="F:\Invisible_Girl_Game\Component.cpp" />
     <ClInclude Include="F:\Invisible_Girl_Game\Component.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\ComponentPairHash.cpp" />
@@ -1044,16 +1041,32 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="F:\Invisible_Girl_Game\Debug.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\Dispatcher.cpp" />
     <ClInclude Include="F:\Invisible_Girl_Game\Dispatcher.h" />
+    <ClCompile Include="F:\Invisible_Girl_Game\E_FireProjectile.cpp" />
+    <ClInclude Include="F:\Invisible_Girl_Game\E_FireProjectile.h" />
+    <ClCompile Include="F:\Invisible_Girl_Game\E_Test.cpp" />
     <ClCompile Include="F:\Invisible_Girl_Game\Event.cpp" />
     <ClInclude Include="F:\Invisible_Girl_Game\Event.h" />
+    <ClInclude Include="F:\Invisible_Girl_Game\External_Libraries\imgui-master\imconfig.h" />
+    <ClCompile Include="F:\Invisible_Girl_Game\External_Libraries\imgui-master\imgui.cpp" />
+    <ClInclude Include="F:\Invisible_Girl_Game\External_Libraries\imgui-master\imgui.h" />
+    <ClCompile Include="F:\Invisible_Girl_Game\External_Libraries\imgui-master\imgui_demo.cpp" />
+    <ClCompile Include="F:\Invisible_Girl_Game\External_Libraries\imgui-master\imgui_draw.cpp" />
+    <ClInclude Include="F:\Invisible_Girl_Game\External_Libraries\imgui-master\imgui_internal.h" />
+    <ClCompile Include="F:\Invisible_Girl_Game\External_Libraries\imgui-master\imgui_tables.cpp" />
+    <ClCompile Include="F:\Invisible_Girl_Game\External_Libraries\imgui-master\imgui_widgets.cpp" />
+    <ClInclude Include="F:\Invisible_Girl_Game\External_Libraries\imgui-master\imstb_rectpack.h" />
+    <ClInclude Include="F:\Invisible_Girl_Game\External_Libraries\imgui-master\imstb_textedit.h" />
+    <ClInclude Include="F:\Invisible_Girl_Game\External_Libraries\imgui-master\imstb_truetype.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\GLC.cpp" />
     <ClInclude Include="F:\Invisible_Girl_Game\GLC.h" />
+    <ClInclude Include="F:\Invisible_Girl_Game\GUI.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\Game.cpp" />
     <ClInclude Include="F:\Invisible_Girl_Game\Game.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\Input.cpp" />
     <ClInclude Include="F:\Invisible_Girl_Game\Input.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\Invisible_Girl_Game.cpp" />
     <ClInclude Include="F:\Invisible_Girl_Game\Invisible_Girl_Game.h" />
+    <ClCompile Include="F:\Invisible_Girl_Game\NPC.cpp" />
     <ClInclude Include="F:\Invisible_Girl_Game\NPC.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\Object.cpp" />
     <ClInclude Include="F:\Invisible_Girl_Game\Object.h" />
@@ -1063,6 +1076,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="F:\Invisible_Girl_Game\Player.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\Quadtree.cpp" />
     <ClInclude Include="F:\Invisible_Girl_Game\Quadtree.h" />
+    <ClCompile Include="F:\Invisible_Girl_Game\Quest.cpp" />
+    <ClInclude Include="F:\Invisible_Girl_Game\Quest.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\Raycast.cpp" />
     <ClInclude Include="F:\Invisible_Girl_Game\Raycast.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\ResourceAllocator.cpp" />
@@ -1071,10 +1086,13 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="F:\Invisible_Girl_Game\S_Collidable.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\S_Drawable.cpp" />
     <ClInclude Include="F:\Invisible_Girl_Game\S_Drawable.h" />
+    <ClCompile Include="F:\Invisible_Girl_Game\S_QuestManager.cpp" />
+    <ClInclude Include="F:\Invisible_Girl_Game\S_QuestManager.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\Scene.cpp" />
     <ClInclude Include="F:\Invisible_Girl_Game\Scene.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\SceneGame.cpp" />
     <ClInclude Include="F:\Invisible_Girl_Game\SceneGame.h" />
+    <ClInclude Include="F:\Invisible_Girl_Game\SceneMainMenu.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\SceneSplashScreen.cpp" />
     <ClInclude Include="F:\Invisible_Girl_Game\SceneSplashScreen.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\SceneStateMachine.cpp" />
@@ -1089,16 +1107,19 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="F:\Invisible_Girl_Game\WorkingDirectory.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\XML_Parser.cpp" />
     <ClInclude Include="F:\Invisible_Girl_Game\XML_Parser.h" />
-    <Xml Include="..\data\dialogue\UIObjects.xml" />
-    <Xml Include="..\data\dialogue\Gerard_Dialogue.xml" />
-    <Xml Include="..\data\obj\Item_Data.xml" />
-    <Xml Include="..\data\obj\Mouse_Data.xml">
-      <DeploymentContent>false</DeploymentContent>
-    </Xml>
-    <Xml Include="..\data\obj\PassiveNPC_Data.xml" />
-    <Xml Include="..\data\obj\Player_Data.xml" />
-    <Xml Include="..\data\trees\PassiveNPC_Tree.xml" />
     <XML Include="F:\Invisible_Girl_Game\data\anim\ANIM_Characters.xml">
+    </XML>
+    <XML Include="F:\Invisible_Girl_Game\data\dialogue\Gerard_Dialogue.xml">
+    </XML>
+    <XML Include="F:\Invisible_Girl_Game\data\obj\Item_Data.xml">
+    </XML>
+    <XML Include="F:\Invisible_Girl_Game\data\obj\Mouse_Data.xml">
+    </XML>
+    <XML Include="F:\Invisible_Girl_Game\data\obj\PassiveNPC_Data.xml">
+    </XML>
+    <XML Include="F:\Invisible_Girl_Game\data\obj\Player_Data.xml">
+    </XML>
+    <XML Include="F:\Invisible_Girl_Game\data\trees\PassiveNPC_Tree.xml">
     </XML>
     <XML Include="F:\Invisible_Girl_Game\data\trees\PlayerTree.xml">
     </XML>

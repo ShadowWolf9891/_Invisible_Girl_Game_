@@ -13,6 +13,7 @@ int main()
 {
 	Game game;
 
+
 	while (game.IsRunning()) {
 		game.CaptureInput();
 		game.Update();
@@ -21,6 +22,7 @@ int main()
 		game.CalculateDeltaTime();
 	}
 
+	ImGui::SFML::Shutdown();
 
 	return 0;
 }

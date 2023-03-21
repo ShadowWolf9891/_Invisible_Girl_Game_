@@ -4,25 +4,32 @@
 
 #include "Input.h"
 #include "GUI.h"
+#include "imgui.h"
 #include "Scene.h"
 
 class SceneMainMenu : public Scene
 {
 public:
 	SceneMainMenu(WorkingDirectory& workingDir, ResourceAllocator<sf::Texture>& textureAllocator, Window& window, ResourceAllocator<sf::Font>& fontAllocator) : 
-		Scene(workingDir, textureAllocator, window, fontAllocator){};
+		Scene(workingDir, textureAllocator, window, fontAllocator), window_flags(0), p_open(false) {};
 	
 	
 	void OnCreate() override
 	{
 		Scene::OnCreate();
+		p_open = true;
+		
+		int buttonID = textureAllocator.Add(workingDir.Get() + "Assets/UI/ButtonImage.png");
 
-		componentGrid.Load();
+		buttonTexture = textureAllocator.Get(buttonID).get(); //This gets the raw pointer. Make sure that the shared_ptr is not deleted before raw pointer.
+
+		/*componentGrid.Load();
 
 		this->background.setSize(sf::Vector2f(sf::VideoMode::getDesktopMode().width, sf::VideoMode::getDesktopMode().height));
-		this->background.setFillColor(sf::Color::White);
+		this->background.setFillColor(sf::Color::White);*/
 
-		std::string btnName = "StartBtn";
+
+		/*std::string btnName = "StartBtn";
 		const int fontID = fontAllocator.Add(workingDir.Get() + "Assets/Fonts/joystix monospace.ttf");
 		std::shared_ptr<sf::Font> font = fontAllocator.Get(fontID);
 
@@ -34,7 +41,7 @@ public:
 		buttons.push_back(std::make_shared<GUI::Button>(startBtn));
 
 		std::vector<std::shared_ptr<Object>> mouseList = CreateObjectFromFile("data/obj/Mouse_Data.xml", sf::Vector2f(0, 0));
-		objects.Add(mouseList);
+		objects.Add(mouseList);*/
 
 	};
 	void OnDestroy() override
@@ -57,7 +64,9 @@ public:
 			this->window.Close();
 		}
 		
-		for (auto& b : buttons)
+		ShowMainMenu(&p_open);
+
+		/*for (auto& b : buttons)
 		{
 			b->Update(sf::Vector2f(sf::Mouse::getPosition(window.GetRenderWindow())));
 
@@ -68,30 +77,67 @@ public:
 					switchScene = true;
 				}
 			}
-		}
+		}*/
 
 	};
 	
 	void Draw(Window& window) override
 	{
-		window.Draw(this->background);
+		//window.Draw(this->background);
 
 		Scene::Draw(window);
 
-		for (auto& b : buttons)
+		/*for (auto& b : buttons)
 		{
 			b->Draw(window);
-		}
+		}*/
+	};
+
+	void ShowMainMenu(bool* p_open)
+	{
+		window_flags = ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoSavedSettings;
+
+		static int startClicked = 0, loadClicked = 0, exitClicked =0;
+
+		if (ImGui::Begin("MainMenu", p_open, window_flags))
+		{
+			if (CreateImageButton("btnStart", "New Game", *buttonTexture, sf::Vector2f(100, 50), sf::Vector2f(0, 0), sf::Vector2f(buttonTexture->getSize()))) startClicked++;
+			if (CreateImageButton("btnLoad", "Continue", *buttonTexture, sf::Vector2f(100, 50), sf::Vector2f(0, 0), sf::Vector2f(buttonTexture->getSize()))) loadClicked++;
+			if (CreateImageButton("btnExit", "Exit", *buttonTexture, sf::Vector2f(100, 50), sf::Vector2f(0, 0), sf::Vector2f(buttonTexture->getSize()))) exitClicked++;
+			
+			if (startClicked & 1)
+			{
+				switchScene = true;
+			}
+			if (loadClicked & 1)
+			{
+				//Load save data
+			}
+			if (exitClicked & 1)
+			{
+				window.Close();
+			}
+
+		};
+
+		ImGui::End();
+
+		ImGui::EndFrame();
 	};
 
 	
 private:
-	sf::RectangleShape background;
-	GUI::Grid componentGrid;
+	/*sf::RectangleShape background;
+	GUI::Grid componentGrid;*/
 	
-	std::vector<std::shared_ptr<GUI::Button>> buttons;
+	/*std::vector<std::shared_ptr<GUI::Button>> buttons;*/
+	
+	//Ui Stuff
 
-	
+	sf::Texture* buttonTexture;
+
+	ImGuiWindowFlags window_flags;  //Specifies info about the window
+	bool p_open; //If window is open
 };
 
 #endif //SceneMainMenu_h

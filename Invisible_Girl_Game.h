@@ -20,3 +20,5 @@
 #include "tinyxml2.h"
 #include "tileson.h"
 #include "Input.h"
+#include "imgui.h"
+#include "imgui-SFML.h"

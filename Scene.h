@@ -35,6 +35,7 @@
 #include "XML_Parser.h"
 #include "S_QuestManager.h"
 
+
 class Scene
 {
 public:
@@ -87,12 +88,10 @@ public:
     {
         objects.Draw(window);
     };
-
     virtual void SetSwitchToScene(unsigned int id)
     {
         switchToSceneID = id;
     };
-
     virtual void InitializeContext()
     {
         context.input = &input;
@@ -107,7 +106,6 @@ public:
         context.bt_factory = &bt_factory;
         context.xml_parser = &xml_parser;
     };
-
     virtual void RegisterNodes()
     {
         bt_factory.registerNodeType<IsOnGround>("IsOnGround");
@@ -130,7 +128,6 @@ public:
         enum bowInfo { NOBOW = 0, BOWDRAW = 1, BOWOUT = 2, BOWSHEATH = 3 };
         bt_factory.registerScriptingEnums<bowInfo>();
     };
-
     virtual std::vector<std::shared_ptr<Object>> CreateObjectFromFile(std::string fileName, sf::Vector2f location)
     {
         std::vector<std::shared_ptr<Object>> objectList;
@@ -166,7 +163,6 @@ public:
         return objectList;
 
     };
-
     virtual void AttachComponent(std::shared_ptr<Object> o, std::string _type, std::unordered_map<std::string, std::string> propertiesMap)
     {
         //Not very elegant but there does not appear to be another way to convert string to typename at the moment
@@ -238,13 +234,42 @@ public:
         //Add any new components here.
 
     };
-
     virtual void DispatchEvents(std::shared_ptr<C_Observer> ob)
     {
         for (auto& e : strToEvent)
         {
             dispatcher.subscribe(e.second, std::bind(&C_Observer::handle, ob, std::placeholders::_1));
         }
+    };
+
+    virtual bool CreateImageButton(const char* ID, const char* text, sf::Texture& fileTexture, ImVec2 imageSize, ImVec2 uv0, ImVec2 uv1)
+    {
+        bool pushed = false;
+
+        sf::Sprite sprite(fileTexture);
+        
+        
+        ImGui::PushID(ID); //Id of button
+        ImGui::PushStyleVar(ImGuiStyleVar_FramePadding, ImVec2(1.0f, 1.0f)); //Padding of button
+       
+        if (ImGui::ImageButton(sprite))
+        {
+            pushed = true;
+        }
+
+        ImGui::PushFont(ImGui::GetIO().Fonts->Fonts[1]);
+
+        ImGui::SameLine(ImGui::GetStyle().ItemInnerSpacing.x + (ImGui::GetContentRegionAvail().x - ImGui::CalcTextSize(text).x) / 2.0f, 0 );
+        ImGui::SetCursorPosY(ImGui::GetCursorPosY() + (ImGui::GetItemRectSize().y - ImGui::CalcTextSize(text).y) / 2.0f  );
+        ImGui::TextColored(sf::Color::Black, text);
+
+        ImGui::PopFont();
+        ImGui::PopStyleVar();
+        ImGui::PopID();
+
+        
+        return pushed;
+
     };
 
     WorkingDirectory& workingDir;
@@ -266,6 +291,9 @@ public:
     BT::BehaviorTreeFactory bt_factory;
 
     bool switchScene;
+
+   
+
 };
 
 #endif /* Scene_h */

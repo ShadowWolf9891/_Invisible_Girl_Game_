@@ -25,6 +25,9 @@
     <ClCompile Include="F:\Invisible_Girl_Game\C_Collider.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\C_Dialogue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="F:\Invisible_Girl_Game\C_Direction.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -91,6 +94,9 @@
     <ClCompile Include="F:\Invisible_Girl_Game\C_WalkInLine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\ClassObserver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="F:\Invisible_Girl_Game\Component.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -103,7 +109,28 @@
     <ClCompile Include="F:\Invisible_Girl_Game\Dispatcher.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\E_FireProjectile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\E_Test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="F:\Invisible_Girl_Game\Event.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\External_Libraries\imgui-master\imgui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\External_Libraries\imgui-master\imgui_demo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\External_Libraries\imgui-master\imgui_draw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\External_Libraries\imgui-master\imgui_tables.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\External_Libraries\imgui-master\imgui_widgets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="F:\Invisible_Girl_Game\GLC.cpp">
@@ -118,6 +145,9 @@
     <ClCompile Include="F:\Invisible_Girl_Game\Invisible_Girl_Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\NPC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="F:\Invisible_Girl_Game\Object.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -130,6 +160,9 @@
     <ClCompile Include="F:\Invisible_Girl_Game\Quadtree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\Quest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="F:\Invisible_Girl_Game\Raycast.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -140,6 +173,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="F:\Invisible_Girl_Game\S_Drawable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Invisible_Girl_Game\S_QuestManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="F:\Invisible_Girl_Game\Scene.cpp">
@@ -175,21 +211,15 @@
     <ClCompile Include="F:\Invisible_Girl_Game\window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Quest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\S_QuestManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\C_Dialogue.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="F:\Invisible_Girl_Game\Animation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="F:\Invisible_Girl_Game\BT_ActionNodes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\BaseUserInterface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="F:\Invisible_Girl_Game\Bitmask.h">
@@ -213,6 +243,9 @@
     <ClInclude Include="F:\Invisible_Girl_Game\C_Collider.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\C_Dialogue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="F:\Invisible_Girl_Game\C_Direction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -220,6 +253,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="F:\Invisible_Girl_Game\C_Events.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\C_FollowMouse.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="F:\Invisible_Girl_Game\C_InstanceID.h">
@@ -291,10 +327,34 @@
     <ClInclude Include="F:\Invisible_Girl_Game\Dispatcher.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\E_FireProjectile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="F:\Invisible_Girl_Game\Event.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\External_Libraries\imgui-master\imconfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\External_Libraries\imgui-master\imgui.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\External_Libraries\imgui-master\imgui_internal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\External_Libraries\imgui-master\imstb_rectpack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\External_Libraries\imgui-master\imstb_textedit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\External_Libraries\imgui-master\imstb_truetype.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="F:\Invisible_Girl_Game\GLC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\GUI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="F:\Invisible_Girl_Game\Game.h">
@@ -321,6 +381,9 @@
     <ClInclude Include="F:\Invisible_Girl_Game\Quadtree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\Quest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="F:\Invisible_Girl_Game\Raycast.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -333,10 +396,16 @@
     <ClInclude Include="F:\Invisible_Girl_Game\S_Drawable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\S_QuestManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="F:\Invisible_Girl_Game\Scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="F:\Invisible_Girl_Game\SceneGame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Invisible_Girl_Game\SceneMainMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="F:\Invisible_Girl_Game\SceneSplashScreen.h">
@@ -367,33 +436,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="F:\Invisible_Girl_Game\window.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Quest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\S_QuestManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\C_Dialogue.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\GUI.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\UI_TextBox.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\BaseUserInterface.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\UI_Lists.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\SceneMainMenu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\C_FollowMouse.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -564,6 +606,9 @@
       <Filter>Resources</Filter>
     </Image>
     <Image Include="F:\Invisible_Girl_Game\Assets\Character\how to make and sell your own outfits\mana seed, sprites.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\Icons\Icon_Sheet.png">
       <Filter>Resources</Filter>
     </Image>
     <Image Include="F:\Invisible_Girl_Game\Assets\MP_Dungeon1\Anim\candle-01.png">
@@ -1292,20 +1337,23 @@
     <Image Include="F:\Invisible_Girl_Game\Assets\RPG_Buildings_WINDMILL_v1.1\Mill_outside_shadows.png">
       <Filter>Resources</Filter>
     </Image>
+    <Image Include="F:\Invisible_Girl_Game\Assets\UI\MouseCursor1.png">
+      <Filter>Resources</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <None Include="F:\Invisible_Girl_Game\level_data\Town_1_data.json" />
   </ItemGroup>
   <ItemGroup>
     <XML Include="F:\Invisible_Girl_Game\data\anim\ANIM_Characters.xml" />
+    <XML Include="F:\Invisible_Girl_Game\data\dialogue\Gerard_Dialogue.xml" />
+    <XML Include="F:\Invisible_Girl_Game\data\dialogue\UIObjects.xml" />
+    <XML Include="F:\Invisible_Girl_Game\data\obj\Item_Data.xml" />
+    <XML Include="F:\Invisible_Girl_Game\data\obj\Mouse_Data.xml" />
+    <XML Include="F:\Invisible_Girl_Game\data\obj\PassiveNPC_Data.xml" />
+    <XML Include="F:\Invisible_Girl_Game\data\obj\Player_Data.xml" />
+    <XML Include="F:\Invisible_Girl_Game\data\trees\PassiveNPC_Tree.xml" />
     <XML Include="F:\Invisible_Girl_Game\data\trees\PlayerTree.xml" />
-    <Xml Include="..\data\obj\Player_Data.xml" />
-    <Xml Include="..\data\obj\PassiveNPC_Data.xml" />
-    <Xml Include="..\data\trees\PassiveNPC_Tree.xml" />
-    <Xml Include="..\data\obj\Item_Data.xml" />
-    <Xml Include="..\data\dialogue\Gerard_Dialogue.xml" />
-    <Xml Include="..\data\dialogue\UIObjects.xml" />
-    <Xml Include="..\data\obj\Mouse_Data.xml" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

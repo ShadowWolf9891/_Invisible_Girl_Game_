@@ -15,21 +15,26 @@ file(GLOB SOURCES
 	"Assets/*/*/*.png"
 	"level_data/*.json"
 	"data/*/*.xml"
+	"External_Libraries/imgui-master/*.h"
+	"External_Libraries/imgui-master/*.cpp"
 )
 
 set(SFML_STATIC_LIBRARIES TRUE)
 
 set(SFML_DIR ${PROJECT_SOURCE_DIR}/External_Libraries/SFML-2.5.1/lib/cmake/SFML)
 set(behaviortree_cpp_DIR ${PROJECT_SOURCE_DIR}/External_Libraries/BehaviorTree/lib/cmake/behaviortree_cpp)
+set(ImGui-SFML_DIR ${PROJECT_SOURCE_DIR}/External_Libraries/imgui-sfml-master/install/lib/cmake/ImGui-SFML)
 
 find_package(SFML 2.5 COMPONENTS system window graphics network audio REQUIRED)
 find_package(behaviortree_cpp REQUIRED)
-
+find_package(ImGui-SFML REQUIRED)
 add_executable(Invisible_Girl ${SOURCES})
 
 target_link_libraries(Invisible_Girl sfml-graphics sfml-system sfml-window sfml-audio sfml-network)
 target_link_libraries(Invisible_Girl BT::behaviortree_cpp)
 target_link_libraries(Invisible_Girl tinyxml2)
+target_link_libraries(Invisible_Girl ImGui-SFML::ImGui-SFML)
+
 
 
 # Install target
@@ -39,6 +44,7 @@ target_include_directories(Invisible_Girl PUBLIC
 						"${PROJECT_SOURCE_DIR}"
 						"${PROJECT_BINARY_DIR}"
 						"${PROJECT_SOURCE_DIR}/External_Libraries/tileson-master/include"
+						"${PROJECT_SOURCE_DIR}/External_Libraries/imgui-master"
 						"${PROJECT_SOURCE_DIR}/External_Libraries/tinyxml2-master"
 						"${PROJECT_SOURCE_DIR}/External_Libraries/BehaviorTree/include"
 						"${PROJECT_SOURCE_DIR}/External_Libraries/SFML-2.5.1/include"

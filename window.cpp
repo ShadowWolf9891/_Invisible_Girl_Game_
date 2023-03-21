@@ -3,11 +3,13 @@ Window::Window(const std::string& windowName) : window(sf::VideoMode(1920, 1080)
 {
     window.setVerticalSyncEnabled(true); // Used to reduce visual artifacts
 }
-void Window::Update()
+void Window::Update(sf::Time deltaTime)
 {
     sf::Event event; // Event for closing the window
     if (window.pollEvent(event))
     {
+        ImGui::SFML::ProcessEvent(window, event); //Process event for UI
+
         if (event.type == sf::Event::Closed)
         {
             window.close();

@@ -40,34 +40,6 @@ namespace GUI
 		sf::Vector3f size;
 	};
 
-	class Cursor : public sf::Drawable
-	{
-	public:
-
-		/*Cursor(Scene& curScene): curScene(curScene)
-		{
-			
-		
-		};*/
-		//~Cursor() = default;
-
-		void HandleMouseEvents(sf::Event event)
-		{
-
-		};
-
-		void Draw(Window& window)
-		{
-			
-		};
-
-	private:
-		//Scene& curScene;
-		//Object cursor;
-
-	};
-
-
 	class Grid
 	{
 	public:
@@ -82,7 +54,7 @@ namespace GUI
 			dp = sf::VideoMode::getDesktopMode().bitsPerPixel;
 
 
-
+			
 
 			componentGrid = SetupGrid(4);
 		};

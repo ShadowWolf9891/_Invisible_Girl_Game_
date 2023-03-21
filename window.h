@@ -1,10 +1,12 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "imgui.h"
+#include "imgui-SFML.h"
 class Window //Class to wrap RenderWindow and add functionality later.
 {
 public:
     Window(const std::string& windowName);
-    void Update();
+    void Update(sf::Time deltaTime);
     
     void BeginDraw();
     void Draw(const sf::Drawable& drawable);
@@ -23,7 +25,7 @@ public:
 
     sf::FloatRect GetViewSpace() const;
 
-    const sf::RenderWindow& GetRenderWindow() const{ return this->window; } ;
+    sf::RenderWindow& GetRenderWindow() { return this->window; } ;
 
 private:
     sf::RenderWindow window;
