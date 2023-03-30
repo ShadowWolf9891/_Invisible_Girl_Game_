@@ -68,7 +68,10 @@ public:
 	virtual void OnActivate() {};
 	// Called whenever a transition out of a scene occurs. 
 	// Can be called many times in a typical game cycle.
-	virtual void OnDeactivate() {};
+	virtual void OnDeactivate() 
+    {
+        switchScene = false;
+    };
 	// The below functions can be overridden as necessary in our scenes.
 	virtual void ProcessInput()
     {
@@ -242,34 +245,87 @@ public:
         }
     };
 
-    virtual bool CreateImageButton(const char* ID, const char* text, sf::Texture& fileTexture, ImVec2 imageSize, ImVec2 uv0, ImVec2 uv1)
+    virtual float GetScaledItemByWindowSize(sf::Vector2u imageSize, ImVec2 scaleFactor)
+    {
+        sf::Vector2u windowSize = window.GetRenderWindow().getSize();
+
+        float scaleX = (float)windowSize.x / (float)imageSize.x * scaleFactor.x;
+        float scaleY = (float)windowSize.y / (float)imageSize.y * scaleFactor.y;
+
+        return std::min(scaleX, scaleY);
+    };
+
+    virtual float CalculateSpacing(float areaSize, float itemSize, float numItems)
+    {
+        return (areaSize - (itemSize * numItems)) / (numItems + 1);
+        
+    };
+
+    virtual bool CreateImageButton(const char* ID, const char* text, sf::Texture& fileTexture, ImVec2 imageScaleFactor = ImVec2(0.1, 0.1), 
+        ImVec2 uv0 = ImVec2(0,0), ImVec2 uv1 = ImVec2(0,0))
     {
         bool pushed = false;
 
+        if (uv1.x == 0 && uv1.y == 0) uv1 = ImVec2(fileTexture.getSize());
+        
         sf::Sprite sprite(fileTexture);
-        
-        
+        sprite.setTextureRect(sf::IntRect(uv0, uv1));
+
+        sf::Vector2u imageSize = fileTexture.getSize();
+
+        float scale = GetScaledItemByWindowSize(imageSize, imageScaleFactor);
+
+        ImVec2 buttonSize = ImVec2(imageSize.x * scale, imageSize.y * scale);
+
+        ImGui::SetWindowFontScale(scale);
+
         ImGui::PushID(ID); //Id of button
-        ImGui::PushStyleVar(ImGuiStyleVar_FramePadding, ImVec2(1.0f, 1.0f)); //Padding of button
-       
-        if (ImGui::ImageButton(sprite))
+
+        ImGui::PushStyleVar(ImGuiStyleVar_FramePadding, ImVec2(2.0f, 2.0f)); //Padding of button
+        ImGui::PushStyleColor(ImGuiCol_ButtonHovered, sf::Color(120, 40, 40, 200));
+        ImGui::PushStyleColor(ImGuiCol_Button, sf::Color(0, 0, 0, 0));
+        
+        if (ImGui::ImageButton(sprite, buttonSize))
         {
             pushed = true;
         }
 
         ImGui::PushFont(ImGui::GetIO().Fonts->Fonts[1]);
+        //ImGui::PushTextWrapPos(ImGui::GetContentRegionAvail().x);
+        
 
-        ImGui::SameLine(ImGui::GetStyle().ItemInnerSpacing.x + (ImGui::GetContentRegionAvail().x - ImGui::CalcTextSize(text).x) / 2.0f, 0 );
-        ImGui::SetCursorPosY(ImGui::GetCursorPosY() + (ImGui::GetItemRectSize().y - ImGui::CalcTextSize(text).y) / 2.0f  );
-        ImGui::TextColored(sf::Color::Black, text);
+        ImGui::SameLine();
 
+        //Set the cursor position based on size of button. The cursor before this it top - right, ignoring padding. This code centers it.
+        ImGui::SetCursorPosX(ImGui::GetCursorPosX() - ImGui::GetItemRectSize().x - ImGui::GetStyle().FramePadding.x * 4 + (ImGui::GetItemRectSize().x  - ImGui::CalcTextSize(text).x) / 2.0f);
+        ImGui::SetCursorPosY(ImGui::GetCursorPosY() + ImGui::GetStyle().FramePadding.y * 2 + (ImGui::GetItemRectSize().y - ImGui::CalcTextSize(text).y) / 2.0f);
+        
+        ImGui::TextColored(sf::Color(30,30,30,255), text);
+
+        //ImGui::PopTextWrapPos();
         ImGui::PopFont();
+        ImGui::PopStyleColor(2);
         ImGui::PopStyleVar();
         ImGui::PopID();
 
         
         return pushed;
 
+    };
+
+    virtual void CreateImportantText(const char* text, float textScale)
+    {
+        ImGui::SetWindowFontScale(textScale);
+        ImGui::PushFont(ImGui::GetIO().Fonts->Fonts[3]);
+        ImGui::PushTextWrapPos(ImGui::GetContentRegionAvail().x);
+
+        ImGui::SetCursorPosX(ImGui::GetCursorPosX() + (ImGui::GetItemRectSize().x - ImGui::CalcTextSize(text).x) / 2.0f);
+        ImGui::SetCursorPosY(ImGui::GetCursorPosY() + (ImGui::GetItemRectSize().y - ImGui::CalcTextSize(text).y) / 2.0f);
+
+        ImGui::TextColored(sf::Color(250, 250, 250, 255), text);
+
+        ImGui::PopTextWrapPos();
+        ImGui::PopFont();
     };
 
     WorkingDirectory& workingDir;
@@ -292,7 +348,7 @@ public:
 
     bool switchScene;
 
-   
+
 
 };
 

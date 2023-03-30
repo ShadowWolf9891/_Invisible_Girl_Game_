@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root _type ="initData">
+	<Object name ="NPC">
+		<Components bitmap ="00000000000001111100110001101110">
+		</Components>
+		<Properties>
+			<Property name="Tag" value="3"/>
+			<Property name="DrawLayer" value="3"/>
+			<Property name="X" value="16"/>
+			<Property name="Y" value="16"/>
+			<Property name="Width" value="32"/>
+			<Property name="Height" value="32"/>
+			<Property name="BBoxSizeX" value="32"/>
+			<Property name="BBoxSizeY" value="32"/>
+			<Property name="BBoxOffsetX" value="0"/>
+			<Property name="BBoxOffsetY" value="0"/>
+			<Property name="BBoxCollisionLayer" value="5"/>
+			<Property name="BaseTextureFile" value="Assets/Enemies/Blue_Slime.png"/>
+			<Property name="AnimationFile" value=""/>
+			<Property name="DialogueFile" value=""/>
+			<Property name="TreeName" value=""/>
+		</Properties>
+	</Object>
+</root>

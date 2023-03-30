@@ -46,6 +46,7 @@ public:
 	};
 	void OnDestroy() override
 	{
+
 	};
 
 	void OnActivate() override
@@ -95,34 +96,37 @@ public:
 
 	void ShowMainMenu(bool* p_open)
 	{
-		window_flags = ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoSavedSettings;
+		window_flags = ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoBackground;
 
 		static int startClicked = 0, loadClicked = 0, exitClicked =0;
 
+		ImGui::SetNextWindowPos(ImVec2((window.GetRenderWindow().getSize().x - ImGui::GetWindowWidth()) * 0.5f, (window.GetRenderWindow().getSize().y - ImGui::GetWindowHeight()) * 0.75f));
+
 		if (ImGui::Begin("MainMenu", p_open, window_flags))
 		{
-			if (CreateImageButton("btnStart", "New Game", *buttonTexture, sf::Vector2f(100, 50), sf::Vector2f(0, 0), sf::Vector2f(buttonTexture->getSize()))) startClicked++;
-			if (CreateImageButton("btnLoad", "Continue", *buttonTexture, sf::Vector2f(100, 50), sf::Vector2f(0, 0), sf::Vector2f(buttonTexture->getSize()))) loadClicked++;
-			if (CreateImageButton("btnExit", "Exit", *buttonTexture, sf::Vector2f(100, 50), sf::Vector2f(0, 0), sf::Vector2f(buttonTexture->getSize()))) exitClicked++;
+			if (CreateImageButton("btnStart", "Start", *buttonTexture)) startClicked++;
+			if (CreateImageButton("btnLoad", "Continue", *buttonTexture)) loadClicked++;
+			if (CreateImageButton("btnExit", "Exit", *buttonTexture)) exitClicked++;
 			
 			if (startClicked & 1)
 			{
 				switchScene = true;
+				startClicked = 0;
 			}
 			if (loadClicked & 1)
 			{
 				//Load save data
+				loadClicked = 0;
 			}
 			if (exitClicked & 1)
 			{
 				window.Close();
+				exitClicked = 0;
 			}
 
 		};
 
 		ImGui::End();
-
-		ImGui::EndFrame();
 	};
 
 	

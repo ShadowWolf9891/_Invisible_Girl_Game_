@@ -1347,13 +1347,13 @@
   <ItemGroup>
     <XML Include="F:\Invisible_Girl_Game\data\anim\ANIM_Characters.xml" />
     <XML Include="F:\Invisible_Girl_Game\data\dialogue\Gerard_Dialogue.xml" />
-    <XML Include="F:\Invisible_Girl_Game\data\dialogue\UIObjects.xml" />
     <XML Include="F:\Invisible_Girl_Game\data\obj\Item_Data.xml" />
     <XML Include="F:\Invisible_Girl_Game\data\obj\Mouse_Data.xml" />
     <XML Include="F:\Invisible_Girl_Game\data\obj\PassiveNPC_Data.xml" />
     <XML Include="F:\Invisible_Girl_Game\data\obj\Player_Data.xml" />
     <XML Include="F:\Invisible_Girl_Game\data\trees\PassiveNPC_Tree.xml" />
     <XML Include="F:\Invisible_Girl_Game\data\trees\PlayerTree.xml" />
+    <Xml Include="..\data\obj\HostileNPC_Data.xml" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

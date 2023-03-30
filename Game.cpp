@@ -48,10 +48,12 @@ void Game::initVariables()
     window.GetRenderWindow().setFramerateLimit(60);
 
     ImGui::SFML::Init(window.GetRenderWindow()); // Initialize sfml
+   
 
     LoadFonts();
     LoadScreens();
 
+    
     //Restart clock 
     deltaTime = clock.restart().asSeconds();
     
@@ -60,12 +62,19 @@ void Game::initVariables()
 void Game::LoadFonts()
 {
     //Add fonts for Sfml here...
-    unsigned int fontID = fontAllocator.Add(workingDir.Get() + "data/fonts/Deutsch.ttf");
-    
+    fontAllocator.Add(workingDir.Get() + "data/fonts/Deutsch.ttf"); //0
+    fontAllocator.Add(workingDir.Get() + "data/fonts/Lato-Regular.ttf"); //1
+    fontAllocator.Add(workingDir.Get() + "data/fonts/Lato-Italic.ttf"); //2
+    fontAllocator.Add(workingDir.Get() + "data/fonts/Lato-Bold.ttf"); //3
+    fontAllocator.Add(workingDir.Get() + "data/fonts/Lato-Black.ttf"); //4
 
     //Add fonts for Imgui here...
-    ImGui::GetIO().Fonts->AddFontFromFileTTF("../data/fonts/Deutsch.ttf", 24.0f);
-
+    //Default font is 0
+    ImGui::GetIO().Fonts->AddFontFromFileTTF("../data/fonts/Deutsch.ttf", 72.0f); //1           Big buttons
+    ImGui::GetIO().Fonts->AddFontFromFileTTF("../data/fonts/Lato-Regular.ttf", 24.0f); //2      Dialogue
+    ImGui::GetIO().Fonts->AddFontFromFileTTF("../data/fonts/Lato-Italic.ttf", 24.0f); //3       Special Dialogue
+    ImGui::GetIO().Fonts->AddFontFromFileTTF("../data/fonts/Lato-Bold.ttf", 24.0f); //4         Important Dialogue
+    ImGui::GetIO().Fonts->AddFontFromFileTTF("../data/fonts/Lato-Black.ttf", 36.0f); //5        Names and titles
 
 
     //Must be called to enable the correct font texture. Only once after all fonts loaded.
@@ -88,6 +97,7 @@ void Game::LoadScreens()
 
     splashScreen->SetSwitchToScene(mainMenuID); //Set splashscreen to transition to gamescreen when switched to
     mainMenuScreen->SetSwitchToScene(gameSceneID);
+    gameScene->SetSwitchToScene(mainMenuID);
     sceneStateMachine.SwitchTo(splashScreenID); //Set game to start on splashscreen
 }
 
@@ -105,6 +115,7 @@ void Game::Update()
     window.Update(clock.getElapsedTime());
     ImGui::SFML::Update(window.GetRenderWindow(), clock.getElapsedTime());
     sceneStateMachine.Update(deltaTime);
+    ImGui::EndFrame;
 }
 
 void Game::LateUpdate()

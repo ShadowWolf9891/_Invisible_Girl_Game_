@@ -41,17 +41,26 @@ class SceneGame : public Scene
 public:
 	// Constructor
 	SceneGame(WorkingDirectory& workingDir, ResourceAllocator<sf::Texture>& textureAllocator, Window& window, ResourceAllocator<sf::Font>& fontAllocator) :
-		Scene(workingDir, textureAllocator, window, fontAllocator){};
+		Scene(workingDir, textureAllocator, window, fontAllocator), showMenu(false), showQuitMenu(false) {};
 	
 	void OnCreate() override;
 	void OnDestroy() override;
 	void OnActivate() override;
+	void OnDeactivate() override;
 
 	void ProcessInput() override;
 	void Update(float deltaTime) override;
 	void LateUpdate(float deltaTime) override;
 	void Draw(Window& window) override;
 
+private:
+
+	void DrawMenu();
+	void DrawQuitMenu();
+
+	bool showMenu, showQuitMenu;
+	sf::Texture* buttonTexture;
+	ImGuiWindowFlags window_flags;  //Specifies info about the window
 };
 
 
