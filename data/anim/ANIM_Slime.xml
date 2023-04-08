@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root _type ="animation">
+	<AnimationGroup state="Idle" looped ="false" filename="Assets/Enemies/Blue_Slime.png">
+		<Animation direction="Down" frameWidth ="32" frameHeight ="32">
+			<Frame number ="0" x ="0" y="0" duration ="0"/>
+		</Animation>
+		<Animation direction="Up" frameWidth="32" frameHeight="32">
+			<Frame number="0" x="0" y="32" duration="0"/>
+		</Animation>
+		<Animation direction="Right" frameWidth="32" frameHeight="32">
+			<Frame number="0" x="0" y="64" duration="0"/>
+		</Animation>
+		<Animation direction="Left" frameWidth="32" frameHeight="32">
+			<Frame number ="0" x="0" y="128" duration="0"/>
+		</Animation>
+	</AnimationGroup>
+	<AnimationGroup state="Walk" looped ="true" filename="Assets/Enemies/Blue_Slime.png">
+		<Animation direction="Down" frameWidth ="32" frameHeight ="32">
+			<Frame number ="0" x="0" y="0" duration="0.0625"/>
+			<Frame number ="1" x="32" y="0" duration="0.0625"/>
+			<Frame number ="2" x="64" y="0" duration="0.0625"/>
+			<Frame number ="3" x="96" y="0" duration="0.0625"/>
+			<Frame number ="4" x="128" y="0" duration="0.0625"/>
+			<Frame number ="5" x="160" y="0" duration="0.0625"/>
+			<Frame number ="6" x="192" y="0" duration="0.0625"/>
+			<Frame number ="7" x="224" y="0" duration="0.0625"/>
+			<Frame number ="8" x="256" y="0" duration="0.0625"/>
+			<Frame number ="9" x="288" y="0" duration="0.0625"/>
+			<Frame number ="10" x="320" y="0" duration="0.0625"/>
+			<Frame number ="11" x="352" y="0" duration="0.0625"/>
+		</Animation>
+		<Animation direction="Up" frameWidth ="32" frameHeight ="32">
+			<Frame number ="0" x="0" y="32" duration="0.0625"/>
+			<Frame number ="1" x="32" y="32" duration="0.0625"/>
+			<Frame number ="2" x="64" y="32" duration="0.0625"/>
+			<Frame number ="3" x="96" y="32" duration="0.0625"/>
+			<Frame number ="4" x="128" y="32" duration="0.0625"/>
+			<Frame number ="5" x="160" y="32" duration="0.0625"/>
+			<Frame number ="6" x="192" y="32" duration="0.0625"/>
+			<Frame number ="7" x="224" y="32" duration="0.0625"/>
+			<Frame number ="8" x="256" y="32" duration="0.0625"/>
+			<Frame number ="9" x="288" y="32" duration="0.0625"/>
+			<Frame number ="10" x="320" y="32" duration="0.0625"/>
+			<Frame number ="11" x="352" y="32" duration="0.0625"/>
+		</Animation>
+		<Animation direction="Right" frameWidth ="32" frameHeight ="32">
+			<Frame number ="0" x="0" y="64" duration="0.0625"/>
+			<Frame number ="1" x="32" y="64" duration="0.0625"/>
+			<Frame number ="2" x="64" y="64" duration="0.0625"/>
+			<Frame number ="3" x="96" y="64" duration="0.0625"/>
+			<Frame number ="4" x="128" y="64" duration="0.0625"/>
+			<Frame number ="5" x="160" y="64" duration="0.0625"/>
+			<Frame number ="6" x="192" y="64" duration="0.0625"/>
+			<Frame number ="7" x="224" y="64" duration="0.0625"/>
+			<Frame number ="8" x="256" y="64" duration="0.0625"/>
+			<Frame number ="9" x="288" y="64" duration="0.0625"/>
+			<Frame number ="10" x="320" y="64" duration="0.0625"/>
+			<Frame number ="11" x="352" y="64" duration="0.0625"/>
+		</Animation>
+		<Animation direction="Left" frameWidth ="32" frameHeight ="32">
+			<Frame number ="0" x="0" y="96" duration="0.0625"/>
+			<Frame number ="1" x="32" y="96" duration="0.0625"/>
+			<Frame number ="2" x="64" y="96" duration="0.0625"/>
+			<Frame number ="3" x="96" y="96" duration="0.0625"/>
+			<Frame number ="4" x="128" y="96" duration="0.0625"/>
+			<Frame number ="5" x="160" y="96" duration="0.0625"/>
+			<Frame number ="6" x="192" y="96" duration="0.0625"/>
+			<Frame number ="7" x="224" y="96" duration="0.0625"/>
+			<Frame number ="8" x="256" y="96" duration="0.0625"/>
+			<Frame number ="9" x="288" y="96" duration="0.0625"/>
+			<Frame number ="10" x="320" y="96" duration="0.0625"/>
+			<Frame number ="11" x="352" y="96" duration="0.0625"/>
+		</Animation>
+	</AnimationGroup>
+	
+	
+	
+</root>

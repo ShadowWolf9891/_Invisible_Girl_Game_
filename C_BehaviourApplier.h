@@ -5,6 +5,8 @@
 #include "Component.h"
 #include "C_SteeringBehaviour.h"
 #include "C_Velocity.h"
+#include "C_Events.h"
+#include "C_Observer.h"
 
 class C_BehaviourApplier : public Component
 {
@@ -23,6 +25,8 @@ private:
 
     std::vector<std::shared_ptr<C_SteeringBehaviour>> behaviours;
     std::shared_ptr<C_Velocity> velocity;
+    std::shared_ptr<C_Events> eStack;
+    std::shared_ptr<C_Observer> handler;
 };
 
 

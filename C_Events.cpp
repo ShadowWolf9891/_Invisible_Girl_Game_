@@ -41,7 +41,7 @@ void C_Events::HandleNextEvent()
 		if (!e.IsHandled())
 		{
 			owner->context->dispatcher->post(e);
-			e.SetHandled(true);
+			//e.SetHandled(true);
 		}
 		
 	}

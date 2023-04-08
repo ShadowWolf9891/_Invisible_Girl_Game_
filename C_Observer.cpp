@@ -1,6 +1,15 @@
 #include "C_Observer.h"
 #include "Object.h"
 
+
+
+
+void C_Observer::Awake()
+{
+    cAnim = owner->GetComponent<C_Animation>();
+    cVel = owner->GetComponent<C_Velocity>();
+}
+
 void C_Observer::handle(const Event& e)
 {
     if (e.GetTargetID() != owner->instanceID->Get()) {
@@ -8,35 +17,33 @@ void C_Observer::handle(const Event& e)
     } 
     currentEventType = e.getType();
 
-    std::shared_ptr CAnim = owner->GetComponent<C_Animation>();
+    if (currentEventType == lastEventHandledType) return;
+    
+    std::string eventType = currentEventType;
 
-    for (auto it = strToEvent.begin(); it != strToEvent.end(); it++) {
-        if (it->second == currentEventType)
-        {
-            auto it2 = strToAnimState.find(it->first);
-            if (it2 != strToAnimState.end()) {
-               
-                CAnim->SetAnimationState(it2->second);
-            }
-           
-            break;
-        }
-    }
+    if (eventType == "E_None") e_None();
+    else if (eventType == "E_Idle") e_Idle();
+    else if (eventType == "E_Walk") e_Walk();
+    else if (eventType == "E_Run") e_Run();
+    else if (eventType == "E_DrawWeapon") e_DrawWeapon();
+    else if (eventType == "E_Parry")e_Parry();
+    else if (eventType == "E_Dodge")e_Dodge();
+    else if (eventType == "E_Hurt")e_Hurt();
+    else if (eventType == "E_Dead")e_Dead();
+    else if (eventType == "E_Crouch")e_Crouch();
+    else if (eventType == "E_Lunge")e_Lunge();
+    else if (eventType == "E_Attack")e_Attack();
+    else if (eventType == "E_Interact")e_Interact();
 
-    float targetSpeed = 0.5f;
+        //Other events calls go here, definition in .h
 
-    if (currentEventType == E_PauseMovement::descriptor)
+    else
     {
-        targetSpeed = 0.f;
-        CAnim->SetAnimationState(AnimationState::Idle);
+        std::cout << eventType << " could not be found, and has not been handled." << std::endl;
+        return;
     }
-    if (currentEventType == E_Walk::descriptor) targetSpeed = 0.5f;
-    else if (currentEventType == E_Run::descriptor) targetSpeed = 1.f;
-    else if (currentEventType == E_BowDraw::descriptor) targetSpeed = 0.1f;
-    else if (currentEventType == E_BowSheath::descriptor) targetSpeed = 0.1f;
-    else if (currentEventType == E_BowMove::descriptor) targetSpeed = 0.25f;
-
-    owner->GetComponent<C_Velocity>()->SetVelocityMultiplier(targetSpeed);
+       
+    
 
     lastEventHandledType = currentEventType;
 

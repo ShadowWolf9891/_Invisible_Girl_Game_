@@ -1107,9 +1107,11 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="F:\Invisible_Girl_Game\WorkingDirectory.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\XML_Parser.cpp" />
     <ClInclude Include="F:\Invisible_Girl_Game\XML_Parser.h" />
+    <Xml Include="..\data\anim\ANIM_Slime.xml" />
     <Xml Include="..\data\obj\HostileNPC_Data.xml">
       <DeploymentContent>false</DeploymentContent>
     </Xml>
+    <Xml Include="..\data\trees\HostileNPC_Tree.xml" />
     <XML Include="F:\Invisible_Girl_Game\data\anim\ANIM_Characters.xml">
     </XML>
     <XML Include="F:\Invisible_Girl_Game\data\dialogue\Gerard_Dialogue.xml">

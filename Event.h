@@ -11,19 +11,17 @@
 //Idle,
 //Walk,
 //Run,
-//DrawBow,
-//SheathBow,
-//BowParry,
-//BowDodge,
-//BowHurt,
-//BowDead,
-//BowIdle,
-//BowMove,
-//BowCrouch,
-//BowRetreat,
-//BowLunge,
-//BowShootUp,
-//BowShootStraight,
+//DrawWeapon,
+//Sheath,
+//Parry,
+//Dodge,
+//Hurt,
+//Dead,
+//Crouch,
+//Retreat,
+//Lunge,
+//ShootUp,
+//ShootStraight,
 //Interact,
 //LeftClick,
 //RightClick,
@@ -87,123 +85,105 @@ public:
 	static constexpr DescriptorType descriptor = "E_Run";
 };
 
-//Bow Events
-class E_BowDraw : public Event
+// Events
+class E_DrawWeapon : public Event
 {
 public:
 
-	E_BowDraw() : Event(*this, descriptor, "Draw Bow Event") {};
-	virtual ~E_BowDraw() = default;
+	E_DrawWeapon() : Event(*this, descriptor, "Draw Weapon Event") {};
+	virtual ~E_DrawWeapon() = default;
 
-	static constexpr DescriptorType descriptor = "E_BowDraw";
+	static constexpr DescriptorType descriptor = "E_Draw";
 };
-class E_BowSheath : public Event
+class E_Sheath : public Event
 {
 public:
 
-	E_BowSheath() : Event(*this, descriptor, "Sheath Bow Event") {};
-	virtual ~E_BowSheath() = default;
+	E_Sheath() : Event(*this, descriptor, "Sheath Event") {};
+	virtual ~E_Sheath() = default;
 
-	static constexpr DescriptorType descriptor = "E_BowSheath";
+	static constexpr DescriptorType descriptor = "E_Sheath";
 };
-class E_BowParry : public Event
+class E_Parry : public Event
 {
 public:
 
-	E_BowParry() : Event(*this, descriptor, "Bow Parry Event") {};
-	virtual ~E_BowParry() = default;
+	E_Parry() : Event(*this, descriptor, " Parry Event") {};
+	virtual ~E_Parry() = default;
 
-	static constexpr DescriptorType descriptor = "E_BowParry";
+	static constexpr DescriptorType descriptor = "E_Parry";
 };
-class E_BowDodge : public Event
+class E_Dodge : public Event
 {
 public:
 
-	E_BowDodge() : Event(*this, descriptor, "Bow Dodge Event") {};
-	virtual ~E_BowDodge() = default;
+	E_Dodge() : Event(*this, descriptor, " Dodge Event") {};
+	virtual ~E_Dodge() = default;
 
-	static constexpr DescriptorType descriptor = "E_BowDodge";
+	static constexpr DescriptorType descriptor = "E_Dodge";
 };
-class E_BowHurt : public Event
+class E_Hurt : public Event
 {
 public:
 
-	E_BowHurt() : Event(*this, descriptor, "Bow Hurt Event") {};
-	virtual ~E_BowHurt() = default;
+	E_Hurt() : Event(*this, descriptor, " Hurt Event") {};
+	virtual ~E_Hurt() = default;
 
-	static constexpr DescriptorType descriptor = "E_BowHurt";
+	static constexpr DescriptorType descriptor = "E_Hurt";
 };
-class E_BowDead : public Event
+class E_Dead : public Event
 {
 public:
 
-	E_BowDead() : Event(*this, descriptor, "Bow Dead Event") {};
-	virtual ~E_BowDead() = default;
+	E_Dead() : Event(*this, descriptor, " Dead Event") {};
+	virtual ~E_Dead() = default;
 
-	static constexpr DescriptorType descriptor = "E_BowDead";
+	static constexpr DescriptorType descriptor = "E_Dead";
 };
-class E_BowIdle : public Event
+class E_Crouch : public Event
 {
 public:
 
-	E_BowIdle() : Event(*this, descriptor, "Bow Idle Event") {};
-	virtual ~E_BowIdle() = default;
+	E_Crouch() : Event(*this, descriptor, " Crouch Event") {};
+	virtual ~E_Crouch() = default;
 
-	static constexpr DescriptorType descriptor = "E_BowIdle";
+	static constexpr DescriptorType descriptor = "E_Crouch";
 };
-class E_BowMove : public Event
+class E_Retreat : public Event
 {
 public:
 
-	E_BowMove() : Event(*this, descriptor, "Bow Move Event") {};
-	virtual ~E_BowMove() = default;
+	E_Retreat() : Event(*this, descriptor, " Retreat Event") {};
+	virtual ~E_Retreat() = default;
 
-	static constexpr DescriptorType descriptor = "E_BowMove";
+	static constexpr DescriptorType descriptor = "E_Retreat";
 };
-class E_BowCrouch : public Event
+class E_Lunge : public Event
 {
 public:
 
-	E_BowCrouch() : Event(*this, descriptor, "Bow Crouch Event") {};
-	virtual ~E_BowCrouch() = default;
+	E_Lunge() : Event(*this, descriptor, " Lunge Event") {};
+	virtual ~E_Lunge() = default;
 
-	static constexpr DescriptorType descriptor = "E_BowCrouch";
+	static constexpr DescriptorType descriptor = "E_Lunge";
 };
-class E_BowRetreat : public Event
+class E_ShootUp : public Event
 {
 public:
 
-	E_BowRetreat() : Event(*this, descriptor, "Bow Retreat Event") {};
-	virtual ~E_BowRetreat() = default;
+	E_ShootUp() : Event(*this, descriptor, " Shoot Up Event") {};
+	virtual ~E_ShootUp() = default;
 
-	static constexpr DescriptorType descriptor = "E_BowRetreat";
+	static constexpr DescriptorType descriptor = "E_ShootUp";
 };
-class E_BowLunge : public Event
+class E_ShootStraight : public Event
 {
 public:
 
-	E_BowLunge() : Event(*this, descriptor, "Bow Lunge Event") {};
-	virtual ~E_BowLunge() = default;
+	E_ShootStraight() : Event(*this, descriptor, " Shoot Straight Event") {};
+	virtual ~E_ShootStraight() = default;
 
-	static constexpr DescriptorType descriptor = "E_BowLunge";
-};
-class E_BowShootUp : public Event
-{
-public:
-
-	E_BowShootUp() : Event(*this, descriptor, "Bow Shoot Up Event") {};
-	virtual ~E_BowShootUp() = default;
-
-	static constexpr DescriptorType descriptor = "E_BowShootUp";
-};
-class E_BowShootStraight : public Event
-{
-public:
-
-	E_BowShootStraight() : Event(*this, descriptor, "Bow Shoot Straight Event") {};
-	virtual ~E_BowShootStraight() = default;
-
-	static constexpr DescriptorType descriptor = "E_BowShootStraight";
+	static constexpr DescriptorType descriptor = "E_ShootStraight";
 };
 
 class E_Interact : public Event

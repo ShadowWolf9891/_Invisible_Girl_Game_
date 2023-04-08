@@ -27,7 +27,7 @@ void SceneGame::OnCreate()
     std::vector<std::shared_ptr<Object>> NPCList = CreateObjectFromFile("data/obj/PassiveNPC_Data.xml", sf::Vector2f(1024, 1224));
     objects.Add(NPCList);
 
-    std::vector<std::shared_ptr<Object>> EnemyList = CreateObjectFromFile("data/obj/HostileNPC_Data.xml", sf::Vector2f(1224, 1224));
+    std::vector<std::shared_ptr<Object>> EnemyList = CreateObjectFromFile("data/obj/HostileNPC_Data.xml", sf::Vector2f(700, 700));
     objects.Add(EnemyList);
 
     std::vector<std::shared_ptr<Object>> mouseList = CreateObjectFromFile("data/obj/Mouse_Data.xml", sf::Vector2f(0, 0));

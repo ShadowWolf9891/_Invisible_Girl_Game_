@@ -213,7 +213,11 @@ public:
                 sprite->SetScale(atof(propertiesMap.at("ScaleX").c_str()), atof(propertiesMap.at("ScaleY").c_str()));
             }
         }
-        else if (_type == "C_SteeringBehaviourChase") o->AddComponent<C_SteeringBehaviourChase>();
+        else if (_type == "C_SteeringBehaviourChase")
+        {
+            auto chase = o->AddComponent<C_SteeringBehaviourChase>();
+            chase->SetTarget(Tag(atoi(propertiesMap.at("TargetToChase").c_str())));
+        }
         else if (_type == "C_SteeringBehaviourWallAvoidance") o->AddComponent<C_SteeringBehaviourWallAvoidance>();
         else if (_type == "C_Tree")
         {

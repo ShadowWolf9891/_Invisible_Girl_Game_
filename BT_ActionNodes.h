@@ -419,16 +419,13 @@ public:
 
 	BT::NodeStatus onRunning() override
 	{
-		if (cAnim->isAnimationDone())
+		if (eStack->PeekEvent().getType() == curDescriptor)
 		{
-			if (eStack->PeekEvent().getType() == curDescriptor)
-			{
-				auto e = eStack->PopEvent();
-				std::cout << curDescriptor << " [Done]" << std::endl;
-				return BT::NodeStatus::SUCCESS;
-			}
+			auto e = eStack->PopEvent();
+			std::cout << curDescriptor << " [Done]" << std::endl;
+			return BT::NodeStatus::SUCCESS;
 		}
-
+		
 		//std::cout << curDescriptor << " [Running]" << std::endl;
 
 		return BT::NodeStatus::RUNNING;
@@ -450,5 +447,6 @@ private:
 	std::shared_ptr <C_Animation> cAnim;
 	Event::DescriptorType curDescriptor;
 };
+
 
 #endif //BT_ActionNodes_h

@@ -42,25 +42,31 @@ struct UIData
 	std::unordered_map<std::string, std::string> properties;
 };
 
+enum WeaponType
+{
+	NONE = 0,
+	SWORD = 1,
+	BOW = 2,
+	SPEAR = 3
+};
+
 static std::unordered_map<std::string, Event::DescriptorType> const strToEvent =
 {
 	{"None",E_None::descriptor},
 	{"Idle",E_Idle::descriptor},
 	{"Walk",E_Walk::descriptor},
 	{"Run",E_Run::descriptor},
-	{"BowDraw",E_BowDraw::descriptor},
-	{"BowSheath",E_BowSheath::descriptor},
-	{"BowParry",E_BowParry::descriptor},
-	{"BowDodge",E_BowDodge::descriptor},
-	{"BowHurt",E_BowHurt::descriptor},
-	{"BowDead",E_BowDead::descriptor},
-	{"BowIdle",E_BowIdle::descriptor},
-	{"BowMove",E_BowMove::descriptor},
-	{"BowCrouch",E_BowCrouch::descriptor},
-	{"BowRetreat",E_BowRetreat::descriptor},
-	{"BowLunge",E_BowLunge::descriptor},
-	{"BowShootUp",E_BowShootUp::descriptor},
-	{"BowShootStraight",E_BowShootStraight::descriptor},
+	{"DrawWeapon",E_DrawWeapon::descriptor},
+	{"Sheath",E_Sheath::descriptor},
+	{"Parry",E_Parry::descriptor},
+	{"Dodge",E_Dodge::descriptor},
+	{"Hurt",E_Hurt::descriptor},
+	{"Dead",E_Dead::descriptor},
+	{"Crouch",E_Crouch::descriptor},
+	{"Retreat",E_Retreat::descriptor},
+	{"Lunge",E_Lunge::descriptor},
+	{"ShootUp",E_ShootUp::descriptor},
+	{"ShootStraight",E_ShootStraight::descriptor},
 	{"Interact",E_Interact::descriptor},
 	{"LeftClick",E_LeftClick::descriptor},
 	{"RightClick",E_RightClick::descriptor},

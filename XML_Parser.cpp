@@ -7,6 +7,7 @@ XML_Parser::XML_Parser(SharedContext& context): context(context)
 
 std::unordered_map<AnimationState, AnimationList> XML_Parser::LoadAnimFromFile(const std::string& filename)
 {
+	animations.clear(); //Reset Animations for each loaded file
 	opened_documents.emplace_back(new tinyxml2::XMLDocument());
 	tinyxml2::XMLDocument* doc = opened_documents.back().get();
 

@@ -3,82 +3,27 @@
 	
 	<BehaviorTree ID="MainTree">
 		<Sequence name ="root_sequence">
-			<Script code="isShift:=false"/>
-			<Script code="bowState:=NOBOW"/>
-			<Script code="Anim:='Idle'"/>
-			<ReactiveSequence>
-				<Inverter>
-					<IsInteracting/>
-				</Inverter>
-				<SubTree ID="InputTree" isRunning="{isShift}" theBowState="{bowState}"/>
-				<SubTree ID="SelectAnimationTree" isRunning="{isShift}" theBowState="{bowState}" animToPlay="{Anim}"/>
-				<TriggerEvent EventType ="{Anim}"/>
+			<ReactiveSequence name="ActionSequence">
+				<ReactiveFallback name="InputSelector">
+					<ReactiveSequence name="SetIsMoving">
+						<ReactiveFallback name="IsMovingAnyDirection">
+							<IsKeyPressed Key="Left"/>
+							<IsKeyPressed Key="Right"/>
+							<IsKeyPressed Key="Up"/>
+							<IsKeyPressed Key="Down"/>
+						</ReactiveFallback>
+						<ReactiveFallback name="WalkOrRun">
+							<ReactiveSequence name="IsRunning">
+								<IsKeyPressed Key="Shift"/>
+								<TriggerEvent EventType="Run"/>
+							</ReactiveSequence>
+							<TriggerEvent EventType="Walk"/>
+						</ReactiveFallback>
+					</ReactiveSequence>
+					<TriggerEvent EventType="Idle"/>
+				</ReactiveFallback>
 			</ReactiveSequence>
 		</Sequence>
 	</BehaviorTree>
 
-	<BehaviorTree ID="InputTree">
-		<ReactiveSequence name="InputSequence">
-			<ReactiveFallback>
-				<Sequence>
-					<IsKeyPressed Key="Shift"/>
-					<Script code="isRunning:=true"/>
-					<Precondition if="theBowState==BOWOUT" else="SUCCESS">
-						<Script code="theBowState:=BOWSHEATH"/>
-					</Precondition>
-				</Sequence>
-				<Sequence>
-					<Inverter>
-						<IsKeyPressed Key="Shift"/>
-					</Inverter>
-					<Script code="isRunning:=false"/>
-				</Sequence>
-			</ReactiveFallback>
-			<ForceSuccess>
-				<ReactiveSequence>
-					<IsKeyDown Key="E"/>
-					<CheckInteraction/>
-					<SetIsInteracting isTalking="true"/>
-					<TriggerEvent EventType ="PauseMovement"/>
-				</ReactiveSequence>
-			</ForceSuccess>
-			<ForceSuccess>
-				<ReactiveFallback>
-					<ReactiveSequence>
-						<IsKeyDown Key="R"/>
-						<Precondition if="theBowState==NOBOW" else="SUCCESS">
-								<Script code="theBowState:=BOWDRAW"/>
-						</Precondition>
-						<Precondition if="theBowState==BOWOUT" else="SUCCESS">
-								<Script code="theBowState:=BOWSHEATH"/>
-						</Precondition>
-					</ReactiveSequence>
-					<ReactiveSequence>
-						<IsDoneAnimating/>
-						<Precondition if="theBowState==BOWDRAW" else="SUCCESS">
-								<Script code="theBowState:=BOWOUT"/>
-						</Precondition>
-						<Precondition if="theBowState==BOWSHEATH" else="SUCCESS">
-								<Script code="theBowState:=NOBOW"/>
-						</Precondition>
-					</ReactiveSequence>
-				</ReactiveFallback>
-			</ForceSuccess>
-		</ReactiveSequence>
-	</BehaviorTree>
-
-	<BehaviorTree ID="SelectAnimationTree">
-		<ReactiveSequence>
-			<GetMoveSpeed moveSpeed="{the_moveSpeed}"/>
-			<ReactiveFallback>
-				<Script code="animToPlay:='BowDraw'" _while="theBowState==BOWDRAW"/>
-				<Script code="animToPlay:='BowSheath'" _while="theBowState==BOWSHEATH"/>
-				<Script code="animToPlay:='BowMove'" _while="theBowState==BOWOUT && the_moveSpeed>5"/>
-				<Script code="animToPlay:='BowIdle'" _while="theBowState==BOWOUT"/>
-				<Script code="animToPlay:='Run'" _while="theBowState==NOBOW && isRunning && the_moveSpeed>5"/>
-				<Script code="animToPlay:='Walk'" _while="theBowState==NOBOW && !isRunning && the_moveSpeed>5"/>
-				<Script code="animToPlay:='Idle'" _while="theBowState==NOBOW"/>
-			</ReactiveFallback>
-		</ReactiveSequence>
-	</BehaviorTree>
 </root>

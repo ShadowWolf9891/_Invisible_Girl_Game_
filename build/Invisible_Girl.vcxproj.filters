@@ -1354,6 +1354,8 @@
     <XML Include="F:\Invisible_Girl_Game\data\trees\PassiveNPC_Tree.xml" />
     <XML Include="F:\Invisible_Girl_Game\data\trees\PlayerTree.xml" />
     <Xml Include="..\data\obj\HostileNPC_Data.xml" />
+    <Xml Include="..\data\anim\ANIM_Slime.xml" />
+    <Xml Include="..\data\trees\HostileNPC_Tree.xml" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
