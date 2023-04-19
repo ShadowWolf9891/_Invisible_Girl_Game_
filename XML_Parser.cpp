@@ -240,7 +240,7 @@ void XML_Parser::ParseInitDoc(tinyxml2::XMLDocument* doc)
 					throw std::exception(buffer);
 				}
 			}
-			for (auto item = obj->FirstChildElement("Item"); item != nullptr; item = item->NextSiblingElement("Item")) 
+			for (auto item = obj->FirstChildElement("Icon"); item != nullptr; item = item->NextSiblingElement("Icon")) 
 			{
 				if (item->Attribute("ID"))objData.properties.at("ID") = item->Attribute("ID");
 				

@@ -44,11 +44,54 @@ struct UIData
 
 enum WeaponType
 {
-	NONE = 0,
+	NOWEAPON = 0,
 	SWORD = 1,
 	BOW = 2,
 	SPEAR = 3
 };
+
+enum RarityValue
+{
+	NORARITY = 0,
+	COMMON = 1,
+	UNCOMMON = 2,
+	RARE = 3,
+	VERYRARE = 4,
+	LEGENDARY = 5,
+	MYTHICAL = 6
+};
+
+enum SpecialEffect
+{
+	NOEFFECT = 0,
+
+	//Elemental Effects items can have
+
+	FIRE = 1,	
+	ICE = 2,
+	LIGHTNING = 3,
+	POISON = 4,
+
+	//Status Effects 
+
+	STUN = 5,
+	KNOCKBACK = 6,
+	BLEED = 7,
+	FEAR = 8,
+	SLEEP = 9,
+	PIERCE = 10,
+
+	//Self buffs
+
+	PHYSATTACKUP = 11,
+	MAGATTACKUP = 12,
+	PHYSDEFENCEUP = 13,
+	MAGDEFENCEUP = 14,
+	AGILITYUP = 15,
+	LIFESTEAL = 16		//Might not add if too OP
+
+};
+
 
 static std::unordered_map<std::string, Event::DescriptorType> const strToEvent =
 {

@@ -370,6 +370,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="F:\Invisible_Girl_Game\Animation.cpp" />
+    <ClInclude Include="..\C_Weapon.h" />
+    <ClInclude Include="..\Weapon.h" />
     <ClInclude Include="F:\Invisible_Girl_Game\Animation.h" />
     <Image Include="F:\Invisible_Girl_Game\Assets\2DML_DUNG1\anim\light1.png">
     </Image>
@@ -1111,6 +1113,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <Xml Include="..\data\obj\HostileNPC_Data.xml">
       <DeploymentContent>false</DeploymentContent>
     </Xml>
+    <Xml Include="..\data\obj\Weapon_Data.xml" />
     <Xml Include="..\data\trees\HostileNPC_Tree.xml" />
     <XML Include="F:\Invisible_Girl_Game\data\anim\ANIM_Characters.xml">
     </XML>

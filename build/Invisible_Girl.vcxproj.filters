@@ -438,6 +438,12 @@
     <ClInclude Include="F:\Invisible_Girl_Game\window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\C_Weapon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Weapon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="F:\Invisible_Girl_Game\CMakeLists.txt" />
@@ -1356,6 +1362,7 @@
     <Xml Include="..\data\obj\HostileNPC_Data.xml" />
     <Xml Include="..\data\anim\ANIM_Slime.xml" />
     <Xml Include="..\data\trees\HostileNPC_Tree.xml" />
+    <Xml Include="..\data\obj\Weapon_Data.xml" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

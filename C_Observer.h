@@ -17,8 +17,8 @@ class C_Observer : public Component
 {
 public:
 
-    C_Observer(Object* owner) : Component(owner), lastEventHandledType("E_None"), currentEventType("E_None"), curWeapon(WeaponType::NONE),
-        equippedWeapon(WeaponType::NONE)
+    C_Observer(Object* owner) : Component(owner), lastEventHandledType("E_None"), currentEventType("E_None"), curWeapon(WeaponType::NOWEAPON),
+        equippedWeapon(WeaponType::NOWEAPON)
     {
 
     };
@@ -46,7 +46,7 @@ private:
 
         switch (curWeapon)
         {
-        case NONE:
+        case NOWEAPON:
             cAnim->SetAnimationState(AnimationState::Idle);
             break;
         case SWORD:
@@ -65,7 +65,7 @@ private:
     {
         switch (curWeapon)
         {
-        case NONE:
+        case NOWEAPON:
             cVel->SetVelocityMultiplier(walkSpeed);
             cAnim->SetAnimationState(AnimationState::Walk);
             break;
@@ -86,7 +86,7 @@ private:
     {
         switch (curWeapon)
         {
-        case NONE:
+        case NOWEAPON:
             cVel->SetVelocityMultiplier(runSpeed);
             cAnim->SetAnimationState(AnimationState::Run);
             break;
@@ -99,43 +99,43 @@ private:
     {
         switch (equippedWeapon)
         {
-        case NONE:
+        case NOWEAPON:
             std::cout << "No weapon equipped to " << owner->tag << std::endl;
             break;
         case SWORD:
-            if (curWeapon == NONE)
+            if (curWeapon == NOWEAPON)
             {
                 curWeapon = WeaponType::SWORD;
                 //cAnim->SetAnimationState(AnimationState::SwordDraw);
             }
             else
             {
-                curWeapon = WeaponType::NONE;
+                curWeapon = WeaponType::NOWEAPON;
                 //cAnim->SetAnimationState(AnimationState::SwordSheath);
             }
             break;
 
         case BOW:
-            if (curWeapon == NONE)
+            if (curWeapon == NOWEAPON)
             {
                 curWeapon = WeaponType::BOW;
                 cAnim->SetAnimationState(AnimationState::BowDraw);
             }
             else
             {
-                curWeapon = WeaponType::NONE;
+                curWeapon = WeaponType::NOWEAPON;
                 cAnim->SetAnimationState(AnimationState::BowSheath);
             }
             break;
         case SPEAR:
-            if (curWeapon == NONE)
+            if (curWeapon == NOWEAPON)
             {
                 curWeapon = WeaponType::SPEAR;
                 //cAnim->SetAnimationState(AnimationState::SpearDraw);
             }
             else
             {
-                curWeapon = WeaponType::NONE;
+                curWeapon = WeaponType::NOWEAPON;
                 //cAnim->SetAnimationState(AnimationState::SpearSheath);
             }
             break;
@@ -149,7 +149,7 @@ private:
         //May need to check if parry is finished and reset speed
         switch (curWeapon)
         {
-        case NONE:
+        case NOWEAPON:
             e_DrawWeapon();
             break;
         case SWORD:
@@ -173,7 +173,7 @@ private:
     {
         switch (curWeapon)
         {
-        case NONE:
+        case NOWEAPON:
             e_Run();
             break;
         case SWORD:
@@ -199,7 +199,7 @@ private:
 
         switch (curWeapon)
         {
-        case NONE:
+        case NOWEAPON:
             cAnim->SetAnimationState(AnimationState::Idle);
             break;
         case SWORD:
@@ -222,7 +222,7 @@ private:
 
         switch (curWeapon)
         {
-        case NONE:
+        case NOWEAPON:
             cAnim->SetAnimationState(AnimationState::None);
             break;
         case SWORD:
@@ -243,7 +243,7 @@ private:
     {
         switch (curWeapon)
         {
-        case NONE:
+        case NOWEAPON:
             cVel->SetVelocityMultiplier(bowOutSpeed);
             cAnim->SetAnimationState(AnimationState::Walk);
             break;
@@ -268,7 +268,7 @@ private:
     {
         switch (curWeapon)
         {
-        case NONE:
+        case NOWEAPON:
             //Entity specific stuff i.e. slime lungeing
 
             break;
@@ -293,7 +293,7 @@ private:
     {
         switch (curWeapon)
         {
-        case NONE:
+        case NOWEAPON:
             //Entity specific stuff i.e. slime lungeing
 
             break;

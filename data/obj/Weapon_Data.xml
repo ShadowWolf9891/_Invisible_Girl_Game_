@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <root _type="weaponData">
-	<Weapon ID="0" name="None">
+	<Weapon ID="0">
 		<Properties>
+			
+			
+			
 			
 		</Properties>
 		

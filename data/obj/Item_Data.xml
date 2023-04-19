@@ -14,7 +14,261 @@
 			<Property name="Height" value="32"/>
 			<Property name="Description" value="Default Description"/>
 		</Properties>
-		<Item ID="100" X="128" Y="448" name="Gold Coin" description="A gold coin belonging to Gerard's great grandfather. It could be worth something."/>
-		<Item ID="101" X="192" Y="192" name="Home cooked meal" description="A home cooked meal from Gerald as thanks for finding his coin. Restores 50HP and 50MP"/>
+		<Icon ID="0" x="0" y="0" name=" " description=" "/>
+		<Icon ID="1" x="32" y="0" name="Accept" description=" "/>
+		<Icon ID="2" x="64" y="0" name="Decline" description=" "/>
+		<Icon ID="3" x="96" y="0" name="Increase" description="Add one"/>
+		<Icon ID="4" x="128" y="0" name="Decrease" description="Subtract one"/>
+		<Icon ID="5" x="160" y="0" name="Submit" description="Submit amount"/>
+		<Icon ID="6" x="192" y="0" name="Cancel" description="Cancel"/>
+		<Icon ID="7" x="224" y="0" name="Leave" description="Leave"/>
+		<Icon ID="8" x="256" y="0" name="Help" description="Help"/>
+		<Icon ID="9" x="288" y="0" name="Bleeding" description="Inflicted with bleeding status effect."/>
+		<Icon ID="10" x="320" y="0" name="Poisoned" description="Inflicted with poisoned status effect."/>
+		<Icon ID="11" x="352" y="0" name="Rage" description="Inflicted with rage status effect."/>
+		<Icon ID="12" x="384" y="0" name="Sleep" description="Inflicted with sleep status effect."/>
+		<Icon ID="13" x="416" y="0" name="Add person" description=" "/>
+		<Icon ID="14" x="448" y="0" name="Subtract person" description=" "/>
+		<Icon ID="15" x="480" y="0" name="Heart person" description=" "/>
+		<Icon ID="16" x="0" y="32" name="Go up" description="Go up"/>
+		<Icon ID="17" x="32" y="32" name="Go down" description="Go down"/>
+		<Icon ID="18" x="64" y="32" name="Go back" description="Go back"/>
+		<Icon ID="19" x="96" y="32" name="Refresh" description="Refresh"/>
+		<Icon ID="20" x="128" y="32" name="Add" description="Add"/>
+		<Icon ID="21" x="160" y="32" name="Remove" description="Remove"/>
+		<Icon ID="22" x="192" y="32" name="Heart" description="Heart"/>
+		<Icon ID="23" x="224" y="32" name="Poison effect" description=" "/>
+		<Icon ID="24" x="256" y="32" name="Purple lightning effect" description=" "/>
+		<Icon ID="25" x="288" y="32" name="Critical hit effect" description="CRIT"/>
+		<Icon ID="26" x="320" y="32" name="Lyre" description="A musical instrument."/>
+		<Icon ID="27" x="352" y="32" name="Panpipes" description="A musical instrument."/>
+		<Icon ID="28" x="384" y="32" name="Violin" description="A musical instrument."/>
+		<Icon ID="29" x="416" y="32" name="Guitar" description="A musical instrument."/>
+		<Icon ID="30" x="448" y="32" name="Flute" description="A musical instrument."/>
+		<Icon ID="31" x="480" y="32" name="Trumpet" description="A musical instrument."/>
+		<Icon ID="32" x="0" y="64" name="Talk bubble" description=" "/>
+		<Icon ID="33" x="32" y="64" name="Quest available bubble" description=" "/>
+		<Icon ID="34" x="64" y="64" name="Quest pending bubble" description=" "/>
+		<Icon ID="35" x="96" y="64" name="Sleeping bubble" description="Z...Z...Z..."/>
+		<Icon ID="36" x="128" y="64" name="Static effect" description=" "/>
+		<Icon ID="37" x="160" y="64" name="Lightning effect" description=" "/>
+		<Icon ID="38" x="192" y="64" name="Rock effect" description=" "/>
+		<Icon ID="39" x="224" y="64" name="Divine effect" description=" "/>
+		<Icon ID="40" x="256" y="64" name="Freeze effect" description=" "/>
+		<Icon ID="41" x="288" y="64" name="Blizzard effect" description=" "/>
+		<Icon ID="42" x="320" y="64" name="Flame effect" description=" "/>
+		<Icon ID="43" x="352" y="64" name="Fireball effect" description=" "/>
+		<Icon ID="44" x="384" y="64" name="Wind effect" description=" "/>
+		<Icon ID="45" x="416" y="64" name="Storm effect" description=" "/>
+		<Icon ID="46" x="448" y="64" name="Water effect" description=" "/>
+		<Icon ID="47" x="480" y="64" name="Wave effect" description=" "/>
+		<Icon ID="48" x="0" y="96" name="Banana" description=" "/>
+		<Icon ID="49" x="32" y="96" name="Mango" description=" "/>
+		<Icon ID="50" x="64" y="96" name="Papaia" description=" "/>
+		<Icon ID="51" x="96" y="96" name="Green Apple" description=" "/>
+		<Icon ID="52" x="128" y="96" name="Orange" description=" "/>
+		<Icon ID="53" x="160" y="96" name="Red Apple" description=" "/>
+		<Icon ID="54" x="192" y="96" name="Grapes" description=" "/>
+		<Icon ID="55" x="224" y="96" name="Lemon" description=" "/>
+		<Icon ID="56" x="256" y="96" name="Avocado" description=" "/>
+		<Icon ID="57" x="288" y="96" name="Avocado open" description=" "/>
+		<Icon ID="58" x="320" y="96" name="Pear" description=" "/>
+		<Icon ID="59" x="352" y="96" name="Pineapple" description=" "/>
+		<Icon ID="60" x="384" y="96" name="Watermelon" description=" "/>
+		<Icon ID="61" x="416" y="96" name="Strawberry" description=" "/>
+		<Icon ID="62" x="448" y="96" name="Bunch of Bananas" description=" "/>
+		<Icon ID="63" x="480" y="96" name="Coconut" description=" "/>
+		<Icon ID="64" x="0" y="128" name="Carrot" description=" "/>
+		<Icon ID="65" x="32" y="128" name="Tomato" description=" "/>
+		<Icon ID="66" x="64" y="128" name="Garlic" description=" "/>
+		<Icon ID="67" x="96" y="128" name="Unknown green vegi" description=" "/>
+		<Icon ID="68" x="128" y="128" name="Corn" description=" "/>
+		<Icon ID="69" x="160" y="128" name="Onion" description=" "/>
+		<Icon ID="70" x="192" y="128" name="Cucumber" description=" "/>
+		<Icon ID="71" x="224" y="128" name="Red pepper" description=" "/>
+		<Icon ID="72" x="256" y="128" name="Green pepper" description=" "/>
+		<Icon ID="73" x="288" y="128" name="Yellow pepper" description=" "/>
+		<Icon ID="74" x="320" y="128" name="Herb" description=" "/>
+		<Icon ID="75" x="352" y="128" name="Red mushroom" description=" "/>
+		<Icon ID="76" x="384" y="128" name="Brown mushroom" description=" "/>
+		<Icon ID="77" x="416" y="128" name="Bamboo" description=" "/>
+		<Icon ID="78" x="448" y="128" name="White powder" description=" "/>
+		<Icon ID="79" x="480" y="128" name="Brown powder" description=" "/>
+		<Icon ID="80" x="0" y="160" name="Sushi" description=" "/>
+		<Icon ID="81" x="32" y="160" name="Cooked drumstick" description=" "/>
+		<Icon ID="82" x="64" y="160" name="Raw drumstick" description=" "/>
+		<Icon ID="83" x="96" y="160" name="Cooking oil" description=" "/>
+		<Icon ID="84" x="128" y="160" name="Mayo" description=" "/>
+		<Icon ID="85" x="160" y="160" name="Egg" description=" "/>
+		<Icon ID="86" x="192" y="160" name="Bread" description=" "/>
+		<Icon ID="87" x="224" y="160" name="Cheese" description=" "/>
+		<Icon ID="88" x="256" y="160" name="Mint leaf" description=" "/>
+		<Icon ID="89" x="288" y="160" name="Raw beef" description=" "/>
+		<Icon ID="90" x="320" y="160" name="Cooked beef" description=" "/>
+		<Icon ID="91" x="352" y="160" name="Raw sausage" description=" "/>
+		<Icon ID="92" x="384" y="160" name="Cooked sausage" description=" "/>
+		<Icon ID="93" x="416" y="160" name="Cake Slice 1" description=" "/>
+		<Icon ID="94" x="448" y="160" name="Cake Slice 2" description=" "/>
+		<Icon ID="95" x="480" y="160" name="Cake Slice 3" description=" "/>
+		<Icon ID="96" x="0" y="192" name="Empty mug" description=" "/>
+		<Icon ID="97" x="32" y="192" name="Brown bean drink" description=" "/>
+		<Icon ID="98" x="64" y="192" name="Raw fish" description=" "/>
+		<Icon ID="99" x="96" y="192" name="Cooked fish" description=" "/>
+		<Icon ID="100" x="128" y="192" name="Mystery meat" description=" "/>
+		<Icon ID="101" x="160" y="192" name="Stew" description=" "/>
+		<Icon ID="102" x="192" y="192" name="Home cooked meal" description="A home cooked meal from Gerald as thanks for finding his coin. Restores 50HP and 50MP"/>
+		<Icon ID="103" x="224" y="192" name="Scythe" description="A farm tool for harvesting grain, or souls. "/>
+		<Icon ID="104" x="256" y="192" name="Axe" description="For chopping wood usually."/>
+		<Icon ID="105" x="288" y="192" name="Shovel" description="For digging up things, or burying them."/>
+		<Icon ID="106" x="320" y="192" name="Hammer" description="Good for carpenters, blacksmiths, and kneecaps."/>
+		<Icon ID="107" x="352" y="192" name="Hoe" description="A farm tool for tiling the land. Nothing else."/>
+		<Icon ID="108" x="384" y="192" name="Pickaxe" description="Used to dig stone."/>
+		<Icon ID="109" x="416" y="192" name="Sickle" description="Used to harvest grain and represent seizing the means of production."/>
+		<Icon ID="110" x="448" y="192" name="Saw" description="Good for carpentry and magic shows."/>
+		<Icon ID="111" x="480" y="192" name="Tongs" description="For when touching something normally would result in damage."/>
+		<Icon ID="112" x="0" y="224" name="Green potion" description=" "/>
+		<Icon ID="113" x="32" y="224" name="Blue potion" description=" "/>
+		<Icon ID="114" x="64" y="224" name="Red potion" description=" "/>
+		<Icon ID="115" x="96" y="224" name="Purple potion" description=" "/>
+		<Icon ID="116" x="128" y="224" name="Red vial" description=" "/>
+		<Icon ID="117" x="160" y="224" name="Green vial" description=" "/>
+		<Icon ID="118" x="192" y="224" name="Blue vial" description=" "/>
+		<Icon ID="119" x="224" y="224" name="Purple vial" description=" "/>
+		<Icon ID="120" x="256" y="224" name="Red flask" description=" "/>
+		<Icon ID="121" x="288" y="224" name="Blue flask" description=" "/>
+		<Icon ID="122" x="320" y="224" name="Green flask" description=" "/>
+		<Icon ID="123" x="352" y="224" name="Purple flask" description=" "/>
+		<Icon ID="124" x="384" y="224" name="Empty bottle" description=" "/>
+		<Icon ID="125" x="416" y="224" name="Half filled bottle" description=" "/>
+		<Icon ID="126" x="448" y="224" name="Full bottle" description=" "/>
+		<Icon ID="127" x="480" y="224" name="Bottle of poison" description=" "/>
+		<Icon ID="128" x="0" y="256" name="Wood buckler" description="A small round shield made of wood."/>
+		<Icon ID="129" x="32" y="256" name="Wood heater shield" description="A large kite-shaped shield made of wood."/>
+		<Icon ID="130" x="64" y="256" name="Reinforced buckler" description="A small round shield made of wood, reinforced with metal."/>
+		<Icon ID="131" x="96" y="256" name="Strongly reinforced buckler" description="A small round shield made of wood, reinforced with lots of metal."/>
+		<Icon ID="132" x="128" y="256" name="Reinforced heater shield" description="A large kite-shaped shield made of wood and metal."/>
+		<Icon ID="133" x="160" y="256" name="Iron buckler" description="A small round shield made of iron."/>
+		<Icon ID="134" x="192" y="256" name="Iron heater shield" description="A large kite-shaped shield made of iron."/>
+		<Icon ID="135" x="224" y="256" name="Gold heater shield" description="A large kite-shaped shield made of gold and infused with magic."/>
+		<Icon ID="136" x="256" y="256" name="Leather helm" description="Common and lightweight head defence."/>
+		<Icon ID="137" x="288" y="256" name="Bronze helm" description="Good defence against glancing and slashing blows."/>
+		<Icon ID="138" x="320" y="256" name="Iron helm" description="Sturdy but heavy head defence."/>
+		<Icon ID="139" x="352" y="256" name="Paladin helm" description="Sturdy and lighter head defence."/>
+		<Icon ID="140" x="384" y="256" name="Hoplite helm" description="Battle ready head defence."/>
+		<Icon ID="141" x="416" y="256" name="Mage hood" description="Light head protection infused with magic."/>
+		<Icon ID="142" x="448" y="256" name="Worn shirt" description="Simple shirt that has been worn frequently."/>
+		<Icon ID="143" x="480" y="256" name="Worn dress" description="Simple dress that have been worn frequently."/>
+		<Icon ID="144" x="0" y="288" name="Worn leather shirt" description="Bulky but provides moderate protection."/>
+		<Icon ID="145" x="32" y="288" name="Chainmail shirt" description="Lightweight protection against glancing and smashing blows."/>
+		<Icon ID="146" x="64" y="288" name="Iron chestpiece" description="Heavy iron chestplate that provides solid defence."/>
+		<Icon ID="147" x="96" y="288" name="Gold chestpiece" description="Gold chestpiece infused with magic."/>
+		<Icon ID="148" x="128" y="288" name="Synthetic chestpiece" description="Manifactured chestpiece for the best defence."/>
+		<Icon ID="149" x="160" y="288" name="Worn boots" description="Boots that could use a wash."/>
+		<Icon ID="150" x="192" y="288" name="Leather boots" description="Lightweight foot and leg protection."/>
+		<Icon ID="151" x="224" y="288" name="Reinforced leather boots" description="Lightweight foot and leg protection."/>
+		<Icon ID="152" x="256" y="288" name="Iron boots" description="Heavy foot and leg protection."/>
+		<Icon ID="153" x="288" y="288" name="Gold boots" description="Gold foot and leg protection that can be infused with magic."/>
+		<Icon ID="154" x="320" y="288" name="Emerald necklace" description=" "/>
+		<Icon ID="155" x="352" y="288" name="Saphire necklace" description=" "/>
+		<Icon ID="156" x="384" y="288" name="Ruby necklace" description=" "/>
+		<Icon ID="157" x="416" y="288" name="Worn pants" description="Simple pants that have been worn frequently."/>
+		<Icon ID="158" x="448" y="288" name="Iron gauntlets" description=" "/>
+		<Icon ID="159" x="480" y="288" name="Leather gauntlets" description=" "/>
+		<Icon ID="160" x="0" y="320" name="Wood sword" description="A stick carved to look like a sword. It still hits like a stick."/>
+		<Icon ID="161" x="32" y="320" name="Rusty metal sword" description="A crude metal sword that may inflict tetanus on the enemy, or on the wielder."/>
+		<Icon ID="162" x="64" y="320" name="Iron short sword" description="Battle ready sword forged of iron."/>
+		<Icon ID="163" x="96" y="320" name="Iron rapier" description="Agile iron poking stick."/>
+		<Icon ID="164" x="128" y="320" name="Dull metal longsword" description="Longer than a regular sword, but probably better used as a club."/>
+		<Icon ID="165" x="160" y="320" name="Iron longsword " description="Battle ready longsword forged of iron."/>
+		<Icon ID="166" x="192" y="320" name="Ornate iron longsword" description="With more elaborate detail, comes more power. Probably."/>
+		<Icon ID="167" x="224" y="320" name="Fire Sword" description="Sword infused with the element of fire."/>
+		<Icon ID="168" x="256" y="320" name="Static Sword" description="Sword infused with the element of electricity."/>
+		<Icon ID="169" x="288" y="320" name="Ice Sword" description="Sword infused with the power of Ice."/>
+		<Icon ID="170" x="320" y="320" name="Scimitar" description="Curved sword from somewhere abroad."/>
+		<Icon ID="171" x="352" y="320" name="Dull iron rapier" description="Agile metal bar."/>
+		<Icon ID="172" x="384" y="320" name="Chaos sword" description=" "/>
+		<Icon ID="173" x="416" y="320" name="Sword of Angels" description=" "/>
+		<Icon ID="174" x="448" y="320" name="Sword of Demons" description=" "/>
+		<Icon ID="175" x="480" y="320" name="Spear" description="A sharper stick."/>
+		<Icon ID="176" x="0" y="352" name="Wooden dagger" description="Faster than a sword, but shorter range."/>
+		<Icon ID="177" x="32" y="352" name="Iron dagger" description="Faster than a sword, but shorter range."/>
+		<Icon ID="178" x="64" y="352" name="Dull iron dagger" description="Faster than a sword, but shorter range."/>
+		<Icon ID="179" x="96" y="352" name="Fire dagger" description="Dagger infused with the element of fire."/>
+		<Icon ID="180" x="128" y="352" name="Ritual knife" description="Curved knife used in sacrifices."/>
+		<Icon ID="181" x="160" y="352" name="Bow" description="A standard bow."/>
+		<Icon ID="182" x="192" y="352" name="Yellow bow" description="A bow with an additional effect."/>
+		<Icon ID="183" x="224" y="352" name="Green bow" description="A bow with an additional effect."/>
+		<Icon ID="184" x="256" y="352" name="Crossbow" description="A bow that shoots sideways."/>
+		<Icon ID="185" x="288" y="352" name="Arrow" description="Not for direction."/>
+		<Icon ID="186" x="320" y="352" name="Boomarang" description="It usually comes back."/>
+		<Icon ID="187" x="352" y="352" name="Iron waraxe" description="You can chop two trees at once."/>
+		<Icon ID="188" x="384" y="352" name="Mace" description="For keeping creepy people away."/>
+		<Icon ID="189" x="416" y="352" name="Basic Staff" description="Wood curved in a way that gives it magical powers, or maybe just a walking stick."/>
+		<Icon ID="190" x="448" y="352" name="Gemstone Staff" description="Pure magical energy focused into a gem."/>
+		<Icon ID="191" x="480" y="352" name="Slingshot" description="For taking out giants."/>
+		<Icon ID="192" x="0" y="384" name="Trophy" description=" "/>
+		<Icon ID="193" x="32" y="384" name="Iron key" description="It opens something."/>
+		<Icon ID="194" x="64" y="384" name="Rusty iron key" description="It probably opens something."/>
+		<Icon ID="195" x="96" y="384" name="Gold key" description="Could open something amazing."/>
+		<Icon ID="196" x="128" y="384" name="Special key" description="Could open something special."/>
+		<Icon ID="197" x="160" y="384" name="Chest" description="Holds loot."/>
+		<Icon ID="198" x="192" y="384" name="Bag of money" description="Contains an amount of money."/>
+		<Icon ID="199" x="224" y="384" name="Bag of something" description="Contains something."/>
+		<Icon ID="200" x="256" y="384" name="Gold coins" description="Stacks of gold coins."/>
+		<Icon ID="201" x="288" y="384" name="Fishing rod" description="Used to catch fish and small land animals."/>
+		<Icon ID="202" x="320" y="384" name="White mass" description=" "/>
+		<Icon ID="203" x="352" y="384" name="Anchor" description=" "/>
+		<Icon ID="204" x="384" y="384" name="Gun" description=" "/>
+		<Icon ID="205" x="416" y="384" name="Gear" description=" "/>
+		<Icon ID="206" x="448" y="384" name="A die" description=" "/>
+		<Icon ID="207" x="480" y="384" name="Hand mirror" description=" "/>
+		<Icon ID="208" x="0" y="416" name="Bomb" description="BOOOM"/>
+		<Icon ID="209" x="32" y="416" name="Latched book" description=" "/>
+		<Icon ID="210" x="64" y="416" name="Book" description=" "/>
+		<Icon ID="211" x="96" y="416" name="Scroll" description="Saving..."/>
+		<Icon ID="212" x="128" y="416" name="Search" description=" "/>
+		<Icon ID="213" x="160" y="416" name="Silver coins" description="Stacks of silver coins."/>
+		<Icon ID="214" x="192" y="416" name="Bone" description="Someone might be missing this."/>
+		<Icon ID="215" x="224" y="416" name="Fang" description="Obtained ethically."/>
+		<Icon ID="216" x="256" y="416" name="Blank paper" description=" "/>
+		<Icon ID="217" x="288" y="416" name="Paper with writing" description=" "/>
+		<Icon ID="218" x="320" y="416" name="Paper with image" description=" "/>
+		<Icon ID="219" x="352" y="416" name="Backpack" description=" "/>
+		<Icon ID="220" x="384" y="416" name="Torch" description="Illuminates the darkness so you can see the monsters."/>
+		<Icon ID="221" x="416" y="416" name="Candle" description="For rituals or fun."/>
+		<Icon ID="222" x="448" y="416" name="Lanturn" description="Portable sunlight."/>
+		<Icon ID="223" x="480" y="416" name="Letter" description=" "/>
+		<Icon ID="224" x="0" y="448" name="Discarded paper" description=" "/>
+		<Icon ID="225" x="32" y="448" name="Red orb" description=" "/>
+		<Icon ID="226" x="64" y="448" name="Green orb" description=" "/>
+		<Icon ID="227" x="96" y="448" name="Blue orb" description=" "/>
+		<Icon ID="228" x="128" y="448" name="Gold coin" description=" "/>
+		<Icon ID="229" x="160" y="448" name="Silver coin" description=" "/>
+		<Icon ID="230" x="192" y="448" name="Bronze coin" description=" "/>
+		<Icon ID="231" x="224" y="448" name="Campfire" description=" "/>
+		<Icon ID="232" x="256" y="448" name="String" description=" "/>
+		<Icon ID="233" x="288" y="448" name="Bait" description=" "/>
+		<Icon ID="234" x="320" y="448" name="Log" description=" "/>
+		<Icon ID="235" x="352" y="448" name="Leather" description=" "/>
+		<Icon ID="236" x="384" y="448" name="Tanned leather" description=" "/>
+		<Icon ID="237" x="416" y="448" name="Bronze coins" description="Stack of bronze coins."/>
+		<Icon ID="238" x="448" y="448" name="Skull" description=" "/>
+		<Icon ID="239" x="480" y="448" name="Dias" description=" "/>
+		<Icon ID="240" x="0" y="480" name="Raw bronze" description=" "/>
+		<Icon ID="241" x="32" y="480" name="Raw gold pieces" description=" "/>
+		<Icon ID="242" x="64" y="480" name="Grey stone" description=" "/>
+		<Icon ID="243" x="96" y="480" name="Brown stone" description=" "/>
+		<Icon ID="244" x="128" y="480" name="Raw iron" description=" "/>
+		<Icon ID="245" x="160" y="480" name="Raw blackstone" description=" "/>
+		<Icon ID="246" x="192" y="480" name="Raw sheetmetal" description=" "/>
+		<Icon ID="247" x="224" y="480" name="Refined gemstone" description=" "/>
+		<Icon ID="248" x="256" y="480" name="Refined iron" description=" "/>
+		<Icon ID="249" x="288" y="480" name="Refined gold" description=" "/>
+		<Icon ID="250" x="320" y="480" name="Refined bronze" description=" "/>
+		<Icon ID="251" x="352" y="480" name="Diamond" description=" "/>
+		<Icon ID="252" x="384" y="480" name="Emerald" description=" "/>
+		<Icon ID="253" x="416" y="480" name="Ruby" description=" "/>
+		<Icon ID="254" x="448" y="480" name="Prism" description=" "/>
+		<Icon ID="255" x="480" y="480" name="Unrefined gemstone" description=" "/>
 	</Object>
 </root>
