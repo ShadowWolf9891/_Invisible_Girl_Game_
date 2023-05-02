@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root _type ="initData">
 	<Object name ="Player">
-		<Components bitmap ="00000000000001100101111101111010">
-		</Components>
+		<Components bitmap ="00000000000001100101111101111010"/>
 		<Properties>
 			<Property name="Tag" value="1"/>
 			<Property name="DrawLayer" value="3"/>

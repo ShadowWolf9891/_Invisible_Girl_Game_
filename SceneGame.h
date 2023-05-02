@@ -34,6 +34,8 @@
 #include "E_FireProjectile.h"
 #include "XML_Parser.h"
 #include "S_QuestManager.h"
+#include "Weapon.h"
+#include "C_Weapon.h"
 
 
 class SceneGame : public Scene
@@ -61,6 +63,9 @@ private:
 	bool showMenu, showQuitMenu;
 	sf::Texture* buttonTexture;
 	ImGuiWindowFlags window_flags;  //Specifies info about the window
+
+	std::map<int, Weapon> weapons;
+	
 };
 
 

@@ -28,6 +28,17 @@ std::unordered_map<std::string, ObjectData> XML_Parser::LoadInitialObjectDataFro
 	return this->objects;
 }
 
+std::unordered_map<int, std::unordered_map <std::string, std::string>> XML_Parser::LoadWeaponFromFile(const std::string& filename)
+{
+	opened_documents.emplace_back(new tinyxml2::XMLDocument());
+	tinyxml2::XMLDocument* doc = opened_documents.back().get();
+
+	doc->LoadFile(filename.c_str());
+	ParseDataDoc(doc);
+
+	return this->weapons;
+}
+
 std::unordered_map<int, std::unordered_map<StatusType, std::vector<std::shared_ptr<DialogueNode>>>> XML_Parser::LoadDialogueDataFromFile(const std::string& filename)
 {
 	opened_documents.emplace_back(new tinyxml2::XMLDocument());
@@ -255,6 +266,65 @@ void XML_Parser::ParseInitDoc(tinyxml2::XMLDocument* doc)
 			}
 
 			objects.insert(std::make_pair(_name, objData));
+		}
+	}
+}
+
+void XML_Parser::ParseDataDoc(tinyxml2::XMLDocument* doc)
+{
+	weapons.clear();
+
+	if (doc->Error())
+	{
+		char buffer[200];
+		sprintf(buffer, "Error parsing the XML: %s", doc->ErrorName());
+		throw std::exception(buffer);
+	}
+
+	const tinyxml2::XMLElement* xml_root = doc->RootElement();
+
+	if (xml_root->Attribute("_type", "weaponData")) //Is a XML file describing initial data stuff
+	{
+		for (auto w = xml_root->FirstChildElement("Weapon"); //Recursivly get all objects
+			w != nullptr;
+			w = w->NextSiblingElement("Weapon"))
+		{
+			std::unordered_map<std::string, std::string> wData;
+			int _ID;
+			
+			if (w->Attribute("ID"))
+			{
+				wData.insert(std::make_pair("ID", w->Attribute("ID")));
+				_ID = atoi(w->Attribute("ID"));
+			}
+			if (w->Attribute("name"))
+			{
+				wData.insert(std::make_pair("name", w->Attribute("name")));
+			}
+			
+			for (auto prop = w->FirstChildElement("Property"); //Recursivly get all properties of weapon
+				prop != nullptr;
+				prop = prop->NextSiblingElement("Property"))
+			{
+				std::string name, value;
+
+				if (prop->Attribute("name") && prop->Attribute("value"))
+				{
+					name = prop->Attribute("name");
+					value = prop->Attribute("value");
+
+					wData.insert(std::make_pair(name, value));
+				}
+				else
+				{
+					char buffer[200];
+					sprintf(buffer, "Error parsing property from XML: %s", doc->ErrorName());
+					throw std::exception(buffer);
+				}
+			}
+			
+
+			weapons.insert(std::make_pair(_ID, wData));
 		}
 	}
 }

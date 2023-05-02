@@ -327,9 +327,6 @@
     <ClInclude Include="F:\Invisible_Girl_Game\Dispatcher.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="F:\Invisible_Girl_Game\E_FireProjectile.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="F:\Invisible_Girl_Game\Event.h">
       <Filter>Header Files</Filter>
     </ClInclude>

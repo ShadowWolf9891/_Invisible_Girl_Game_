@@ -19,11 +19,15 @@ void SceneGame::OnCreate()
     std::vector<std::shared_ptr<Object>> levelTiles = mapParser.Parse(workingDir.Get() + "level_data/Town_1_data.json");
     objects.Add(levelTiles);
     
-    std::vector<std::shared_ptr<Object>> itemList = CreateObjectFromFile("data/obj/Item_Data.xml", sf::Vector2f(1000, 1000));
-    objects.Add(itemList);
+    std::vector<std::shared_ptr<Object>> iconList = CreateObjectFromFile("data/obj/Item_Data.xml", sf::Vector2f(1000, 1000));
+    objects.Add(iconList);
+
+    std::vector<std::shared_ptr<Object>> weaponList = CreateObjectFromFile("data/obj/Weapon_Data.xml", sf::Vector2f(1024, 1024));
+    objects.Add(weaponList);
 
     std::vector<std::shared_ptr<Object>> playerList = CreateObjectFromFile("data/obj/Player_Data.xml", sf::Vector2f(1024, 1024));
     objects.Add(playerList);
+
     std::vector<std::shared_ptr<Object>> NPCList = CreateObjectFromFile("data/obj/PassiveNPC_Data.xml", sf::Vector2f(1024, 1224));
     objects.Add(NPCList);
 

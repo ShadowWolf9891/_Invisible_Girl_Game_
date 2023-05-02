@@ -303,7 +303,7 @@ private:
             break;
         case BOW:
             cVel->SetVelocityMultiplier(bowOutSpeed / 2);
-            cAnim->SetAnimationState(AnimationState::BowShootUp);
+            cAnim->SetAnimationState(AnimationState::BowAttack);
             break;
         case SPEAR:
             //cVel->SetVelocityMultiplier(spearOutSpeed / 2);

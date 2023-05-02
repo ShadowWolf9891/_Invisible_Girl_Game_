@@ -1044,7 +1044,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="F:\Invisible_Girl_Game\Dispatcher.cpp" />
     <ClInclude Include="F:\Invisible_Girl_Game\Dispatcher.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\E_FireProjectile.cpp" />
-    <ClInclude Include="F:\Invisible_Girl_Game\E_FireProjectile.h" />
     <ClCompile Include="F:\Invisible_Girl_Game\E_Test.cpp" />
     <ClCompile Include="F:\Invisible_Girl_Game\Event.cpp" />
     <ClInclude Include="F:\Invisible_Girl_Game\Event.h" />

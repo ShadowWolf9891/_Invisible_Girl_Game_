@@ -1,18 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <root _type="weaponData">
-	<Weapon ID="0">
-		<Properties>
-			
-			
-			
-			
-		</Properties>
-		
-		
-		
+	<Weapon ID="0" name="No Weapon">
+		<Property name="iconID" value="0"/>
+		<Property name="description" value="No weapon equipped."/>
+		<Property name="weaponType" value="0"/>
+		<Property name="rarity" value="0"/>
+		<Property name="effect" value="0"/>
+		<Property name="baseDamage" value="1"/>
+		<Property name="critChance" value="0.0"/>
+		<Property name="range" value="32.0"/>
+		<Property name="attackSpeed" value="1.0"/>
+		<Property name="requiredSkill" value="0"/>
+		<Property name="requiredSkillLevel" value="0"/>
 	</Weapon>
-	
+	<Weapon ID="1" name="Wood Sword">
+		<Property name="iconID" value="160"/>
+		<Property name="description" value="A stick carved to look like a sword. It still hits like a stick."/>
+		<Property name="weaponType" value="1"/>
+		<Property name="rarity" value="1"/>
+		<Property name="effect" value="0"/>
+		<Property name="baseDamage" value="10"/>
+		<Property name="critChance" value="0.01"/>
+		<Property name="range" value="32.0"/>
+		<Property name="attackSpeed" value="0.8"/>
+		<Property name="requiredSkill" value="1"/>
+		<Property name="requiredSkillLevel" value="1"/>
+	</Weapon>
 	
 	
 	

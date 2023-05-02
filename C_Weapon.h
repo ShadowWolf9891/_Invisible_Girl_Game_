@@ -10,18 +10,31 @@
 class C_Weapon : public Component
 {
 public:
-	C_Weapon(Object* owner) : Component(owner)
+	C_Weapon(Object* owner) : Component(owner), currentWeapon(std::make_shared<Weapon>()), previousWeapon(currentWeapon)
 	{
 
 	};
 	virtual ~C_Weapon() = default;
 
+	//Returns the previously equipped weapon for return to inventory
+	std::shared_ptr<Weapon> EquipWeapon(std::shared_ptr<Weapon> w)
+	{
+		previousWeapon = currentWeapon;
+		currentWeapon = w;
+		return previousWeapon;
+	};
 	
+	bool Attack()
+	{
+
+
+
+	};
 
 private:
 	
-	WeaponType currentWeapon;
-
+	std::shared_ptr<Weapon> currentWeapon;
+	std::shared_ptr<Weapon> previousWeapon;
 
 
 };

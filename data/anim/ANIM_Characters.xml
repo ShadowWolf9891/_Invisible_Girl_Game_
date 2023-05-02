@@ -280,7 +280,7 @@
 			<Frame number ="0" x="128" y="448" duration="0"/>
 		</Animation>
 	</AnimationGroup>
-	<AnimationGroup state="BowShootUp" looped ="false" filename="Assets\Character\20.08b - Bow Combat 3.1\char_a_pBOW3\char_a_pBOW3_0bas_humn_v01.png">
+	<AnimationGroup state="BowAttack" looped ="false" filename="Assets\Character\20.08b - Bow Combat 3.1\char_a_pBOW3\char_a_pBOW3_0bas_humn_v01.png">
 		<Animation direction="Down" frameWidth ="64" frameHeight ="64">
 			<Frame number ="0" x ="0" y="0" duration ="0.18"/>
 			<Frame number ="1" x ="64" y="0" duration ="0.1"/>

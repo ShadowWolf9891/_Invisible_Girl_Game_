@@ -34,7 +34,7 @@
 #include "E_FireProjectile.h"
 #include "XML_Parser.h"
 #include "S_QuestManager.h"
-
+#include "Weapon.h"
 
 class Scene
 {
@@ -165,6 +165,19 @@ public:
 
         return objectList;
 
+    };
+    virtual std::vector<std::shared_ptr<Weapon>> CreateWeaponFromFile(std::string fileName)
+    {
+        std::vector<std::shared_ptr<Weapon>> weaponList;
+        auto weaponData = xml_parser.LoadWeaponFromFile(workingDir.Get() + fileName);
+        for (auto& weapon : weaponData)
+        {
+            std::shared_ptr<Weapon> w = std::make_shared<Weapon>();
+            w->CreateWeapon(weapon.second);
+            weaponList.emplace_back(w);
+        }
+
+        return weaponList;
     };
     virtual void AttachComponent(std::shared_ptr<Object> o, std::string _type, std::unordered_map<std::string, std::string> propertiesMap)
     {

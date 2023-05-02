@@ -29,6 +29,8 @@ public:
 
 	std::unordered_map <std::string, ObjectData> LoadInitialObjectDataFromFile(const std::string& filename);
 
+	std::unordered_map<int, std::unordered_map <std::string, std::string>> LoadWeaponFromFile(const std::string& filename);
+
 	std::unordered_map<int, std::unordered_map<StatusType, std::vector<std::shared_ptr<DialogueNode>>>> LoadDialogueDataFromFile(const std::string& filename);
 
 	std::unordered_map<std::string, UIData> LoadUIFromFile(const std::string& filename);
@@ -39,6 +41,7 @@ public:
 private:
 	void ParseAnimDoc(tinyxml2::XMLDocument* doc);
 	void ParseInitDoc(tinyxml2::XMLDocument* doc);
+	void ParseDataDoc(tinyxml2::XMLDocument* doc);
 	void ParseDialogueDoc(tinyxml2::XMLDocument* doc);
 	void ParseUIFormatDoc(tinyxml2::XMLDocument* doc);
 	std::shared_ptr <BaseUserInterface> CheckUIObjectType(const char* name, const tinyxml2::XMLElement* UIElement);
@@ -47,6 +50,7 @@ private:
 
 	std::unordered_map<AnimationState, AnimationList> animations;
 	std::unordered_map<std::string, ObjectData> objects;
+	std::unordered_map<int, std::unordered_map <std::string, std::string>> weapons;
 	std::unordered_map<int, std::unordered_map<StatusType, std::vector<std::shared_ptr<DialogueNode>>>> dNodes;
 	std::unordered_map<std::string, UIData> uiObjects;
 
@@ -71,7 +75,7 @@ static std::unordered_map<std::string, AnimationState> const strToAnimState =
 		{"BowCrouch",AnimationState::BowCrouch},
 		{"BowRetreat",AnimationState::BowRetreat},
 		{"BowLunge",AnimationState::BowLunge},
-		{"BowShootUp",AnimationState::BowShootUp},
+		{"BowAttack",AnimationState::BowAttack},
 		{"BowShootStraight",AnimationState::BowShootStraight}
 	};
 static std::unordered_map<std::string, FacingDirection> const strToDir =

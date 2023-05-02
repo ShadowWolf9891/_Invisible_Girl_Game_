@@ -167,14 +167,14 @@ public:
 
 	static constexpr DescriptorType descriptor = "E_Lunge";
 };
-class E_ShootUp : public Event
+class E_Attack : public Event
 {
 public:
 
-	E_ShootUp() : Event(*this, descriptor, " Shoot Up Event") {};
-	virtual ~E_ShootUp() = default;
+	E_Attack() : Event(*this, descriptor, " E_Attack Event") {};
+	virtual ~E_Attack() = default;
 
-	static constexpr DescriptorType descriptor = "E_ShootUp";
+	static constexpr DescriptorType descriptor = "E_Attack";
 };
 class E_ShootStraight : public Event
 {

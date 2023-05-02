@@ -92,6 +92,24 @@ enum SpecialEffect
 
 };
 
+enum SkillType
+{
+	NOSKILL = 0,
+	SWORDSKILL = 1,
+	BOWSKILL = 2,
+	SPEARSKILL = 3,
+	MAGICSKILL = 4,
+	HEAVYARMOURSKILL = 5,
+	LIGHTARMOURSKILL = 6,
+	FORGINGSKILL = 7,
+	MININGSKILL = 8,
+	CHOPPINGSKILL = 9,
+	FARMINGSKILL = 10,
+	COOKINGSKILL = 11,
+	ARCANASKILL = 12,	//For enchanting or other stuff
+	LORESKILL = 13,
+	EXPLORESKILL = 14
+};
 
 static std::unordered_map<std::string, Event::DescriptorType> const strToEvent =
 {
@@ -108,7 +126,7 @@ static std::unordered_map<std::string, Event::DescriptorType> const strToEvent =
 	{"Crouch",E_Crouch::descriptor},
 	{"Retreat",E_Retreat::descriptor},
 	{"Lunge",E_Lunge::descriptor},
-	{"ShootUp",E_ShootUp::descriptor},
+	{"Attack",E_Attack::descriptor},
 	{"ShootStraight",E_ShootStraight::descriptor},
 	{"Interact",E_Interact::descriptor},
 	{"LeftClick",E_LeftClick::descriptor},

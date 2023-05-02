@@ -26,8 +26,8 @@ enum class AnimationState
 	BowCrouch,
 	BowRetreat,
 	BowLunge,
-	BowShootUp,
-	BowShootStraight
+	BowAttack,
+	BowShootStraight	//Probably wont be used
 };
 
 using AnimationList = std::unordered_map<FacingDirection, std::shared_ptr<Animation>>;
